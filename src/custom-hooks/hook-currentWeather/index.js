@@ -17,7 +17,7 @@ export function useCurrentWeather() {
        }))
 
        useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=09470b2c21c566193aff07298b5d4d3c`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&___TUKEY`)
         .then(r=> r.json())
         .then(d => setWeather(d))
        },[])
