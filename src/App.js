@@ -11,19 +11,9 @@ function App() {
   return (
     <div className="App">
 
-<<<<<<< HEAD
-      {/* <CurrentWeather></CurrentWeather> */}
-      <CurrentActualWeather></CurrentActualWeather>
 
-
-        <CurrentWeather></CurrentWeather>
-
-=======
       <PruebaAlba></PruebaAlba>
     <h1>HOLA</h1>
->>>>>>> develop
-
-
     </div>
   );
 }
