@@ -1,29 +1,28 @@
-import { useCurrentWeather } from "../../custom-hooks/hook-currentWeather"
+
 import { useState, useEffect } from 'react'
+import { useCurrentWeather } from '../../custom-hooks/hook-currentWeather'
+import { useForeCastWeather } from '../../custom-hooks/hook-forecast'
+import { useSearchWeather } from '../../custom-hooks/hook-search'
 
-function CurrentWeather(){
+function CurrentWeather() {
 
+    const tiempo = useCurrentWeather()
+   // const current = useForeCastWeather()
 
-    const [lat, updateLatitude] = useState('')
-    const [lon, updateLongitude] = useState('')
+    const search = useSearchWeather('mexico')
+    console.log(search)
+ 
+    return (
+        <div>
+            <h1>{tiempo.name}</h1>
 
+           
+        </div>
 
-    navigator.geolocation.getCurrentPosition((function(position){
-        updateLatitude(position.coords.latitude)
-         updateLongitude(position.coords.longitude)
-       }))
-
-
-       useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&---TU APIKEY---`)
-        .then(r=> r.json())
-        .then(d => console.log(d))
-       })
-
-
-    return(
-        <h1>Hola</h1>
     )
 }
 
 export default CurrentWeather
+
+
+//   
