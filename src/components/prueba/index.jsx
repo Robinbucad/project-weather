@@ -7,9 +7,8 @@ import { useSearchWeather } from '../../custom-hooks/hook-search'
 function CurrentWeather() {
 
     const tiempo = useCurrentWeather()
-   // const current = useForeCastWeather()
 
-
+    
  
     return (
         <div>

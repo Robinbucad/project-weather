@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="App">
 
-
+    
       <CurrentActualWeather></CurrentActualWeather>
-    <h1>HOLA</h1>
+
     </div>
   );
 }

@@ -9,6 +9,7 @@ export function useCurrentWeather() {
     const [lat] = useState(lonFromLocal)
     const [lon] = useState(latFromLocal)
     const [weather,setWeather] = useState([])
+  
 
     navigator.geolocation.getCurrentPosition((function(position){
         localStorage.setItem('lat',position.coords.latitude)
@@ -18,7 +19,9 @@ export function useCurrentWeather() {
        useEffect(() => {
         fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY.key}`)
         .then(r=> r.json())
-        .then(d => setWeather(d))
+        .then(d => {
+            setWeather(d)
+        })
        },[])
 
     return weather

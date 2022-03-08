@@ -1,0 +1,14 @@
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+    width: 10%;
+}
