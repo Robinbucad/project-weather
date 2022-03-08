@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    flex-direction: column;
 }
 
 .card{
@@ -12,4 +13,8 @@
     align-items: center;
     background-color: gray;
     width: 10%;
+}
+
+.card-list{
+    display: flex;
 }

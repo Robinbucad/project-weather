@@ -12,25 +12,24 @@ function CurrentActualWeather() {
 
 
     const actual = useActualWeather([])
-
-
-    const search = useSearchWeather('madrid')
-    console.log(search)
-
-
+    console.log(actual)
 
 
 
 
     return (
         <div className='container'>
+
+            <h1>Soy el filtro</h1>
+            <input type='text' />
+            <div className='card-list'>
             {actual.map((e, i) => (
-                <Card style={{ width: '18rem' }}>
-                    
+                <Card key={i} style={{ width: '18rem' }}>
+
                     <Card.Body>
                         <Card.Title>Card Title</Card.Title>
                         <Card.Text>
-                           {e.dt}
+                            {e.dt}
                         </Card.Text>
                         <Card.Text>{e.temp.day}</Card.Text>
                         <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${e.weather.map(e => e.icon)}@2x.png`} />
@@ -38,6 +37,8 @@ function CurrentActualWeather() {
                 </Card>
             ))}
 
+            </div>
+           
 
         </div>
     )
