@@ -12,13 +12,9 @@ export function useActualWeather() {
     const [actualweather,updateWeather] = useState([])
 
 
-    navigator.geolocation.getCurrentPosition((function(position){
-        localStorage.setItem('lat',position.coords.latitude)
-        localStorage.setItem('lon',position.coords.longitude)
-       }))
 
        useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${key}`)
+        fetch(`http://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY.key}`)
         .then(r=> r.json())
         .then(d => updateWeather(d))
        },[])
