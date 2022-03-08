@@ -11,7 +11,7 @@ function App() {
     <div className="App">
 
       <PruebaAlba></PruebaAlba>
-
+    <h1>HOLA</h1>
 
     </div>
   );
