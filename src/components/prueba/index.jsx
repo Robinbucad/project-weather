@@ -1,19 +1,20 @@
 
 import { useState, useEffect } from 'react'
 import { useCurrentWeather } from '../../custom-hooks/hook-currentWeather'
+import { useForeCastWeather } from '../../custom-hooks/hook-forecast'
 
 function CurrentWeather() {
 
     const tiempo = useCurrentWeather()
+
+
     
-  //  const [icon,updateIcon] = useState('')
-
-
+ 
     return (
         <div>
             <h1>{tiempo.name}</h1>
-       
-            
+
+           
         </div>
 
     )
@@ -22,4 +23,4 @@ function CurrentWeather() {
 export default CurrentWeather
 
 
-//   <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}></img>
+//   
