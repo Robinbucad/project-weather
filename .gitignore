@@ -24,5 +24,4 @@ yarn-error.log*
 
 # key
 
-.gitignore
 config.js
