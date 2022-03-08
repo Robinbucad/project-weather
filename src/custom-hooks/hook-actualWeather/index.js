@@ -8,7 +8,7 @@ export function useActualWeather() {
     const [lat] = useState(lonFromLocal)
     const [lon] = useState(latFromLocal)
     const [actualweather,updateWeather] = useState([])
-    const key = '6895ca3f7b75487a0deaff7aaa6d94be'
+
 
     navigator.geolocation.getCurrentPosition((function(position){
         localStorage.setItem('lat',position.coords.latitude)
