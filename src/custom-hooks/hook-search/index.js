@@ -4,8 +4,8 @@ import { API_KEY } from "../../config";
 
  export function useSearchWeather(place){
 
-    const [search, setSEarch] = useState('')
-
+    const [search, setSEarch] = useState([])
+    
     useEffect(() => {
         fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${place}&appid=${API_KEY.key}`)
         .then(r => r.json())

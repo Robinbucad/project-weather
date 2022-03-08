@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import FilterProvider from './context/filterContext/filter.provider'
+import LonProvider from './context/filterContext/lon.provider'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+        <App />
+ 
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
 
-      <CurrentWeather></CurrentWeather>
-      <CurrentActualWeather></CurrentActualWeather>
+
+    <CurrentActualWeather></CurrentActualWeather>
 
     </div>
   );
