@@ -1,5 +1,5 @@
 import CurrentWeather from './components/prueba';
-import CurrentActualWeather from './components/api1';
+import CurrentActualWeather from './components/actualweather';
 import './App.css';
 
 function App() {
