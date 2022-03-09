@@ -15,23 +15,12 @@ export const useOneCity = () => {
     const [cityOne,updateCity] = useState([])
     
     useEffect(() => {
-        async function fetcHCity (){
-            const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY.key4}`)
-            const d = await r.json()
-            updateCity([d])
-            
-        }
-       
-        fetcHCity()
-    
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY.key4}`)
+        .then(r => r.json())
+        .then(d => updateCity([d]))
     },[])
     
     return {cityOne, updateCity}
 
-    /**
-     *  fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY.key4}`)
-        .then(r => r.json())
-        .then(d => updateCity([d]))
-     */
 }
 
