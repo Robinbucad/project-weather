@@ -15,7 +15,7 @@ function App() {
     <CurrentActualWeather></CurrentActualWeather>
     <CurrentWeather></CurrentWeather>
 
-
+    <p>Hola</p>
     </div>
   );
 }
