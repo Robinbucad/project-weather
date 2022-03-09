@@ -17,7 +17,7 @@ export const useMoreCities = () => {
             updateCities([d])
         })
       
-    },[])
+    },[lat, long])
     
     return {lat  , long, updateLatitude, updateLongitude, cities}
 }
