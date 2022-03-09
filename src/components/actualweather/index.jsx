@@ -13,8 +13,7 @@ function CurrentActualWeather() {
     const [location, setLocation] = useState('')
     const {cityOne,updateCity}  = useOneCity()
     const {updateLat,updateLon} = useGeoLocation()
-    const {lat,cities,long,updateLatitude,updateLongitude} = useMoreCities()
-    console.log(cityOne)
+    const {lat,cities,long,updateLatitude,updateLongitude, date} = useMoreCities()
 
     const searchLoc = e => {
         if(e.key === 'Enter'){
@@ -24,13 +23,16 @@ function CurrentActualWeather() {
                 updateCity([d])
                updateLatitude(d.coord.lat)
                updateLongitude(d.coord.lon)
-                
+          
             })
         }
     }
+    
+ 
 
 
-    console.log(cityOne.map(e => e.main.temp))
+    
+
 
     return (
 
@@ -41,7 +43,7 @@ function CurrentActualWeather() {
             <div className='current'>
             {cityOne.map((e,i) => (
                 <Card key={i} style={{ width: '18rem' }}>
-
+               
                 <Card.Body>
                     <Card.Title>{e.name}</Card.Title>
                     <Card.Text>
@@ -60,14 +62,15 @@ function CurrentActualWeather() {
                 <div className='list-container'>
                     {e.daily.map((d,i) => (
 
-                        <Card key={i} style={{ width: '18rem' }}>
+                        <Card key={i} style={{ width: '13rem' }}>
 
                             <Card.Body>
-                                <Card.Title>{d.dt}</Card.Title>
-                                <Card.Text>
-                                    {e.dt}
-                                </Card.Text>
+                                <Card.Title>{console.log(d)}</Card.Title>
+                                
                                 <Card.Text>{d.temp.day}º</Card.Text>
+                                <Card.Text>{d.wind_speed} km/h</Card.Text>
+                                <Card.Text>Min: {d.temp.min}º </Card.Text>
+                                <Card.Text>Max: {d.temp.max}º </Card.Text>
                                 <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${d.weather.map(e => e.icon)}@2x.png`} />
                             </Card.Body>
                         </Card>

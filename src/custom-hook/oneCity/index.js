@@ -24,7 +24,7 @@ export const useOneCity = () => {
        
         fetcHCity()
     
-    },[lat,lon])
+    },[])
     
     return {cityOne, updateCity}
 
