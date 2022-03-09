@@ -1,7 +1,7 @@
-import CurrentWeather from './components/prueba';
+
 import CurrentActualWeather from './components/actualweather';
 import './App.css';
-
+import CurrentWeather from './components/actualweather/prueba';
 
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
 
   return (
     <div className="App">
-
-
+      
     <CurrentActualWeather></CurrentActualWeather>
+
 
     </div>
   );

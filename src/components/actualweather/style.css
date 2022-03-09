@@ -1,10 +1,8 @@
 
 
-.container{
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-direction: column;
+.container-cards{
+    background-color: lightgray;
+    height: 100vh;
 }
 
 .card{
@@ -17,4 +15,15 @@
 
 .card-list{
     display: flex;
+}
+
+.current{
+    display: flex;
+    justify-content: center;
+}
+
+.list-container{
+    display: flex;
+    flex-wrap: wrap;
+   gap: 2rem;
 }
