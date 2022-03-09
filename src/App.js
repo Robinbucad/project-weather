@@ -1,7 +1,8 @@
 
 import CurrentActualWeather from './components/actualweather';
 import './App.css';
-import CurrentWeather from './components/actualweather/prueba';
+import CurrentWeather from './components/currentweather';
+
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <CurrentWeather></CurrentWeather>
     <CurrentActualWeather></CurrentActualWeather>
+    <CurrentWeather></CurrentWeather>
 
 
     </div>
