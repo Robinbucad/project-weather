@@ -5,7 +5,7 @@ import { Card, Button } from 'react-bootstrap'
 import { useOneCity } from '../../custom-hook/oneCity'
 import { useGeoLocation } from '../../geolocation'
 import { useMoreCities } from '../../custom-hook/moreCities'
-import { API_KEY } from '../../config'
+import {API_KEY} from '../../config.js'
 
 
 function CurrentActualWeather() {

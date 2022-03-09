@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap'
 import { useCurrentWeather } from '../../../custom-hook/custom-alba'
 
 
-function CurrentWeather() {
+function CurrentWeatherP() {
 
     const tiempo = useCurrentWeather()
     // const current = useForeCastWeather()
@@ -25,4 +25,4 @@ function CurrentWeather() {
     
 }
 
-export default CurrentWeather
+export default CurrentWeatherP
