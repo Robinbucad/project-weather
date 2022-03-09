@@ -21,12 +21,13 @@ function CurrentWeather() {
   <Card.Body>
     <Card.Title>{tiempo.map(e => e.name)}</Card.Title>
     <Card.Text>
+  
     {tiempo.map(e => e.weather[0].description)}
     </Card.Text>
   </Card.Body>
   <ListGroup className="list-group-flush">
-    <ListGroupItem>{tiempo.map(e => e.main.temp)}/{tiempo.map(e => e.main.feels_like)}</ListGroupItem>
-    <ListGroupItem>{tiempo.map(e => e.main.temp_max)}/{tiempo.map(e => e.main.temp_min)}</ListGroupItem>
+    <ListGroupItem>Temp / Temp feels {tiempo.map(e => e.main.temp)}º/ {tiempo.map(e => e.main.feels_like)}º</ListGroupItem>
+    <ListGroupItem>Temp Max/ Temp Min {tiempo.map(e => e.main.temp_max)}º/ {tiempo.map(e => e.main.temp_min)}º</ListGroupItem>
     <ListGroupItem>{tiempo.map(e => e.weather[0].main)}</ListGroupItem>
   </ListGroup>
   
