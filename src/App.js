@@ -1,6 +1,7 @@
 
 
 import './App.css';
+import TemperatureProvider from './context/temperature.context.jsx';
 import { useGeoLocation } from './geolocation';
 
 
@@ -11,9 +12,11 @@ function App() {
   
 
   return (
+    <TemperatureProvider>
     <div className="App">
      
     </div>
+    </TemperatureProvider>
   );
 }
 
