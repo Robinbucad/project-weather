@@ -1,7 +1,7 @@
 
-import CurrentActualWeather from './components/actualweather';
 import './App.css';
-import CurrentWeather from './components/currentweather';
+import CurrentActualWeather from './components/actualweather';
+
 
 
 
@@ -11,10 +11,9 @@ function App() {
 
   return (
     <div className="App">
-      <CurrentWeather></CurrentWeather>
-    <CurrentActualWeather></CurrentActualWeather>
-    <CurrentWeather></CurrentWeather>
+ 
 
+    <CurrentActualWeather></CurrentActualWeather>
 
     </div>
   );
