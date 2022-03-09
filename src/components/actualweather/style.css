@@ -1,0 +1,28 @@
+
+
+.container-cards{
+    background-color: lightgray;
+    height: 130vh;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+    width: 20%;
+}
+
+
+
+.current{
+    display: flex;
+    justify-content: center;
+}
+
+.list-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   gap: 2rem;
+}
