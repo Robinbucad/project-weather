@@ -3,10 +3,14 @@ import { Container, Row, Col, Nav, Navbar, Form, FormControl, Button, NavDropdow
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
 import { TemperatureContext } from '../../context/temperature.context'
 import './style.css'
+import { API_KEY } from '../../config.js'
+import { useOneCity } from '../../custom-hook/oneCity'
 
 
 function Header() {
     const [unit, updateUnit] = useContext(TemperatureContext)
+    const [location, updateLocation] = useState('')
+    const { cityOne, updateCity } = useOneCity()
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -21,7 +25,9 @@ function Header() {
 
     const searchLoc = e => {
         if(e.key === 'Enter'){
-            fetch('')
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY.key4}`)
+            .then(r => r.json())
+            .then(d => updateCity([d]))
         }
     }
 
@@ -43,6 +49,9 @@ function Header() {
                         type="text"
                         id="inputSearch"
                         placeholder='Busca una ciudad'
+                        value={location}
+                        onChange={e => updateLocation(e.target.value)}
+                        onKeyPress={searchLoc}
                     />
                 </Col>
 

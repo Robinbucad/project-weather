@@ -8,6 +8,7 @@ import { useMoreCities } from "../../custom-hook/moreCities"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick'
+import portrait from '../../assets/img/sunset.svg'
 
 
 
@@ -31,13 +32,37 @@ function CurrentWeather() {
     <Container style={{ height: '90vh', }} >
       <Row>
 
-        {cityOne.map(e => (
-          <Col lg={12}>
-            <Card style={{ width: '100%', height: '80%', marginBottom: '5%', background: '#FF385C', borderRadius: '12px', alignItems: 'center', justifyContent: 'center' }}>
+        <Row style={{ marginBottom: '2rem' }}>
+          {cityOne.map(e => (
+            <Col lg={12}>
+              <Card border="primary" style={{ width: '100%', alignItems: 'center', height: '23rem', borderRadius: '12px', border: 'none', color:'white' }} className='img-temp'>
 
-              <div className="card-container">
+                <Card.Body className="card-body-current">
+                  <div >
+                    <Card.Title>{e.name}</Card.Title>
+                    <Card.Text>Dia,hora</Card.Text>
+                  </div>
 
-                <Card.Title>{e.name}</Card.Title>
+                  <div>
+                    <Card.Text className="temp-info-current">{e.main.temp} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
+                    <Card.Text className="desc-temp" >{`${e.weather.map(e => e.description.charAt(0).toUpperCase())}${e.weather.map(e => e.description.slice(1))}`}</Card.Text>
+                    <div className="min-max">
+                      <p className="max-info-current">Max {e.main.temp_max}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
+                      <p className="max-info-current">Min {e.main.temp_min}{unit === 'metric' ? 'ºC' : 'ºF'}</p>
+                    </div>
+                  </div>
+
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+
+        </Row>
+
+
+        {/**<div className="card-container">
+
+                <p>{e.name}</p>
                 <Card.Text>
                   Dia,hora
                 </Card.Text>
@@ -53,11 +78,7 @@ function CurrentWeather() {
                   </div>
 
                 </Card.Body>
-              </div>
-
-            </Card>
-          </Col>
-        ))}
+              </div> */}
 
         <section className="slider-container">
           <Slider {...settings} className='slider-config' >
@@ -85,7 +106,7 @@ function CurrentWeather() {
 
         <Row>
           <Col>
-            <Card style={{ width: '110%', height: '13rem', borderRadius:'12px' }}>
+            <Card style={{ width: '110%', height: '13rem', borderRadius: '12px' }}>
 
               <Card.Body>
                 <div className="div-opts-current">
@@ -106,7 +127,7 @@ function CurrentWeather() {
                 </div>
                 <div className="div-opts-current">
                   <p className="name-opts-current">Sensación</p>
-                  <p className="value-opts-current">{cityOne.map(e => e.main.feels_like)}</p>
+                  <p className="value-opts-current">{cityOne.map(e => e.main.feels_like)}{unit === 'metric' ? 'ºC' : 'ºF'} </p>
                 </div>
               </Card.Body>
             </Card>
@@ -115,7 +136,7 @@ function CurrentWeather() {
 
           <Col>
             <Col>
-              <Card style={{ width: '110%', height: '13rem', borderRadius:'12px' }}>
+              <Card style={{ width: '110%', height: '13rem', borderRadius: '12px' }}>
 
                 <Card.Body>
                   <div>
