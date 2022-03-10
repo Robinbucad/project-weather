@@ -2,5 +2,86 @@
 .min-max{
     display: flex;
     gap: 1rem
+
 }
 
+.max-info-current{
+    font-size: 14px;
+}
+
+.temp-info-current{
+    font-size: 40px;
+    margin: 0;
+}
+
+.text-card-current  > * {
+    margin: 0;
+
+}
+
+.desc-temp{
+    font-size:22px ;
+}
+
+.img-current{
+    width: 8rem !important;
+}
+
+.text-card-current{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.slick-arrow, slick-prev{
+    background-color:#FF385C!important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 100%;
+    padding: 12px !important;
+    padding-top: 13px !important;
+}
+
+.card-current-weather{
+    border: none !important;
+}
+
+.slider-container{
+    border: 1px solid lightgray;
+    width: 200%;
+    border-radius: 10px;
+    height: 9rem;
+    margin-bottom: 2rem;
+}
+
+.slider-config{
+    height: 9rem;
+
+}
+
+.img-small{
+    width: 80px;
+    margin-top: -10px;
+}
+
+.div-temp-currrent{
+    display: flex;
+    justify-content: center;
+}
+
+.div-opts-current{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-opts-current{
+    font-size: 14px;
+    color: gray;
+}
+
+.value-opts-current{
+    font-size: 14px;
+    font-weight: bold;
+}

@@ -16,8 +16,8 @@ function Activities() {
 
             <Container >
                 <Row>
-                    <Col>
-                        <h2 className="title-activities">Las mejores actividades para el clima de hoy en <p className="city-title">{cityOne.map(e => e.name)}</p></h2>
+                    <Col >
+                        <h2 style={{display:'flex', gap:'5px'}} className="title-activities">Las mejores actividades para el clima de hoy en <p className="city-title">{cityOne.map(e => e.name)}</p></h2>
                     </Col>
                 </Row>
                 <Row>

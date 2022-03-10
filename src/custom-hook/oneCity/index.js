@@ -19,7 +19,7 @@ export const useOneCity = () => {
     console.log(unit)
 
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key4}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key4}&lang=es`)
         .then(r => r.json())
         .then(d => updateCity([d]))
     },[unit])

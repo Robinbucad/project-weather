@@ -5,10 +5,11 @@ import TemperatureProvider from './context/temperature.context.jsx';
 import { useGeoLocation } from './geolocation';
 
 import HomePage from './components/home';
+import { useGooglePlaces } from './custom-hook/googleApi';
 
 function App() {
   const geolo = useGeoLocation()
-  
+
 
   return (
     <TemperatureProvider>

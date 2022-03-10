@@ -7,18 +7,18 @@ import CurrentWeather from "../currentWeather/index"
 
 function HomePage() {
     return (
-        <Container  fluid>
+        <Container style={{paddingLeft:'10rem', paddingRight:'10rem'}} fluid >
 
-            <Container  style={{marginBottom:'30px'}} >
+            <Container fluid  style={{marginBottom:'30px'}} >
                 <Row >
                     <Col  lg={12}><Header></Header></Col>
                 </Row>
             </Container>
 
 
-            <Container style={{ display: 'flex'}}>
+            <Container fluid style={{ display: 'flex'}}>
                 <Row>
-                    <Col >
+                    <Col  style={{ width:'25rem'}} lg={12} >
                         <CurrentWeather></CurrentWeather>
                     </Col>
 
