@@ -5,15 +5,19 @@ import bicicleta from '../../assets/img/bicicleta.jpg'
 import drinking from '../../assets/img/drinking.jpg'
 import flamenco from '../../assets/img/flamenco.jpg'
 import museum from '../../assets/img/museum.jpg'
+import { useOneCity } from "../../custom-hook/oneCity"
 
 function Activities() {
+
+    const { cityOne } = useOneCity()
+
     return (
         <Container className="container-activities" >
 
             <Container >
                 <Row>
                     <Col>
-                        <h2>Las mejores actividades para el clima de hoy en Madrid</h2>
+                        <h2 className="title-activities">Las mejores actividades para el clima de hoy en <p className="city-title">{cityOne.map(e => e.name)}</p></h2>
                     </Col>
                 </Row>
                 <Row>

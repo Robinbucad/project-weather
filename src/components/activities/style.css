@@ -4,10 +4,18 @@
     gap:2rem;
 }
 
+.title-activities{
+    font-size: 30px;
+}
+
 .card-activity{
     width: 165px;
     height: 320px;
     border-radius: 50px;
+}
+
+.city-title{
+    color: #FF385C;
 }
 
 .row-inputs{
