@@ -1,0 +1,37 @@
+
+.activities-container{
+    display: flex;
+    gap:2rem
+}
+
+.card-activity{
+    width: 165px;
+    height: 320px;
+    border-radius: 50px;
+}
+
+.row-inputs{
+    justify-content: flex-start;
+    justify-content: space-evenly;
+    display: flex;
+    align-content: center;
+    align-items: baseline;
+}
+.btn-outline-danger{
+    background-color: red;
+}
+
+.btn-filter{
+    border-radius: 20px !important;
+}
+
+.container-activities{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.img-acti{
+   height: 430px;
+   width: 160px;
+}
