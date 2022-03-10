@@ -7,16 +7,16 @@ import CurrentWeather from "../currentWeather/index"
 
 function HomePage() {
     return (
-        <Container fluid>
+        <Container  >
 
-            <Container fluid>
-                <Row>
-                    <Col><Header></Header></Col>
+            <Container  style={{marginBottom:'30px'}} >
+                <Row >
+                    <Col  lg={12}><Header></Header></Col>
                 </Row>
             </Container>
 
 
-            <Container style={{ display: 'flex', backgroundColor: 'green' }}>
+            <Container style={{ display: 'flex'}}>
                 <Row>
                     <Col >
                         <CurrentWeather></CurrentWeather>
@@ -26,13 +26,14 @@ function HomePage() {
                 </Row>
                 <Container style={{ flexDirection: 'column', display: 'flex' }}>
                     <Row>
-                        <Col  style={{ backgroundColor: 'yellow', display:'flex', gap:'1rem' }} lg={12}>
+                        <Col  style={{ display:'flex', gap:'1rem' }} lg={12}>
 
 
                     {/**ESTO SE TENDRA QUE BORRAR, ESTA DE EJEMPLO */}
-                        <Card style={{ width: '15%', height:'14rem' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                        <Card style={{ width: '15%', height:'14rem',marginBottom:'5%', background:'#FF385C',borderRadius:'12px' }}>
+                               
                                 <Card.Body>
+                                <Card.Img variant="top" src="holder.js/100px180" />
                                     <Card.Title>Card Title</Card.Title>
                                     <Card.Text>
                                         Aqui card temperatura futura
@@ -41,9 +42,10 @@ function HomePage() {
                                 </Card.Body>
                             </Card>
 
-                            <Card style={{ width: '15%', height:'14rem' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card style={{ width: '15%', height:'14rem', borderRadius:'12px' }}>
+                              
                                 <Card.Body>
+                                <Card.Img variant="top" src="holder.js/100px180" />
                                     <Card.Title>Card Title</Card.Title>
                                     <Card.Text>
                                         Aqui card temperatura futura
@@ -51,30 +53,10 @@ function HomePage() {
                                   
                                 </Card.Body>
                             </Card>
-                            <Card style={{ width: '15%', height:'14rem' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card style={{ width: '15%', height:'14rem', borderRadius:'12px' }} >
+                              
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Aqui card temperatura futura
-                                    </Card.Text>
-                                  
-                                </Card.Body>
-                            </Card>
-
-                            <Card style={{ width: '15%', height:'14rem' }}>
                                 <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Aqui card temperatura futura
-                                    </Card.Text>
-                                  
-                                </Card.Body>
-                            </Card>
-                            <Card style={{ width: '15%', height:'14rem' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                <Card.Body>
                                     <Card.Title>Card Title</Card.Title>
                                     <Card.Text>
                                         Aqui card temperatura futura
@@ -83,9 +65,33 @@ function HomePage() {
                                 </Card.Body>
                             </Card>
 
-                            <Card style={{ width: '15%', height:'14rem' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card style={{ width: '15%', height:'14rem', borderRadius:'12px' }}>
+                              
                                 <Card.Body>
+                                <Card.Img variant="top" src="holder.js/100px180" />
+                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Text>
+                                        Aqui card temperatura futura
+                                    </Card.Text>
+                                  
+                                </Card.Body>
+                            </Card>
+                            <Card style={{ width: '15%', height:'14rem', borderRadius:'12px' }}>
+                             
+                                <Card.Body>
+                                <Card.Img variant="top" src="holder.js/100px180" />
+                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Text>
+                                        Aqui card temperatura futura
+                                    </Card.Text>
+                                  
+                                </Card.Body>
+                            </Card>
+
+                            <Card style={{ width: '15%', height:'14rem', borderRadius:'12px' }}>
+                               
+                                <Card.Body>
+                                <Card.Img variant="top" src="holder.js/100px180" />
                                     <Card.Title>Card Title</Card.Title>
                                     <Card.Text>
                                         Aqui card temperatura futura

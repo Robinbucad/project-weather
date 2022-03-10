@@ -2,7 +2,9 @@ import { useState } from "react";
 import { TemperatureContext } from "./temperature.context";
 
 function TemperatureProvider({children}){
-const temperatureState = useState('G');
+
+const temperatureState = useState('metric');
+
 
 return(
 <TemperatureContext.Provider value={temperatureState}>

@@ -1,31 +1,38 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Container, Row, Col, Nav, Navbar, Form, FormControl, Button, NavDropdown } from 'react-bootstrap'
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
+import { TemperatureContext } from '../../context/temperature.context'
 import './style.css'
 
 
 function Header() {
+    const [unit, updateUnit] = useContext(TemperatureContext)
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
         if (btn === true) {
             setBtn(false)
+            updateUnit('imperial')
         } else if (btn === false) {
             setBtn(true)
+            updateUnit('metric')
         }
     }
 
-    console.log(btn)
+    
+
+
+ 
 
     return (
 
-        <Container  >
-            <Row  style={{ alignItems: 'center' }}>
-                <Col>
+        <Container fluid>
+            <Row  style={{ alignItems: 'center', display:'flex'}} lg={12}>
+                <Col lg={3}>
                     <img className='logo-img' src={logo}></img>
                 </Col>
 
-                <Col lg={3}>
+                <Col  lg={4}>
                     <Form.Control
                         type="text"
                         id="inputSearch"
@@ -33,7 +40,7 @@ function Header() {
                     />
                 </Col>
 
-                <Col   md={{ span: 4, offset: 1 }}>
+                <Col lg={1}  >
                     <div className='div-celsius'>
                         <button onClick={handleClick} className={btn === true ? 'celsius' : 'fahrenheit'}>
                             <p>ºC</p>
@@ -43,6 +50,10 @@ function Header() {
                         </button>
                     </div>
 
+                </Col>
+
+                <Col md={{offset: 3}}>
+                <p>Menu</p>
                 </Col>
             </Row>
 

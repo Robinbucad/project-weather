@@ -1,7 +1,7 @@
 
 .activities-container{
     display: flex;
-    gap:2rem
+    gap:2rem;
 }
 
 .card-activity{
@@ -28,10 +28,19 @@
 .container-activities{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .img-acti{
    height: 430px;
    width: 160px;
+
+
+}
+
+
+.footer-card > *{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
