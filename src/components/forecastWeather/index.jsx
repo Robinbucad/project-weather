@@ -15,33 +15,22 @@ function ForecastWeather() {
 
     return (
 
+
+
         <Container>
             <Row>
-         
-                {/* {cities.map(e => e.daily.map(j => (
-                <p>{j.date}</p>
-            )))
-                
-                 } */}
-
-                {/* {cities.map(e => e.daily.map(j => (
-                    <div>
-                        <p>{j.humidity}</p>
-                        <p>{j.weather.map(v => v.description)}</p>
-                    </div>
-                )))
-
-                } */}
 
                 <Card style={{ width: '15%', height: '14rem', marginBottom: '5%', background: '#FF385C', borderRadius: '12px' }}>
-                <img src={`https://openweathermap.org/img/wn/${e.weather.map(d => d.icon)}@4x.png`}></img>
+    
                     {cities.map(e => e.daily.map(j => (
 
                         <Card.Body>
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Title>{j.humidity}</Card.Title>
+                            {/* <Card.Title>{j.date}</Card.Title> */}
+                            <Card.Title>DIA SEMANA</Card.Title>
+                          <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${j.weather.map(v =>v.icon)}@2x.png`}/>
                             <Card.Text>
-                                {j.weather.map(v => v.description)}
+                                <Col className="temp">{j.temp.max}{unit === 'metric' ? 'ºC' : 'ºFº'}
+                              {j.temp.min}{unit === 'metric' ? 'ºC' : 'ºFº'}</Col>
                             </Card.Text>
 
                         </Card.Body>

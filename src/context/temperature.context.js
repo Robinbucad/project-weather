@@ -1,3 +1,3 @@
 import {createContext} from 'react';
 
-export const TemperatureContext = createContext('G');
+export const TemperatureContext = createContext();
