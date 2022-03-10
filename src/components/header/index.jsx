@@ -19,6 +19,12 @@ function Header() {
         }
     }
 
+    const searchLoc = e => {
+        if(e.key === 'Enter'){
+            fetch('')
+        }
+    }
+
     
 
 
