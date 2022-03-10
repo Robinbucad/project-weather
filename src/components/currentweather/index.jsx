@@ -29,6 +29,9 @@ function CurrentWeather(){
                 <p>Max {e.main.temp_max}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
                 <p>Min {e.main.temp_min}{unit === 'metric' ? 'ºC' : 'ºF'}</p>
               </div>
+              <div>
+                <p>Mas info future</p>
+              </div>
             </Col>
           ) )}
      

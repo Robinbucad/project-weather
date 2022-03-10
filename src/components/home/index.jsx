@@ -7,7 +7,7 @@ import CurrentWeather from "../currentWeather/index"
 
 function HomePage() {
     return (
-        <Container  >
+        <Container  fluid>
 
             <Container  style={{marginBottom:'30px'}} >
                 <Row >
