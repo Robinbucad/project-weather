@@ -12,6 +12,7 @@ function CurrentWeather(){
 
   const { cityOne, updateCity } = useOneCity()
   const [unit] = useContext(TemperatureContext)
+  let date = new Date
 
   console.log(unit)
 
@@ -22,7 +23,8 @@ function CurrentWeather(){
           {cityOne.map(e => (
             <Col lg={12} style={{ height:'90vh'}}>
               <h3>{e.name}</h3>
-              <p>Dia y hora</p>
+              <p>{date.toLocaleDateString()} {date.getHours()}:{date.getMinutes()} </p>
+              
               <img src={`https://openweathermap.org/img/wn/${e.weather.map(d => d.icon)}@4x.png`}></img>
               <p>{e.main.temp} {unit === 'metric' ? 'ºC' : 'ºFº'}</p>
               <div className="min-max">

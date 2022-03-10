@@ -1,7 +1,7 @@
 import Header from "../header"
 import Activities from "../activities"
 import { Container, Row, Col, Button, Card } from "react-bootstrap"
-import CurrentWeather from "../currentWeather/index"
+import CurrentWeather from "../currentweather"
 
 
 
