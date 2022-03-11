@@ -15,8 +15,8 @@ function App() {
   return (
     <TemperatureProvider>
     <div className="App">
-     {/* <HomePage></HomePage> */}
-     <ForecastWeather></ForecastWeather>
+    <HomePage></HomePage> 
+      
     </div>
     </TemperatureProvider>
    

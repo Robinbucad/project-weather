@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { Container, Row, Col,Card } from "react-bootstrap"
+import { Container, Row, Col, Card } from "react-bootstrap"
 import { TemperatureContext } from "../../context/temperature.context"
 import { useMoreCities } from "../../custom-hook/moreCities"
 // import './style.css'
@@ -11,11 +11,11 @@ function ForecastWeather() {
     const [unit] = useContext(TemperatureContext)
     console.log(cities)
 
-    cities.map((e,i) => e.daily.map (( j,id) => {
-        console.log(i,id,j.date)
+    cities.map((e, i) => e.daily.map((j, id) => {
+        console.log(i, id, j.date)
     }
 
-    
+
 
 
     ))
@@ -27,35 +27,40 @@ function ForecastWeather() {
 
 
         <Container>
-            <Row>
+            <Row >
 
-                <Card style={{ width: '15%', height: '14rem', marginBottom: '5%', background: '#FF385C', borderRadius: '12px' }}>
-    
-                    {cities.map(e => e.daily.map(j => (
+                <div style={{display:'flex', gap:'1rem'}}>
+               
 
-                        <Card.Body>
-                            
-                            <Card.Title>{j.date?.toString()}</Card.Title>
-                          <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${j.weather.map(v =>v.icon)}@2x.png`}/>
-                            <Card.Text>
-                                <Col className="temp">{j.temp.max}{unit === 'metric' ? 'ºC' : 'ºFº'}
-                              {j.temp.min}{unit === 'metric' ? 'ºC' : 'ºFº'}</Col>
-                            </Card.Text>
+                        {cities.map(e => e.daily.map(j => (
+        <Card style={{ width: '10%', height: '14rem', marginBottom: '5%', borderRadius: '12px' }}>
+                            <Card.Body>
 
-                        </Card.Body>
+                                <Card.Title>{j.date?.toString()}</Card.Title>
+                                <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${j.weather.map(v => v.icon)}@2x.png`} />
+                                <Card.Text>
+                                    <Col className="temp">{j.temp.max}{unit === 'metric' ? 'ºC' : 'ºFº'}
+                                        {j.temp.min}{unit === 'metric' ? 'ºC' : 'ºFº'}</Col>
+                                </Card.Text>
+
+                            </Card.Body>
+                            </Card>
                         )))
+                       
+                        }
+                
 
-                    }
-                           </Card>
-
-
-
-
+                </div>
 
 
 
-                           </Row>
-         
+
+
+
+
+
+            </Row>
+
         </Container>
 
 
