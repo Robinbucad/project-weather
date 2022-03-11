@@ -9,6 +9,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick'
 import sun from '../../assets/img/sun.png'
+import { useState } from "react"
+import rainSmall from '../../assets/img/icon-weather/rainy-small.png'
+import cloudSmall from '../../assets/img/icon-weather/cloudy-small.png'
+import nightStorm from '../../assets/img/icon-weather/night_storm-small.png'
+import partCloud from '../../assets/img/icon-weather/partly_cloudy-small.png'
+import partDayStorm from '../../assets/img/icon-weather/partly_day_storm-small.png'
+import rainStorm from '../../assets/img/icon-weather/rainstorm-small.png'
+import snowy from '../../assets/img/icon-weather/snowy-small.png'
+import thundstorm from '../../assets/img/icon-weather/thunderstorm-small.png'
+
 
 function CurrentWeather() {
 
@@ -23,14 +33,36 @@ function CurrentWeather() {
 
   const { cityContext } = useOneCity()
   const [unit] = useContext(TemperatureContext)
+
+
+
   const { cities} = useMoreCities()
 
-  console.log(cityContext)
 
+  const handleIcon = (icon)  => {
+   switch(icon){
+    case '10d': return rainSmall ;
+    case '04d': return cloudSmall;
+    case '02d': return partCloud;
+    case '03d': return cloudSmall;
+    case '09d': return rainStorm;
+    case '11d': return thundstorm;
+    case '13d': return snowy;
+
+   }
+
+  }
+
+
+
+
+  
   return (
     <Container style={{ height: '90vh', }} >
-      <Row>
 
+
+      <Row>
+   
         <Row style={{ marginBottom: '2rem' }}>
           {cityContext.map((e,i) => (
             <Col key={i} lg={12}>
@@ -53,6 +85,7 @@ function CurrentWeather() {
 
                 </Card.Body>
               </Card>
+              
             </Col>
           ))}
 
@@ -66,7 +99,7 @@ function CurrentWeather() {
                   <div>
                     <p style={{ textAlign: 'center' }}>{d.date}</p>
                   </div>
-                  <img variant="top" className="img-small" src={`https://openweathermap.org/img/wn/${d.weather.map(i => i.icon)}@2x.png`} />
+                  <img variant="top" className="img-small" src={handleIcon(d.icon)}  />
 
 
                   <div className="div-temp-currrent">
@@ -116,14 +149,14 @@ function CurrentWeather() {
             <Col>
               <Card style={{ width: '110%', height: '13rem', borderRadius: '12px', display:'flex', justifyContent:'space-between' }}>
 
-                <Card.Body style={{display:'flex', flexDirection:'column'}}>
+                <section style={{display:'flex', flexDirection:'column'}}>
                   <div>
                     <p className="value-opts-current">Posicion del sol</p>
                   
                   </div>
 
                   <div className="sun-div">
-                    <img className="sun-status" src={sun}></img>
+                    <img className="sun-status" src={sun} ></img>
                     <div role='progressbar'>
 
                     </div>
@@ -141,13 +174,14 @@ function CurrentWeather() {
                       </div>
                      
                   </section>
-                </Card.Body>
+                </section>
               </Card>
             </Col>
           </Col>
         </Row>
 
       </Row>
+   
     </Container>
   )
 }

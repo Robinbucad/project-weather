@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-import { TemperatureContext } from "./temperature.context";
+import { TemperatureContext, IdiomContext } from "./temperature.context";
 
 function TemperatureProvider({ children }) {
 
     const temperatureState = useState('metric');
-
+    const idiomState = useState(['es'])
+    
 
     return (
         <TemperatureContext.Provider value={temperatureState}>
-            {children}
-
+            <IdiomContext.Provider value={idiomState}>
+                {children}
+            </IdiomContext.Provider>
         </TemperatureContext.Provider>
     )
 
