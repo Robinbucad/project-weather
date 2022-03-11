@@ -12,7 +12,7 @@ export const usePlaces = e => {
 
 
     useEffect(() => {
-       fetch('https://maps.googleapis.com/maps/api/place/nearbyseh/jn?location=38.3890815,-0.5352448&radius=1500&type=restaurant&key=AIzaSyDU_rTJMBQ3rp8BRMiqFb9_sgd4AsxOJ-E')
+       fetch('')
             .then(r => r.json())
             .then(d => {
           

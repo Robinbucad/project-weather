@@ -35,7 +35,7 @@ function CurrentWeather() {
   const [unit] = useContext(TemperatureContext)
 
 
-  const { cities} = useMoreCities()
+  const {cities} = useMoreCities()
 
 
   const handleIcon = (icon)  => {
