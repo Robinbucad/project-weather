@@ -10,6 +10,8 @@ import SearchProvider from './context/search.provider'
 import global_es from './translation/es/global.json'
 import global_en from './translation/en/global.json'
 import global_fr from './translation/fr/global.json'
+import activities_es from './translation/es/activities.json'
+import activities_en from './translation/en/activities.json'
 
 import i18next from 'i18next'
 import { I18nextProvider } from 'react-i18next'
@@ -20,9 +22,12 @@ i18next.init({
   resources: {
     es: {
       global: global_es,
+      activities: activities_es
+      
     },
     en: {
-      global: global_en
+      global: global_en,
+      activities: activities_en
     },
     fr: {
       global: global_fr
