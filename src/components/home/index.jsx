@@ -30,7 +30,7 @@ function HomePage() {
 
 
                     {/**ESTO SE TENDRA QUE BORRAR, ESTA DE EJEMPLO */}
-                        <Card style={{ width: '15%', height:'14rem',marginBottom:'5%', background:'#FF385C',borderRadius:'12px' }}>
+                        <Card style={{ width: '15%', height:'14rem',marginBottom:'3%', background:'#FF385C',borderRadius:'12px' }}>
                                
                                 <Card.Body>
                                 <Card.Img variant="top" src="holder.js/100px180" />

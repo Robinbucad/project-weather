@@ -52,3 +52,28 @@
     flex-direction: column;
     margin: 0;
 }
+
+.slider-activities{
+    display: flex !important;
+}
+
+.section-activities{
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+}
+
+::-webkit-scrollbar{
+    height: 15px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+::-webkit-scrollbar-thumb{
+    background: #FF385C;
+    border-radius:12px;
+}

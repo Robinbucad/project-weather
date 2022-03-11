@@ -5,12 +5,16 @@ import { TemperatureContext } from '../../context/temperature.context'
 import './style.css'
 import { API_KEY } from '../../config.js'
 import { useOneCity } from '../../custom-hook/oneCity'
+import { SearchContext } from '../../context/search.context'
+import { UsePlaces } from '../../custom-hook/googleApi'
 
 
 function Header() {
     const [unit, updateUnit] = useContext(TemperatureContext)
     const [location, updateLocation] = useState('')
     const { cityOne, updateCity } = useOneCity()
+    const [city, updateCityContext] = useContext(SearchContext)
+
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -27,11 +31,15 @@ function Header() {
         if(e.key === 'Enter'){
             fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY.key4}`)
             .then(r => r.json())
-            .then(d => updateCity([d]))
+            .then(d => {
+                updateCityContext([d])
+             
+            })
         }
     }
 
-    
+ 
+
 
 
  
