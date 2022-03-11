@@ -17,6 +17,7 @@ function ForecastWeather() {
 
     const [unit] = useContext(TemperatureContext)
 
+
     const handleIcon = (icon)  => {
         switch(icon){
          case '10d': return rainSmall ;
@@ -30,6 +31,7 @@ function ForecastWeather() {
         }
      
        }
+
 
     return (
 
