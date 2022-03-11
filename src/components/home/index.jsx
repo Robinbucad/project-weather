@@ -1,7 +1,7 @@
 import Header from "../header"
 import Activities from "../activities"
 import { Container, Row, Col, Button, Card } from "react-bootstrap"
-import CurrentWeather from "../currentweather"
+import CurrentWeather from "../currentWeather"
 import ForecastWeather from "../forecastWeather"
 
 
@@ -51,17 +51,3 @@ function HomePage() {
 
 export default HomePage
 
-/**
- * 
- *   <Card style={{ width: '15%', height:'14rem', borderRadius:'12px' }}>
-                               
-                                <Card.Body>
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Aqui card temperatura futura
-                                    </Card.Text>
-                                  
-                                </Card.Body>
-                            </Card>
- */

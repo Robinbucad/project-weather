@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useOneCity } from "../custom-hook/oneCity";
 import { SearchContext } from "./search.context";
 
 

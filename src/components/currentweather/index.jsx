@@ -17,8 +17,6 @@ import partDayStorm from '../../assets/img/icon-weather/partly_day_storm-small.p
 import rainStorm from '../../assets/img/icon-weather/rainstorm-small.png'
 import snowy from '../../assets/img/icon-weather/snowy-small.png'
 import thundstorm from '../../assets/img/icon-weather/thunderstorm-small.png'
-
-import sun from '../../assets/img/sun.png';
 import { useTranslation } from 'react-i18next'
 
 function CurrentWeather() {
@@ -35,7 +33,6 @@ function CurrentWeather() {
 
   const { cityContext } = useOneCity()
   const [unit] = useContext(TemperatureContext)
-
 
 
   const { cities} = useMoreCities()
@@ -66,14 +63,14 @@ function CurrentWeather() {
       <Row>
    
         <Row style={{ marginBottom: '2rem' }}>
-          {cityContext.map((e,i) => (
+          {cityContext.length===0 ? <h1>Cargando</h1> : cityContext.map((e,i) => (
             <Col key={i} lg={12}>
               <Card border="primary" style={{ width: '100%', alignItems: 'center', height: '23rem', borderRadius: '12px', border: 'none', color: 'white' }} className='img-temp'>
 
                 <Card.Body className="card-body-current">
                   <div >
                     <Card.Title>{e.name}</Card.Title>
-                    <p>{`${e.date}, ${e.hours}:${e.minutes} `}</p>
+                    <p>{`${e.date}`}, {`${e.hours}`}:{`${e.minutes}`}</p>
                   </div>
 
                   <div>
@@ -95,8 +92,9 @@ function CurrentWeather() {
 
         <section className="slider-container">
           <Slider {...settings} className='slider-config' >
-            {cities.map((e) =>
-              e.daily.map((d, i) => (
+            {cities.length === 0 ? <h1>Cargando...</h1>:
+
+              cities[0].daily.map((d, i) => (
                 <div key={i} className="card-current-weather" style={{ width: '100%' }}>
                   <div>
                     <p style={{ textAlign: 'center' }}>{d.date}</p>
@@ -110,7 +108,7 @@ function CurrentWeather() {
 
 
                 </div>
-              ))
+              )
             )}
 
           </Slider>

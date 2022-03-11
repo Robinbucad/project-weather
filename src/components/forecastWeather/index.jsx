@@ -17,20 +17,24 @@ function ForecastWeather() {
 
     const [unit] = useContext(TemperatureContext)
 
+    
 
-    const handleIcon = (icon)  => {
-        switch(icon){
-         case '10d': return rainSmall ;
-         case '04d': return cloudSmall;
-         case '02d': return partCloud;
-         case '03d': return cloudSmall;
-         case '09d': return rainStorm;
-         case '11d': return thundstorm;
-         case '13d': return snowy;
-     
+    const handleIcon = (icon) => {
+        switch (icon) {
+            case '10d': return rainSmall;
+            case '04d': return cloudSmall;
+            case '02d': return partCloud;
+            case '03d': return cloudSmall;
+            case '09d': return rainStorm;
+            case '11d': return thundstorm;
+            case '13d': return snowy;
+
         }
-     
-       }
+
+    }
+
+
+
 
 
     return (
@@ -43,8 +47,10 @@ function ForecastWeather() {
                 <Col style={{ display: 'flex', gap: '1rem' }}>
 
 
-                    {cities.map((e) => e.daily.map((j, i )=> (
-
+                    {cities.length === 0 ? <h1>Cargando</h1>: 
+                    
+                        cities[0].daily.map((j, i) => (
+                        
                         <Card key={i} style={{ width: '10%', height: '14rem', marginBottom: '5%', borderRadius: '12px' }}>
                             <section>
 
@@ -57,7 +63,7 @@ function ForecastWeather() {
 
                             </section>
                         </Card>
-                    )))
+                    ))
 
                     }
 

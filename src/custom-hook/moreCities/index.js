@@ -16,7 +16,7 @@ export const useMoreCities = () => {
 
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&appid=${API_KEY.key4}&lang=${lng}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&appid=${API_KEY.key2}&lang=${lng}`)
         .then(r => r.json())
         .then(d => {
             updateCities([d])
@@ -34,7 +34,7 @@ export const useMoreCities = () => {
 
     
       
-    },[lat])
+    },[lat,unit])
     
     return {lat  , long, updateLatitude, updateLongitude, cities}
 }

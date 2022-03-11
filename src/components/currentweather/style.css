@@ -96,6 +96,7 @@
     font-size: 14px;
     font-weight: bold;
 }
+
 [role="progressbar"]{
     animation: progress 2s 0.5s forwards;
     
