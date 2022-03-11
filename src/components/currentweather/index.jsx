@@ -23,13 +23,30 @@ function CurrentWeather() {
 
   const { cityContext } = useOneCity()
   const [unit] = useContext(TemperatureContext)
+
+  let date = new Date
+
   const { cities} = useMoreCities()
+
 
   console.log(cityContext)
 
   return (
     <Container style={{ height: '90vh', }} >
       <Row>
+
+   
+          {cityOne.map(e => (
+            <Col lg={12} style={{ height:'90vh'}}>
+              <h3>{e.name}</h3>
+              <p>{date.toLocaleDateString()} {date.getHours()}:{date.getMinutes()} </p>
+              
+              <img src={`https://openweathermap.org/img/wn/${e.weather.map(d => d.icon)}@4x.png`}></img>
+              <p>{e.main.temp} {unit === 'metric' ? 'ºC' : 'ºFº'}</p>
+              <div className="min-max">
+                <p>Max {e.main.temp_max}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
+                <p>Min {e.main.temp_min}{unit === 'metric' ? 'ºC' : 'ºF'}</p>
+              </div>
 
         <Row style={{ marginBottom: '2rem' }}>
           {cityContext.map((e,i) => (
@@ -53,6 +70,7 @@ function CurrentWeather() {
 
                 </Card.Body>
               </Card>
+              
             </Col>
           ))}
 
