@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { Container, Row, Col, Nav, Navbar, Form, FormControl, Button, NavDropdown } from 'react-bootstrap'
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
-import { TemperatureContext } from '../../context/temperature.context'
+import { IdiomContext, TemperatureContext } from '../../context/temperature.context'
 import './style.css'
 import { API_KEY } from '../../config.js'
 import { useOneCity } from '../../custom-hook/oneCity'
@@ -17,10 +17,11 @@ function Header() {
     const [location, updateLocation] = useState('')
     const { cityOne, updateCity } = useOneCity()
     const [city, updateCityContext] = useContext(SearchContext)
+    const [lng,updateLng] = useContext(IdiomContext)
 
     const [t, i18n] = useTranslation("global")
 
-    console.log(t("global.placeholder"))
+  console.log(lng)
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -47,8 +48,10 @@ function Header() {
     const handleChange = e => {
         if(e.target.value === "en"){
             i18n.changeLanguage("en")
+            updateLng("en")
         }else if(e.target.value==="es"){
             i18n.changeLanguage("es")
+            updateLng("es")
         }
     }
 
