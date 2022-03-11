@@ -6,10 +6,19 @@ import { useMoreCities } from "../../custom-hook/moreCities"
 
 
 function ForecastWeather() {
-    const { cities, updateCities } = useMoreCities({})
+    const { cities, updateCities } = useMoreCities([])
 
     const [unit] = useContext(TemperatureContext)
     console.log(cities)
+
+    cities.map((e,i) => e.daily.map (( j,id) => {
+        console.log(i,id,j.date)
+    }
+
+    
+
+
+    ))
 
 
 
@@ -25,8 +34,8 @@ function ForecastWeather() {
                     {cities.map(e => e.daily.map(j => (
 
                         <Card.Body>
-                            {/* <Card.Title>{j.date}</Card.Title> */}
-                            <Card.Title>DIA SEMANA</Card.Title>
+                            
+                            <Card.Title>{j.date?.toString()}</Card.Title>
                           <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${j.weather.map(v =>v.icon)}@2x.png`}/>
                             <Card.Text>
                                 <Col className="temp">{j.temp.max}{unit === 'metric' ? 'ºC' : 'ºFº'}
