@@ -2,6 +2,7 @@ import { useState, useEffect,useContext} from "react"
 import { IdiomContext, TemperatureContext } from "../../context/temperature.context.js"
 import { API_KEY } from "../../config"
 
+
 const latLoc = localStorage.getItem('lat')
 const lonLoc = localStorage.getItem('lon')
 
@@ -11,7 +12,8 @@ export const useMoreCities = () => {
     const [lat, updateLatitude] = useState(latLoc)
     const [long, updateLongitude] = useState(lonLoc)
     const [lng,updateLng] = useContext(IdiomContext)
-    console.log(lng)
+
+
 
     useEffect(() => {
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&appid=${API_KEY.key4}&lang=${lng}`)
@@ -20,17 +22,19 @@ export const useMoreCities = () => {
             updateCities([d])
                 d.daily.map(f => {
                 f.date = new Date(f.dt * 1000).toLocaleDateString("eng",{weekday:"short"})
-          
+                f.icon = `${f.weather.map(r => r.icon)}`
                 return f
-            })
+            }
+            
+            )
      
-
+            
         })
 
-  
+
     
       
-    },[lat, long,unit,lng])
+    },[lat])
     
     return {lat  , long, updateLatitude, updateLongitude, cities}
 }

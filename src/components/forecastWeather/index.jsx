@@ -11,14 +11,8 @@ function ForecastWeather() {
     const [unit] = useContext(TemperatureContext)
     console.log(cities)
 
-    cities.map((e, i) => e.daily.map((j, id) => {
-        console.log(i, id, j.date)
-    }
 
 
-
-
-    ))
 
 
 
