@@ -6,10 +6,11 @@ import { useGeoLocation } from './geolocation';
 import ForecastWeather from './components/forecastWeather';
 
 import HomePage from './components/home';
+import {  usePlaces, UsePlaces } from './custom-hook/googleApi';
 
 function App() {
   const geolo = useGeoLocation()
-  
+
 
   return (
     <TemperatureProvider>

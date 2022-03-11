@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useContext } from "react"
 import { API_KEY } from "../../config.js"
+import { SearchContext } from "../../context/search.context.js"
 import { TemperatureContext } from "../../context/temperature.context.js"
 
 const latLoc = localStorage.getItem('lat')
@@ -15,18 +16,25 @@ export const useOneCity = () => {
     const [lat,updateLat] = useState(latLoc)
     const [lon,updateLon] = useState(lonLoc)
     const [cityOne,updateCity] = useState([])
-    
-    console.log(unit)
+    const [cityContext, setCitycontext] = useContext(SearchContext)
+
 
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key4}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key4}&lang=es`)
         .then(r => r.json())
-        .then(d => updateCity([d]))
+        .then(d => {
+            setCitycontext([d])
+            d.date = new Date(d.dt * 1000).toLocaleDateString("eng",{weekday:"long"})
+            d.minutes = new Date(d.dt * 1000).getMinutes()
+            d.hours = new Date(d.dt * 1000).getHours()
+            console.log(d)
+            return d
+        })
     },[unit])
 
-    console.log(cityOne)
+
     
-    return {cityOne, updateCity}
+    return {cityOne, updateCity, cityContext}
 
 }
 

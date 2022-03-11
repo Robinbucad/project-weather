@@ -3,10 +3,18 @@ import { Container, Row, Col, Nav, Navbar, Form, FormControl, Button, NavDropdow
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
 import { TemperatureContext } from '../../context/temperature.context'
 import './style.css'
+import { API_KEY } from '../../config.js'
+import { useOneCity } from '../../custom-hook/oneCity'
+import { SearchContext } from '../../context/search.context'
+import { UsePlaces } from '../../custom-hook/googleApi'
 
 
 function Header() {
     const [unit, updateUnit] = useContext(TemperatureContext)
+    const [location, updateLocation] = useState('')
+    const { cityOne, updateCity } = useOneCity()
+    const [city, updateCityContext] = useContext(SearchContext)
+
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -19,7 +27,19 @@ function Header() {
         }
     }
 
-    
+    const searchLoc = e => {
+        if(e.key === 'Enter'){
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY.key4}`)
+            .then(r => r.json())
+            .then(d => {
+                updateCityContext([d])
+             
+            })
+        }
+    }
+
+ 
+
 
 
  
@@ -37,6 +57,9 @@ function Header() {
                         type="text"
                         id="inputSearch"
                         placeholder='Busca una ciudad'
+                        value={location}
+                        onChange={e => updateLocation(e.target.value)}
+                        onKeyPress={searchLoc}
                     />
                 </Col>
 
@@ -53,7 +76,7 @@ function Header() {
                 </Col>
 
                 <Col md={{offset: 3}}>
-                <p>Menu</p>
+                <p>Aqui menu</p>
                 </Col>
             </Row>
 

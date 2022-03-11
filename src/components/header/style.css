@@ -13,12 +13,12 @@
 
 .celsius{
     background-color: #FF385C;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     display: flex;
-        justify-content: center;
-        padding-right: 5px;
-    
+    justify-content: center;
+    padding-right: 5px;
+    padding-top: 1px;
     border: none;
     border-radius: 100%;
 
@@ -29,15 +29,15 @@
 
 
 .celsius > p{
-    font-size:17px;
+    font-size:20px;
     font-weight: bold;
     color: white;
 }
 
 .fahrenheit{
     background:none;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -49,7 +49,7 @@
 }
 
 .fahrenheit{
-    font-size:17px;
+    font-size:20px;
     font-weight: bold;
 }
 

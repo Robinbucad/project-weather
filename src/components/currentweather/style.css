@@ -2,5 +2,144 @@
 .min-max{
     display: flex;
     gap: 1rem
+
 }
 
+.max-info-current{
+    font-size: 14px;
+}
+
+.temp-info-current{
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-card-current  > * {
+    margin: 0;
+
+}
+.card-body-current{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img-temp{
+    background:url('../../assets/img/sunset.svg');
+}
+
+.desc-temp{
+    font-size:22px ;
+}
+
+.img-current{
+    width: 8rem !important;
+}
+
+.text-card-current{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.slick-arrow, slick-prev{
+    background-color:#FF385C!important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 100%;
+    padding: 12px !important;
+    padding-top: 13px !important;
+}
+
+.card-current-weather{
+    border: none !important;
+}
+
+.slider-container{
+    border: 1px solid lightgray;
+    width: 200%;
+    border-radius: 10px;
+    height: 9rem;
+    margin-bottom: 2rem;
+
+}
+
+.slider-config{
+    height: 9rem;
+
+}
+
+.img-small{
+    width: 80px;
+    margin-top: -10px;
+}
+
+.div-temp-currrent{
+    display: flex;
+    justify-content: center;
+}
+
+.div-opts-current{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-opts-current{
+    font-size: 14px;
+    color: gray;
+}
+
+.value-opts-current{
+    font-size: 14px;
+    font-weight: bold;
+}
+[role="progressbar"]{
+    animation: progress 2s 0.5s forwards;
+    
+    background: linear-gradient(90deg, rgba(255,187,48,1) 0%, rgba(255,209,98,1) 42%, rgba(255,255,255,1) 100%);
+
+    aspect-ratio: 2/1;
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+[role="progressbar"]{
+    content:"";
+    position:absolute;
+    top: 75px;
+    width: 60%;
+    height: 30%;
+    background:conic-gradient(from 0.75turn at 50% 100%);
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 0);
+    -webkit-mask: radial-gradient(at 50% 100%,#0000 64%, #000 0);
+}
+
+.sun-status{
+    position: absolute;
+    z-index: 1;
+    right: 28px;
+    top: 100px;
+}
+
+.sun-div{
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.div-pos-sun > * {
+    margin: 0;
+    font-size: 10px;
+}
+
+.card-body{
+    justify-content: space-between;
+}

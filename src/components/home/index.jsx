@@ -7,18 +7,18 @@ import CurrentWeather from "../currentweather"
 
 function HomePage() {
     return (
-        <Container  >
+        <Container style={{paddingLeft:'10rem', paddingRight:'10rem'}} fluid >
 
-            <Container  style={{marginBottom:'30px'}} >
+            <Container fluid  style={{marginBottom:'30px'}} >
                 <Row >
                     <Col  lg={12}><Header></Header></Col>
                 </Row>
             </Container>
 
 
-            <Container style={{ display: 'flex'}}>
+            <Container fluid style={{ display: 'flex'}}>
                 <Row>
-                    <Col >
+                    <Col  style={{ width:'25rem'}} lg={12} >
                         <CurrentWeather></CurrentWeather>
                     </Col>
 
@@ -30,7 +30,7 @@ function HomePage() {
 
 
                     {/**ESTO SE TENDRA QUE BORRAR, ESTA DE EJEMPLO */}
-                        <Card style={{ width: '15%', height:'14rem',marginBottom:'5%', background:'#FF385C',borderRadius:'12px' }}>
+                        <Card style={{ width: '15%', height:'14rem',marginBottom:'3%', background:'#FF385C',borderRadius:'12px' }}>
                                
                                 <Card.Body>
                                 <Card.Img variant="top" src="holder.js/100px180" />
