@@ -1,0 +1,16 @@
+{
+    
+    "card":{
+        "text1":"Uv index",
+        "text2":"Wind",
+        "text3":"Humidity",
+        "text4":"Visibility",
+        "text5":"Sensation",
+        "card2":"Position of the sun",
+        "card3":"Sunrise",
+        "card4":"Time",
+        "card5":"Sunset"
+
+    }
+
+}

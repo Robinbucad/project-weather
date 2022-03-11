@@ -8,6 +8,7 @@ import museum from '../../assets/img/museum.jpg'
 import { useOneCity } from "../../custom-hook/oneCity"
 import { usePlaces } from "../../custom-hook/googleApi"
 import Slider from "react-slick"
+import { useTranslation } from 'react-i18next'
 
 function Activities() {
 
@@ -19,9 +20,12 @@ function Activities() {
         slidesToShow: 4,
         slidesToScroll: 4
     };
-
+    const [t, i18n] = useTranslation("activities")
     const { cityOne } = useOneCity()
     const { restaurant } = usePlaces()
+    console.log(t("activities.button5"))
+
+
 
     console.log(restaurant)
 
@@ -31,17 +35,17 @@ function Activities() {
             <Container >
                 <Row>
                     <Col >
-                        <h2 style={{ display: 'flex', gap: '5px' }} className="title-activities">Las mejores actividades para el clima de hoy en <p className="city-title">{cityOne.map(e => e.name)}</p></h2>
+                        <h2 style={{ display: 'flex', gap: '5px' }} className="title-activities">{t("activities.button7")} <p className="city-title">{cityOne.map(e => e.name)}</p></h2>
                     </Col>
                 </Row>
                 <Row>
                     <Col lg={9}>
                         <ButtonGroup style={{ display: 'flex', gap: '1rem' }}>
-                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">Arte y cultura</Button>
-                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">Ocio</Button>
-                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">Comida y bebida</Button>
-                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">Deportes</Button>
-                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">Filtros</Button>
+                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">{t("activities.button1")}</Button>
+                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">{t("activities.button2")}</Button>
+                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">{t("activities.button3")}</Button>
+                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">{t("activities.button4")}</Button>
+                            <Button style={{ borderRadius: '20px' }} variant="outline-danger">{t("activities.button5")}</Button>
                         </ButtonGroup>
                     </Col>
 
@@ -52,9 +56,9 @@ function Activities() {
 
                 <Container>
                     <Row>
-                        <Col lg={8}>Experiencias cerca de ti</Col>
+                        <Col lg={8}>{t("activities.button6")}</Col>
                         <Col style={{ display: 'flex', justifyContent: 'space-between' }} lg={2}>
-                            <p>Mostrar</p>
+                            <p>{t("activities.button8")}</p>
                             <p>Flechas</p>
                         </Col>
 

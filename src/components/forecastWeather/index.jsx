@@ -16,11 +16,7 @@ function ForecastWeather() {
     }
 
 
-
-
     ))
-
-
 
     return (
 
