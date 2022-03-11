@@ -32,7 +32,7 @@ export const useOneCity = () => {
          
             return d
         })
-    },[unit,lng])
+    },[])
 
 
     
