@@ -29,7 +29,7 @@ export const useOneCity = () => {
             d.date = new Date(d.dt * 1000).toLocaleDateString("eng",{weekday:"long"})
             d.minutes = new Date(d.dt * 1000).getMinutes()
             d.hours = new Date(d.dt * 1000).getHours()
-            console.log(d)
+         
             return d
         })
     },[unit,lng])

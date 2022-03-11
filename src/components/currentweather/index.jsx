@@ -37,7 +37,7 @@ function CurrentWeather() {
 
 
   const { cities} = useMoreCities()
- 
+
 
   const handleIcon = (icon)  => {
    switch(icon){
@@ -53,7 +53,7 @@ function CurrentWeather() {
 
   }
 
-  console.log(cityContext)
+
 
 
   
@@ -149,7 +149,7 @@ function CurrentWeather() {
             <Col>
               <Card style={{ width: '110%', height: '13rem', borderRadius: '12px', display:'flex', justifyContent:'space-between' }}>
 
-                <Card.Body style={{display:'flex', flexDirection:'column'}}>
+                <section style={{display:'flex', flexDirection:'column'}}>
                   <div>
                     <p className="value-opts-current">Posicion del sol</p>
                   
@@ -174,7 +174,7 @@ function CurrentWeather() {
                       </div>
                      
                   </section>
-                </Card.Body>
+                </section>
               </Card>
             </Col>
           </Col>

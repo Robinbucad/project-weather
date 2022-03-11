@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchProvider from './context/search.provider'
 
+
 //IDIOMAS
 import global_es from './translation/es/global.json'
 import global_en from './translation/en/global.json'
@@ -29,6 +30,8 @@ i18next.init({
     }
   },
 })
+
+
 
 ReactDOM.render(
   <React.StrictMode>
