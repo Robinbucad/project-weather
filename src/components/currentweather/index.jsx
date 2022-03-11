@@ -8,7 +8,8 @@ import { useMoreCities } from "../../custom-hook/moreCities"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick'
-import sun from '../../assets/img/sun.png'
+import sun from '../../assets/img/sun.png';
+import { useTranslation } from 'react-i18next'
 
 function CurrentWeather() {
 
@@ -19,6 +20,7 @@ function CurrentWeather() {
     slidesToShow: 4,
     slidesToScroll: 4
   };
+  const [t, i18n] = useTranslation("card")
 
 
   const { cityContext } = useOneCity()
@@ -97,23 +99,23 @@ function CurrentWeather() {
 
               <Card.Body>
                 <div className="div-opts-current">
-                  <p className="name-opts-current">Índice UV</p>
+                  <p className="name-opts-current">{t("card.text1")}</p>
                   <p className="value-opts-current">{cities.map(e => e.daily[0].uvi)}</p>
                 </div>
                 <div className="div-opts-current">
-                  <p className="name-opts-current">Viento</p>
+                  <p className="name-opts-current">{t("card.text2")}</p>
                   <p className="value-opts-current">{cities.map(e => e.daily[0].wind_speed)}Km/h</p>
                 </div>
                 <div className="div-opts-current">
-                  <p className="name-opts-current">Humedad</p>
+                  <p className="name-opts-current">{t("card.text3")}</p>
                   <p className="value-opts-current">{cities.map(e => e.daily[0].humidity)}%</p>
                 </div>
                 <div className="div-opts-current">
-                  <p className="name-opts-current">Visibilidad</p>
+                  <p className="name-opts-current">{t("card.text4")}</p>
                   <p className="value-opts-current">{cities.map(e => e.daily[0].wind_speed)}</p>
                 </div>
                 <div className="div-opts-current">
-                  <p className="name-opts-current">Sensación</p>
+                  <p className="name-opts-current">{t("card.text5")}</p>
                   <p className="value-opts-current">{cityContext.map(e => e.main.feels_like)}{unit === 'metric' ? 'ºC' : 'ºF'} </p>
                 </div>
               </Card.Body>
@@ -127,7 +129,7 @@ function CurrentWeather() {
 
                 <Card.Body style={{display:'flex', flexDirection:'column'}}>
                   <div>
-                    <p className="value-opts-current">Posicion del sol</p>
+                    <p className="value-opts-current">{t("card.card2")}</p>
                   
                   </div>
 
@@ -141,12 +143,12 @@ function CurrentWeather() {
 
                   <section style={{display:'flex', width:'110%', gap:'25px'}}>
                       <div className="div-pos-sun">
-                        <p>Hora</p>
-                        <p className="pues-sol">Amanecer</p>
+                        <p>{t("card.card4")}</p>
+                        <p className="pues-sol">{t("card.card3")}</p>
                       </div>
                       <div className="div-pos-sun">
-                        <p>Hora</p>
-                        <p className="pues-sol">Puesta del sol</p>
+                        <p>{t("card.card4")}</p>
+                        <p className="pues-sol">{t("card.card5")}</p>
                       </div>
                      
                   </section>
