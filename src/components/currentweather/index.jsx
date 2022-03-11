@@ -23,13 +23,21 @@ function CurrentWeather() {
 
   const { cityContext } = useOneCity()
   const [unit] = useContext(TemperatureContext)
-  const { cities} = useMoreCities()
 
+  let date = new Date
+
+  const { cities} = useMoreCities()
   console.log(cityContext)
 
+  
   return (
     <Container style={{ height: '90vh', }} >
+
+
       <Row>
+
+   
+   
 
         <Row style={{ marginBottom: '2rem' }}>
           {cityContext.map((e,i) => (
@@ -53,6 +61,7 @@ function CurrentWeather() {
 
                 </Card.Body>
               </Card>
+              
             </Col>
           ))}
 
@@ -148,6 +157,7 @@ function CurrentWeather() {
         </Row>
 
       </Row>
+   
     </Container>
   )
 }

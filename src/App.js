@@ -1,6 +1,12 @@
 
 import './App.css';
+
+import TemperatureProvider from './context/temperature.context.jsx';
+import { useGeoLocation } from './geolocation';
+import ForecastWeather from './components/forecastWeather';
+
 import CurrentActualWeather from './components/actualweather';
+
 
 
 
@@ -14,12 +20,18 @@ function App() {
   return (
     <TemperatureProvider>
     <div className="App">
+
+    <HomePage></HomePage> 
+      
+
  
 
     <CurrentActualWeather></CurrentActualWeather>
 
+
     </div>
     </TemperatureProvider>
+   
   );
 }
 
