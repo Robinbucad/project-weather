@@ -1,0 +1,15 @@
+{
+    
+    "card":{
+        "text1":"Índice UV",
+        "text2":"Viento",
+        "text3":"Humedad",
+        "text4":"Visibilidad",
+        "text5":"Sensación",
+        "card2":"Posicion del Sol",
+        "card3":"Amanecer",
+        "card4":"Hora",
+        "card5":"Atardecer"
+    }
+
+}

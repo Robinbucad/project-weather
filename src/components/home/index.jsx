@@ -1,41 +1,31 @@
 import Header from "../header"
 import Activities from "../activities"
-import { Container, Row, Col, Button, Card } from "react-bootstrap"
-import CurrentWeather from "../currentWeather/"
+import { Container, Row, Col} from "react-bootstrap"
+import CurrentWeather from "../currentWeather"
 import ForecastWeather from "../forecastWeather"
 
 
 function HomePage() {
     return (
-        <Container style={{paddingLeft:'10rem', paddingRight:'10rem'}} fluid >
+        <Container style={{ paddingLeft: '6rem', paddingRight: '6rem' }} fluid >
 
-            <Container fluid  style={{marginBottom:'30px'}} >
+            <Container fluid style={{ marginBottom: '30px' }} >
                 <Row >
-                    <Col  lg={12}><Header></Header></Col>
+                    <Col lg={12}><Header></Header></Col>
                 </Row>
             </Container>
 
-
-            <Container fluid style={{ display: 'flex'}}>
+            <Container fluid style={{ display: 'flex' }}>
                 <Row>
-                    <Col  style={{ width:'25rem'}} lg={12} >
+                    <Col style={{ width: '25rem' }} lg={6} >
                         <CurrentWeather></CurrentWeather>
                     </Col>
-
-
                 </Row>
+
                 <Container style={{ flexDirection: 'column', display: 'flex' }}>
                     <Row>
-                        <Col  style={{ display:'flex', gap:'1rem' }} lg={12}>
-
-
-                    {/**ESTO SE TENDRA QUE BORRAR, ESTA DE EJEMPLO */}
-                            
-                        <ForecastWeather></ForecastWeather>
-                          
-
-                            {/**ESTO SE TENDRA QUE BORRAR, ESTA DE EJEMPLO */}
-                            
+                        <Col style={{ display: 'flex', gap: '1rem' }} lg={12}>
+                            <ForecastWeather></ForecastWeather>
                         </Col>
                     </Row>
 
@@ -45,23 +35,10 @@ function HomePage() {
                 </Container>
 
             </Container>
+            
         </Container>
     )
 }
 
 export default HomePage
 
-/**
- * 
- *   <Card style={{ width: '15%', height:'14rem', borderRadius:'12px' }}>
-                               
-                                <Card.Body>
-                                <Card.Img variant="top" src="holder.js/100px180" />
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Aqui card temperatura futura
-                                    </Card.Text>
-                                  
-                                </Card.Body>
-                            </Card>
- */

@@ -5,7 +5,7 @@ import { TemperatureContext, IdiomContext } from "./temperature.context";
 function TemperatureProvider({ children }) {
 
     const temperatureState = useState('metric');
-    const idiomState = useState(['es'])
+    const idiomState = useState('es')
     
 
     return (

@@ -16,3 +16,23 @@
     font-weight: bold;
 }
 
+.div-min-max-forecast{
+    display:  flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.cardForecast:first-child{
+    background-color: #FF385C !important;
+    color: white;
+}
+
+.div-date-forecast{
+    text-align: center;
+    font-weight: bold;
+}
+

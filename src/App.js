@@ -1,38 +1,37 @@
 
 import './App.css';
-<<<<<<< HEAD
 import CurrentActualWeather from './components/actualweather';
 
 
-=======
+
 import TemperatureProvider from './context/temperature.context.jsx';
 import { useGeoLocation } from './geolocation';
 import ForecastWeather from './components/forecastWeather';
->>>>>>> develop
 
-import HomePage from './components/home';
-import {  usePlaces, UsePlaces } from './custom-hook/googleApi';
+
+import TemperatureProvider from './context/temperature.context.jsx';
+import { useGeoLocation } from './geolocation';
+import HomePage from './components/home/';
+
+
+
 
 function App() {
   const geolo = useGeoLocation()
 
 
   return (
-    <TemperatureProvider>
+      <TemperatureProvider>
     <div className="App">
-<<<<<<< HEAD
- 
 
-    <CurrentActualWeather></CurrentActualWeather>
-
-=======
     <HomePage></HomePage> 
-      
->>>>>>> develop
+
+
+
     </div>
     </TemperatureProvider>
-   
   );
 }
 
 export default App;
+
