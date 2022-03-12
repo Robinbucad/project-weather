@@ -111,24 +111,14 @@ function Activities() {
                 </Container>
 
             </Container>
-
             <Container className="activities-container">
-
                 <Row >
-
-
-
                     <Col lg={12}>
                         <Slider {...settings}>
-
-
                             {restaurant.map(e => e.results.map(r => (
                                 <article >
                                     <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                         <Card.Img variant="top" className="img-acti" src={bicicleta} />
-
-
-
                                     </Card>
                                     <footer className="footer-card">
                                         <p>{r.rating}</p>
@@ -138,22 +128,9 @@ function Activities() {
                                     </footer>
                                 </article>
                             )))}
-
-
-
                         </Slider>
-
-
                     </Col>
-
                 </Row>
-
-
-
-
-
-
-
             </Container>
 
 

@@ -19,8 +19,6 @@ import { useState } from "react"
 function ForecastWeather() {
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const { cities } = useMoreCities()
     const [unit] = useContext(TemperatureContext)
@@ -49,6 +47,8 @@ function ForecastWeather() {
     }
 
 
+ 
+
     return (
 
         <Container>
@@ -56,13 +56,13 @@ function ForecastWeather() {
             <Row >
 
                 <Col style={{ display: 'flex', gap: '1rem' }}>
-                    {cities.length === 0 ? <h1>Cargando...</h1> : cities.map(e => e.daily.map((r, i) => (
+                    { cities.map(e => e.daily.map((r, i) => (
                        
                         <Card value={i}  key={i} style={{ width: '110px', width: '200px' }}>
                             
-                            <Card.Body>
-                                {r.dateLong === undefined ? <p>Cargando...</p> :
-                                    <p>{`${r.date}`}</p>
+                             <Card.Body>
+                               {
+                                    <p>{`${new Date(r.dt*1000).toLocaleDateString("eng",{weekday:"long"})}`}</p>
                                 }
                                 <Card.Img variant="top" src={r.weather.map(n => handleIcon(n.icon))} />
 

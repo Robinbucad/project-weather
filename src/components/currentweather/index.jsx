@@ -45,7 +45,7 @@ function CurrentWeather() {
       }
   }
 
-  console.log(city)
+
 
   return (
     <Container style={{ height: '90vh', }} >
