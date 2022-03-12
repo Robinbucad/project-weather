@@ -28,7 +28,7 @@
 /*ILUSTRACIONES*/
 
 .img-temp{
-    background:url('../../assets/img/sunset.svg');
+    background:url('../../assets/img/sunset.svg') !important;
 }
 
 .img-rainy{
