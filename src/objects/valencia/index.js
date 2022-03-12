@@ -13,7 +13,7 @@ export const valenciaSol = [
         tag:'sport',
         val:"4,95",
         res:"353",
-        desc:"Paseo en barca en Costa de Valencia",
+        desc:"Ruta de senderismo en Costa de Valencia",
         price:"Desde 95€ por persona",
         img:"valencia2Sol"
     },
@@ -57,6 +57,15 @@ export const valenciaSol = [
         price:"Desde 13€ por persona",
         img:"valenciaSol7"
     },
+    {
+        tag:'sport',
+        val:"4,91",
+        res:"166",
+        desc:"Ruta en bicicleta en Costa de Valencia",
+        price:"Desde 52€ por persona",
+        img:"valenciaSol8"
+    },
+    
 ]
 
 
@@ -79,51 +88,51 @@ export const valenciaNublado = [
         img:"valenciaNub2"
     },
     {   
-        tag:'sport',
+        tag:'night_club',
         val:"4,99",
-        desc:"Paseo en barca en Costa de Valencia",
-        price:"Desde 95€ por persona",
-        res:"190",
-        img:"valenciaSol"
+        desc:"Ruta nocturna en Costa de Valencia",
+        price:"Desde 13€ por persona",
+        res:"33",
+        img:"valenciaNub3"
     },
     {   
-        tag:'sport',
-        val:"4,99",
-        desc:"Paseo en barca en Costa de Valencia",
-        price:"Desde 95€ por persona",
-        res:"190",
-        img:"valenciaSol"
+        tag:'museum',
+        val:"5",
+        desc:"Art and dessign class en Costa de Valencia",
+        price:"Desde 55€ por persona",
+        res:"44",
+        img:"valenciaNub4"
     },
     {   
-        tag:'sport',
-        val:"4,99",
-        desc:"Paseo en barca en Costa de Valencia",
-        price:"Desde 95€ por persona",
-        res:"190",
-        img:"valenciaSol"
+        tag:'museum',
+        val:"4,89",
+        desc:"Clases de dibujo en costa de Valencia",
+        price:"Desde 35€ por persona",
+        res:"44",
+        img:"valenciaNub5"
     },
     {   
-        tag:'sport',
-        val:"4,99",
-        desc:"Paseo en barca en Costa de Valencia",
-        price:"Desde 95€ por persona",
-        res:"190",
-        img:"valenciaSol"
+        tag:'outdoors',
+        val:"5",
+        desc:"Sesión de fotos en Costa de Valencia",
+        price:"Desde 59€ por persona",
+        res:"27",
+        img:"valenciaNub6"
     },
     {   
-        tag:'sport',
-        val:"4,99",
-        desc:"Paseo en barca en Costa de Valencia",
-        price:"Desde 95€ por persona",
-        res:"190",
-        img:"valenciaSol"
+        tag:'food',
+        val:"4,94",
+        desc:"Ruta de comida callejera en Costa de Valencia",
+        price:"Desde 65€ por persona",
+        res:"137",
+        img:"valenciaNub7"
     },
     {   
-        tag:'sport',
-        val:"4,99",
-        desc:"Paseo en barca en Costa de Valencia",
-        price:"Desde 95€ por persona",
-        res:"190",
-        img:"valenciaSol"
+        tag:'food',
+        val:"4,92",
+        desc:"Recorrido gastronómico en Costa de Valencia",
+        price:"Desde 65€ por persona",
+        res:"156",
+        img:"valenciaNub8"
     },
 ]

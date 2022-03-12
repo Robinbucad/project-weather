@@ -72,7 +72,7 @@ function CurrentWeather() {
       <Row>
    
         <Row style={{ marginBottom: '2rem' }}>
-          {city.length===0 ? <h1>Cargando</h1> : city.map((e,i) => (
+        {city.length===0 ? <h1>Cargando</h1> : city.map((e,i) => (
             <Col key={i} lg={12}>
               <Card border="primary" style={{ width: '100%', height: '23rem', borderRadius: '12px', border: 'none', color: 'white' }} className={e.weather.map(d => handleBg(d.icon) )}>
 
@@ -95,8 +95,8 @@ function CurrentWeather() {
               </Card>
               
             </Col>
-          ))}
-
+        ))
+}
         </Row>
 
         <Row>
@@ -146,7 +146,7 @@ function CurrentWeather() {
                   </div>
 
                   <div className="sun-div">
-                    <img className={handlePos(12)} src={sun} ></img>
+                    <img className={handlePos(date)} src={sun} ></img>
                     <div role='progressbar'>
 
                     </div>
