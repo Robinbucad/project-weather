@@ -25,8 +25,20 @@
     justify-content: space-between;
 }
 
+/*ILUSTRACIONES*/
+
 .img-temp{
     background:url('../../assets/img/sunset.svg');
+}
+
+.img-rainy{
+    background:url('../../assets/img/ilustracionesClima/rain-couple.jpg');
+    background-size: contain;
+}
+
+.img-night{
+    background:url('../../assets/img/ilustracionesClima/night.jpg');
+    background-size: contain;
 }
 
 .desc-temp{
@@ -43,38 +55,22 @@
     margin: 0;
 }
 
-.slick-arrow, slick-prev{
-    background-color:#FF385C!important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 100%;
-    padding: 12px !important;
-    padding-top: 13px !important;
-}
 
 .card-current-weather{
     border: none !important;
 }
 
-.slider-container{
-    border: 1px solid lightgray;
-    width: 200%;
-    border-radius: 10px;
-    height: 9rem;
-    margin-bottom: 2rem;
 
-}
 
-.slider-config{
-    height: 9rem;
-
+.div-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-small{
-    width: 80px;
-    margin-top: -10px;
+    width: 55px;
+    height: 55px;
 }
 
 .div-temp-currrent{

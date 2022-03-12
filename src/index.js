@@ -5,19 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchProvider from './context/search.provider'
-
+import CoordsProvider from './context/geocoding/coords.provider';
+import GoogleProvider from './context/googleApiContext/google.provider';
 
 //IDIOMAS
 import global_es from './translation/es/global.json'
 import global_en from './translation/en/global.json'
-import global_fr from './translation/fr/global.json'
+
 import activities_es from './translation/es/activities.json'
 import activities_en from './translation/en/activities.json'
 import card_es from './translation/es/card.json'
 import card_en from './translation/en/card.json'
-
 import i18next from 'i18next'
 import { I18nextProvider } from 'react-i18next'
+
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -26,17 +27,15 @@ i18next.init({
     es: {
       global: global_es,
       activities: activities_es,
-      card:card_es
-      
+      card: card_es
+
     },
     en: {
       global: global_en,
       activities: activities_en,
-      card:card_en
+      card: card_en
     },
-    fr: {
-      global: global_fr
-    }
+    
   },
 })
 
@@ -44,11 +43,18 @@ i18next.init({
 
 ReactDOM.render(
   <React.StrictMode>
-    < I18nextProvider i18n={i18next}>
-      <SearchProvider>
-        <App />
-      </SearchProvider>
-    </ I18nextProvider>
+    <CoordsProvider>
+
+
+      < I18nextProvider i18n={i18next}>
+        <GoogleProvider>
+          <SearchProvider>
+            <App />
+          </SearchProvider>
+        </GoogleProvider>
+      </ I18nextProvider>
+    </CoordsProvider>
+
 
 
 

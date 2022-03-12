@@ -16,3 +16,8 @@
     font-weight: bold;
 }
 
+.div-min-max-forecast{
+    display:  flex;
+    width:7rem;
+    justify-content: space-between;
+}

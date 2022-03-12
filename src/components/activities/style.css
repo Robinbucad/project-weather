@@ -1,11 +1,26 @@
 
-.activities-container{
-    display: flex;
-    gap:2rem;
+
+.slick-arrow{
+    background-color: #FF385C !important;
+    padding: 10px!important;
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.slick-slider {
+    padding: 10px;
 }
 
 .title-activities{
     font-size: 20px;
+}
+
+.slider-container-activ{
+    display: flex;
 }
 
 .card-activity{
@@ -53,9 +68,7 @@
     margin: 0;
 }
 
-.slider-activities{
-    display: flex !important;
-}
+
 
 .section-activities{
     display: flex;

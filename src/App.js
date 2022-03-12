@@ -6,21 +6,22 @@ import { useGeoLocation } from './geolocation';
 import HomePage from './components/home/';
 
 
+
 function App() {
   const geolo = useGeoLocation()
 
 
   return (
-    <TemperatureProvider>
+      <TemperatureProvider>
     <div className="App">
 
     <HomePage></HomePage> 
-    
+
 
     </div>
     </TemperatureProvider>
-   
   );
 }
 
 export default App;
+

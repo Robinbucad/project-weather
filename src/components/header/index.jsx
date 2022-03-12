@@ -1,27 +1,31 @@
 import { useContext, useState } from 'react'
-import { Container, Row, Col, Nav, Navbar, Form, FormControl, Button, NavDropdown } from 'react-bootstrap'
+import { Container, Row, Col,Form} from 'react-bootstrap'
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
 import { IdiomContext, TemperatureContext } from '../../context/temperature.context'
 import './style.css'
 import { API_KEY } from '../../config.js'
 import { useOneCity } from '../../custom-hook/oneCity'
 import { SearchContext } from '../../context/search.context'
-import { UsePlaces } from '../../custom-hook/googleApi'
 import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
-
+import { LatContext, LonContext } from '../../context/geocoding/coords.context'
 
 
 function Header() {
+    
     const [unit, updateUnit] = useContext(TemperatureContext)
     const [location, updateLocation] = useState('')
-    const { cityOne, updateCity } = useOneCity()
     const [city, updateCityContext] = useContext(SearchContext)
+    
+    /**UPDATE COORDS CONTEXT */
+    const [lat,updateLat] = useContext(LatContext)
+    const [lon, updateLon] = useContext(LonContext)
+
+    /**IDIOMA */
     const [lng,updateLng] = useContext(IdiomContext)
-
     const [t, i18n] = useTranslation("global")
+    
 
-  console.log(lng)
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -36,11 +40,13 @@ function Header() {
 
     const searchLoc = e => {
         if (e.key === 'Enter') {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY.key4}`)
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${API_KEY.key2}&lang=${lng}`)
                 .then(r => r.json())
                 .then(d => {
-                    updateCityContext([d])
-
+                    updateLat(d.coord.lat)
+                    updateLon(d.coord.lon)
+                    updateCityContext([d])          
+                    updateLng(lng)
                 })
         }
     }
@@ -54,10 +60,6 @@ function Header() {
             updateLng("es")
         }
     }
-
-
-
-
 
     return (
 
