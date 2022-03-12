@@ -4,11 +4,11 @@ import logo from '../../assets/img/logo-airbnb-tiempo.svg'
 import { IdiomContext, TemperatureContext } from '../../context/temperature.context'
 import './style.css'
 import { API_KEY } from '../../config.js'
-import { useOneCity } from '../../custom-hook/oneCity'
 import { SearchContext } from '../../context/search.context'
 import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
 import { LatContext, LonContext } from '../../context/geocoding/coords.context'
+import placeholderIcon from '../../assets/img/placeholderIcon.svg'
 
 
 function Header() {
@@ -69,8 +69,10 @@ function Header() {
                 <Col lg={3}>
                     <img className='logo-img' src={logo}></img>
                 </Col>
-
+              
+               
                 <Col lg={3}>
+                
                     <Form.Control
                         
                         type="text"

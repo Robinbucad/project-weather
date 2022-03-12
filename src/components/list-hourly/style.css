@@ -7,9 +7,10 @@
 }
 
 .slider-container{
+    padding-top: 20px;
     border: 1px solid lightgray;
     border-radius: 10px;
-    height: 11rem;
+    height: 11.7rem;
     margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;

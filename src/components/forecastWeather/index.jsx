@@ -58,12 +58,13 @@ function ForecastWeather() {
                 <Col style={{ display: 'flex', gap: '1rem' }}>
                     { cities.map(e => e.daily.map((r, i) => (
                        
-                        <Card value={i}  key={i} style={{ width: '110px', width: '200px' }}>
+                        <Card value={i}  key={i} style={{ width: '110px', width: '200px', borderRadius:'12px'}} className='cardForecast'>
                             
                              <Card.Body>
-                               {
-                                    <p>{`${new Date(r.dt*1000).toLocaleDateString("eng",{weekday:"long"})}`}</p>
-                                }
+                                 <div className="div-date-forecast">
+                                <p>{`${new Date(r.dt*1000).toLocaleDateString("eng",{weekday:"long"})}`}</p>
+                               </div>
+                                                             
                                 <Card.Img variant="top" src={r.weather.map(n => handleIcon(n.icon))} />
 
                                 <div className="div-min-max-forecast">
