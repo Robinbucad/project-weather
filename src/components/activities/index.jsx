@@ -10,6 +10,9 @@ import valenciaSol1 from '../../assets/img/valencia/valenciaSol1.svg'
 import valencia2Sol from '../../assets/img/valencia/valenciaSol2.svg'
 import valenciaSol3 from '../../assets/img/valencia/valenciaSol3.svg'
 import valenciaSol4 from '../../assets/img/valencia/valenciaSol4.svg'
+import valenciaSol5 from '../../assets/img/valencia/valenciaSol5.svg'
+import valenciaSol6 from '../../assets/img/valencia/valenciaSol6.svg'
+import valenciaSol7 from '../../assets/img/valencia/valenciaSol7.svg'
 import { useState } from "react"
 import Slider from "react-slick"
 import { useContext } from "react"
@@ -33,15 +36,21 @@ function Activities() {
             case 'valencia2Sol': return valencia2Sol
             case 'valenciaSol3': return valenciaSol3
             case 'valenciaSol4': return valenciaSol4
+            case 'valenciaSol5': return valenciaSol5
+            case 'valenciaSol6': return valenciaSol6
+            case 'valenciaSol7': return valenciaSol7
+            
         }
     }
 
+    console.log(valencia)
+
     const settings = {
-        dots: false,
+        dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 5
+        slidesToShow: 4,
+        slidesToScroll: 4
     };
 
     const filterCard = e => {
@@ -55,15 +64,15 @@ function Activities() {
         } else if (e.target.value === 'restaurant') {
             updateValencia(filter)
             updatePlace(e.target.value)
-        }else if(e.target.value==='outdoors'){
+        } else if (e.target.value === 'outdoors') {
             updatePlace(e.target.value)
-        }else if(e.target.value === 'gym'){
+        } else if (e.target.value === 'gym') {
             updatePlace(e.target.value)
         }
     }
 
-    
-   
+
+
 
     const filterBack = e => {
         if (e.target.value === 'show') {
@@ -83,7 +92,7 @@ function Activities() {
             <Container >
                 <Row>
                     <Col >
-                        <h2 style={{ display: 'flex', gap: '5px',fontSize:'26px', fontWeight:'bold' }} className="title-activities">{t("activities.button7")} <p className="city-title">{city.map(e => e.name)}</p></h2>
+                        <h2 style={{ display: 'flex', gap: '5px', fontSize: '26px', fontWeight: 'bold' }} className="title-activities">{t("activities.button7")} <p className="city-title">{city.map(e => e.name)}</p></h2>
                     </Col>
                 </Row>
                 <Row>
@@ -103,13 +112,9 @@ function Activities() {
 
             <Container>
 
-                <Container style={{background:'red', marginTop:'42px'}}>
+                <Container style={{ marginTop: '10px' }}>
                     <Row>
-                        <Col lg={8}>{t("activities.button6")}</Col>
-                        <Col style={{ display: 'flex', justifyContent: 'space-between' }} lg={2}>
-                            <p>{t("activities.button8")}</p>
-                            <p>Flechas</p>
-                        </Col>
+                        <Col lg={12} className='experiences-near'>{t("activities.button6")}</Col>
 
                     </Row>
                 </Container>
@@ -119,19 +124,26 @@ function Activities() {
                 <Row >
                     <Col lg={12}>
                         <Slider {...settings}>
-                            {restaurant.map(e => e.results.map(r => (
+                            {valencia.map(e => (
                                 <article >
                                     <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
-                                        <Card.Img variant="top" className="img-acti" src={bicicleta} />
+                                        <img src={handleImgAct(e.img)}></img>
                                     </Card>
                                     <footer className="footer-card">
-                                        <p>{r.rating}</p>
-                                        <p>{r.name}</p>
-                                        <p>{r.user_ratings_total}</p>
-                                        <p>{r.price_level}</p>
+                                     
+                                           
+                                            <p>{e.res}</p>
+                                        
+
+
+
+                                        <p>{e.desc}</p>
+                                        <p>{e.price}</p>
+
+
                                     </footer>
                                 </article>
-                            )))}
+                            ))}
                         </Slider>
                     </Col>
                 </Row>
@@ -144,5 +156,20 @@ function Activities() {
 
 export default Activities
 
-
+/**
+ * 
+ *  {restaurant.map(e => e.results.map(r => (
+                                <article >
+                                    <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
+                                        <Card.Img variant="top" className="img-acti" src={bicicleta} />
+                                    </Card>
+                                    <footer className="footer-card">
+                                        <p>{r.rating}</p>
+                                        <p>{r.name}</p>
+                                        <p>{r.user_ratings_total}</p>
+                                        <p>{r.price_level}</p>
+                                    </footer>
+                                </article>
+                            )))}
+ */
 

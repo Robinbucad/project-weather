@@ -71,7 +71,7 @@ function Header() {
                 </Col>
               
                
-                <Col lg={3}>
+                <Col lg={4}>
                 
                     <Form.Control
                         
@@ -107,7 +107,7 @@ function Header() {
 
                 </Col>
 
-                <Col md={{ offset: 3 }}>
+                <Col md={{ offset: 2 }}>
                     <p>Aqui menu</p>
                 </Col>
             </Row>

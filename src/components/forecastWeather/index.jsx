@@ -55,7 +55,7 @@ function ForecastWeather() {
 
             <Row >
 
-                <Col style={{ display: 'flex', gap: '1rem', marginBottom:'54px' }}>
+                <Col style={{ display: 'flex', gap: '1rem', marginBottom:'35px' }}>
                     { cities.map(e => e.daily.map((r, i) => (
                        
                         <Card value={i}  key={i} style={{ width: '110px', width: '200px', borderRadius:'12px'}} className='cardForecast'>
