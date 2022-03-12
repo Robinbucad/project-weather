@@ -25,8 +25,20 @@
     justify-content: space-between;
 }
 
+/*ILUSTRACIONES*/
+
 .img-temp{
-    background:url('../../assets/img/sunset.svg');
+    background:url('../../assets/img/sunset.svg') !important;
+}
+
+.img-rainy{
+    background:url('../../assets/img/ilustracionesClima/rain-couple.jpg');
+    background-size: contain;
+}
+
+.img-night{
+    background:url('../../assets/img/ilustracionesClima/night.jpg');
+    background-size: contain;
 }
 
 .desc-temp{
@@ -43,38 +55,22 @@
     margin: 0;
 }
 
-.slick-arrow, slick-prev{
-    background-color:#FF385C!important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 100%;
-    padding: 12px !important;
-    padding-top: 13px !important;
-}
 
 .card-current-weather{
     border: none !important;
 }
 
-.slider-container{
-    border: 1px solid lightgray;
-    width: 200%;
-    border-radius: 10px;
-    height: 9rem;
-    margin-bottom: 2rem;
 
-}
 
-.slider-config{
-    height: 9rem;
-
+.div-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-small{
-    width: 80px;
-    margin-top: -10px;
+    width: 55px;
+    height: 55px;
 }
 
 .div-temp-currrent{
@@ -96,6 +92,7 @@
     font-size: 14px;
     font-weight: bold;
 }
+
 [role="progressbar"]{
     animation: progress 2s 0.5s forwards;
     
@@ -120,15 +117,8 @@
     -webkit-mask: radial-gradient(at 50% 100%,#0000 64%, #000 0);
 }
 
-.sun-status{
-    position: absolute;
-    z-index: 1;
-    right: 28px;
-    top: 100px;
-}
 
 .sun-div{
-    background-color: yellow;
     display: flex;
     justify-content: center;
 }
@@ -137,9 +127,46 @@
 
 .div-pos-sun > * {
     margin: 0;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .card-body{
     justify-content: space-between;
+}
+
+.div-pos-sun{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*POS SUN*/
+
+.sun-sunrise{
+    position: absolute;
+    z-index:1;
+    left: 45px;
+    top: 62px;
+}
+
+.sun-fullMorning{
+    position: absolute;
+    z-index:1;
+    left: 17px;
+    bottom:70px;
+}
+
+.sunset{
+    position: absolute;
+    z-index:1;
+    left: 85px;
+    bottom: 90px;
+}
+
+.night{
+    position: absolute;
+    z-index:1;
+    left: 95px;
+    bottom: 65px;
 }

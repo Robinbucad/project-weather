@@ -16,27 +16,25 @@ export const useOneCity = () => {
     const [lat,updateLat] = useState(latLoc)
     const [lon,updateLon] = useState(lonLoc)
     const [cityOne,updateCity] = useState([])
-    const [cityContext, setCitycontext] = useContext(SearchContext)
+    const [city, updateSearchCity] = useContext(SearchContext)
     const [lng,updateLng] = useContext(IdiomContext)
-    
-    console.log(lng)
+   
 
+    
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key4}&lang=${lng}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=&lang=${lng}`)
         .then(r => r.json())
         .then(d => {
-            setCitycontext([d])
-            d.date = new Date(d.dt * 1000).toLocaleDateString("eng",{weekday:"long"})
-            d.minutes = new Date(d.dt * 1000).getMinutes()
-            d.hours = new Date(d.dt * 1000).getHours()
-            console.log(d)
-            return d
+            updateCity([d])
+            updateSearchCity([d])
         })
-    },[unit,lng])
+        
+        
+    },[unit,lng,lat,lon])
 
 
     
-    return {cityOne, updateCity, cityContext}
+    return {cityOne, updateCity}
 
 }
 

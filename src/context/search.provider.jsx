@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { useOneCity } from "../custom-hook/oneCity";
 import { SearchContext } from "./search.context";
 
 
 
-function SearchProvider({children}){
+function SearchProvider({ children }) {
 
     const city = useState([])
-
-   
-    return(
+    
+        
+    return (
         <SearchContext.Provider value={city}>
-            {children}
+            
+                {children}
+           
         </SearchContext.Provider>
     )
 }
