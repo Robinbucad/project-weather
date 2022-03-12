@@ -1,7 +1,8 @@
 
-
+/*
 .slick-arrow{
-    background-color: #FF385C !important;
+
+    background: none !important;
     padding: 10px!important;
     height: 30px !important;
     width: 30px !important;
@@ -9,11 +10,50 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    left:91% !important;
+}
+
+.slick-prev{
+    left: 89% !important;
+  
+}
+
+
+.slick-prev:before, .slick-next:before {
+    
+    font-size: 20px;
+
+    background:none !important;
+     opacity: 1 !important;  
+     color: black !important; 
+     -webkit-font-smoothing: antialiased; 
+
+
 }
 
 .slick-slider {
     padding: 10px;
+    color: black !important;
 }
+
+.slick-prev, .slick-next {
+    color: black !important;
+    position: absolute;
+    top:-5% !important; 
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+  
+    border: none;
+    outline: none;
+
+}
+
+*/
+
 
 .title-activities{
     font-size: 20px;
@@ -40,7 +80,10 @@
     align-content: center;
     align-items: baseline;
 }
-.btn-outline-danger{
+
+.res-div{
+    display: flex;
+    justify-content: space-between;
     background-color: red;
 }
 
@@ -59,6 +102,11 @@
    width: 160px;
 
 
+}
+
+.experiences-near{
+    font-size: 22px;
+    font-weight: bold;
 }
 
 
