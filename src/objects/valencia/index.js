@@ -63,7 +63,7 @@ export const valenciaSol = [
 
 export const valenciaNublado = [
     {   
-        tag:'foodd',
+        tag:'food',
         val:"4.92",
         desc:"Clases de cocina en Costa de Valencia",
         price:"Desde 60€ por persona",

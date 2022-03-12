@@ -123,28 +123,21 @@ function Activities() {
             <Container className="activities-container">
                 <Row >
                     <Col lg={12}>
-                        <Slider {...settings}>
-                            {valencia.map(e => (
-                                <article >
-                                    <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
-                                        <img src={handleImgAct(e.img)}></img>
-                                    </Card>
-                                    <footer className="footer-card">
-                                     
-                                           
-                                            <p>{e.res}</p>
-                                        
-
-
-
-                                        <p>{e.desc}</p>
-                                        <p>{e.price}</p>
-
-
-                                    </footer>
-                                </article>
-                            ))}
-                        </Slider>
+                        {/* <Slider {...settings}> {restaurant.map(e => e.results.map(r => (
+                            //     <article >
+                            //         <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
+                            //             <Card.Img variant="top" className="img-acti" src={bicicleta} />
+                            //         </Card>
+                            //         <footer className="footer-card">
+                            //             <p>{r.rating}</p>
+                            //             <p>{r.name}</p>
+                            //             <p>{r.user_ratings_total}</p>
+                            //             <p>{r.price_level}</p>
+                            //         </footer>
+                            //     </article>
+                            // )))}
+                            
+                        </Slider> */}
                     </Col>
                 </Row>
             </Container>
@@ -158,18 +151,26 @@ export default Activities
 
 /**
  * 
- *  {restaurant.map(e => e.results.map(r => (
-                                <article >
-                                    <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
-                                        <Card.Img variant="top" className="img-acti" src={bicicleta} />
-                                    </Card>
-                                    <footer className="footer-card">
-                                        <p>{r.rating}</p>
-                                        <p>{r.name}</p>
-                                        <p>{r.user_ratings_total}</p>
-                                        <p>{r.price_level}</p>
-                                    </footer>
-                                </article>
-                            )))}
+ *  
  */
 
+                            // {valencia.map(e => (
+                            //     <article >
+                            //         <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
+                            //             <img src={handleImgAct(e.img)}></img>
+                            //         </Card>
+                            //         <footer className="footer-card">
+                                     
+                                           
+                            //                 <p>{e.res}</p>
+                                        
+
+
+
+                            //             <p>{e.desc}</p>
+                            //             <p>{e.price}</p>
+
+
+                            //         </footer>
+                            //     </article>
+                            // ))}
