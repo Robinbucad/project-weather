@@ -22,17 +22,10 @@ export const useOneCity = () => {
 
     
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=1f7689b2591acb5efd5d91b7e124bf44&lang=${lng}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=__APIKEY__&lang=${lng}`)
         .then(r => r.json())
-        .then(d => {
-            updateCity([d])
-            updateSearchCity([d])
-            d.date = new Date(d.dt * 1000).toLocaleDateString("eng",{weekday:"long"})
-            d.minutes = new Date(d.dt * 1000).getMinutes()
-            d.hours = new Date(d.dt * 1000).getHours()
-         
-            return d
-        })
+        .then(d => updateSearchCity([d]))
+
     },[unit,lng,lat,lon])
 
 

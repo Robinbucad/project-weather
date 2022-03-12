@@ -61,7 +61,7 @@ function CurrentWeather() {
                 <Card.Body className="card-body-current">
                   <div >
                     <Card.Title>{e.name}</Card.Title>
-                    <p>{`${e.date}`}, {`${e.hours}`}:{`${e.minutes}`}</p>
+                    <p>{`${new Date(e.dt*1000).toLocaleDateString("eng",{weekday:"short"})}`}, {`${new Date(e.dt*1000).getHours()}`}:{`${new Date(e.dt*1000).getMinutes()}`}</p>
                   </div>
 
                   <div>

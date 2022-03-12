@@ -15,16 +15,16 @@ function Header() {
     
     const [unit, updateUnit] = useContext(TemperatureContext)
     const [location, updateLocation] = useState('')
-    const [city, updateCityContext] = useContext(SearchContext)
+    const [, updateCityContext] = useContext(SearchContext)
     
     /**UPDATE COORDS CONTEXT */
-    const [lat,updateLat] = useContext(LatContext)
-    const [lon, updateLon] = useContext(LonContext)
+    const [,updateLat] = useContext(LatContext)
+    const [, updateLon] = useContext(LonContext)
 
     /**IDIOMA */
     const [lng,updateLng] = useContext(IdiomContext)
     const [t, i18n] = useTranslation("global")
-    
+  
 
 
     const [btn, setBtn] = useState(true)
@@ -47,6 +47,7 @@ function Header() {
                     updateLon(d.coord.lon)
                     updateCityContext([d])          
                     updateLng(lng)
+                    updateLocation('')
                 })
         }
     }

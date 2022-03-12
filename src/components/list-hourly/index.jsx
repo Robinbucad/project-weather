@@ -14,7 +14,7 @@ import './style.css'
 
 function ListHourly() {
 
-  const { cities, citiesSearch } = useMoreCities()
+  const { cities } = useMoreCities()
 
   const handleIcon = (icon) => {
     switch (icon) {
@@ -51,7 +51,7 @@ function ListHourly() {
 
 
             <div>
-              <p style={{ textAlign: 'center' }}>{`${d.hour}:${d.minutes}0`}</p>
+              <p style={{ textAlign: 'center' }}>{`${new Date(d.dt*1000).getHours()}:${new Date(d.dt*1000).getMinutes()}0`}</p>
             </div>
 
             <div className="img-container-listHour">
@@ -71,11 +71,6 @@ function ListHourly() {
 
 
     </section>
-
-
-
-
-
   )
 }
 
