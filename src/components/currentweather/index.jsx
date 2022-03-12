@@ -17,10 +17,10 @@ function CurrentWeather() {
 
   
   const [t, i18n] = useTranslation("card")
-  const { cityOne } = useOneCity()
   const [unit] = useContext(TemperatureContext)
   const [city ] = useContext(SearchContext)
   const {cities} = useMoreCities()
+  console.log(cities)
 
   const handleBg = (temp) => {
       switch(temp){
@@ -45,6 +45,22 @@ function CurrentWeather() {
       }
   }
 
+  const date = new Date().getHours()
+
+  const handlePos = date => {
+    if(date > 7 &&  date <15 ){
+      return 'sun-sunrise'
+    }else if (date <= 7 && date >= 0){
+      return 'sun-fullMorning'
+    }else if (date >=16 && date <= 19){
+      return 'sunset'
+    }else if(date >= 19 && date <= 24){
+      return 'night'
+    }
+  }
+
+
+
 
 
   return (
@@ -65,7 +81,7 @@ function CurrentWeather() {
                   </div>
 
                   <div>
-                    <Card.Text className="temp-info-current">{e.main.temp} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
+                    <Card.Text className="temp-info-current">{parseInt(e.main.temp)} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
                     <Card.Text className="desc-temp" >{`${e.weather.map(e => e.description.charAt(0).toUpperCase())}${e.weather.map(e => e.description.slice(1))}`}</Card.Text>
                     <div className="min-max">
                       <p className="max-info-current">Max {parseInt(e.main.temp_max)}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
@@ -110,7 +126,7 @@ function CurrentWeather() {
                 </div>
                 <div className="div-opts-current">
                   <p className="name-opts-current">{t("card.text5")}</p>
-                  <p className="value-opts-current">{cityOne.map(e => parseInt(e.main.feels_like))}{unit === 'metric' ? 'ºC' : 'ºF'} </p>
+                  <p className="value-opts-current">{cities.map(e =>parseInt(e.current.feels_like))}{unit === 'metric' ? 'ºC' : 'ºF'} </p>
                 </div>
               </Card.Body>
             </Card>
@@ -119,16 +135,16 @@ function CurrentWeather() {
 
           <Col>
             <Col>
-              <Card style={{ width: '100%', height: '13rem', borderRadius: '12px', display:'flex', justifyContent:'space-between' }}>
+              <Card style={{ width: '100%', height: '13rem', borderRadius: '12px', display:'flex', justifyContent:'space-between',padding:'10px' }}>
 
-                <section style={{display:'flex', flexDirection:'column'}}>
+                <section className="div-pos-sun">
                   <div>
                     <p className="value-opts-current">{t("card.card2")}</p>
                   
                   </div>
 
                   <div className="sun-div">
-                    <img className="sun-status" src={sun} ></img>
+                    <img className={handlePos(date)} src={sun} ></img>
                     <div role='progressbar'>
 
                     </div>
@@ -137,11 +153,11 @@ function CurrentWeather() {
 
                   <section style={{display:'flex', width:'110%', gap:'25px'}}>
                       <div className="div-pos-sun">
-                        <p>{t("card.card4")}</p>
+                        <p>{`${cities.map(e => new Date(e.current.sunrise*1000).getHours())}:${cities.map(e => new Date(e.current.sunrise*1000).getMinutes())}`}</p>
                         <p className="pues-sol">{t("card.card3")}</p>
                       </div>
                       <div className="div-pos-sun">
-                        <p>{t("card.card4")}</p>
+                        <p>{`${cities.map(e => new Date(e.current.sunset*1000).getHours())}:${cities.map(e => new Date(e.current.sunset*1000).getMinutes())}`}</p>
                         <p className="pues-sol">{t("card.card5")}</p>
                       </div>
                      

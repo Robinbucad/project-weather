@@ -117,15 +117,8 @@
     -webkit-mask: radial-gradient(at 50% 100%,#0000 64%, #000 0);
 }
 
-.sun-status{
-    position: absolute;
-    z-index: 1;
-    right: 28px;
-    top: 100px;
-}
 
 .sun-div{
-    background-color: yellow;
     display: flex;
     justify-content: center;
 }
@@ -134,9 +127,46 @@
 
 .div-pos-sun > * {
     margin: 0;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .card-body{
     justify-content: space-between;
+}
+
+.div-pos-sun{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*POS SUN*/
+
+.sun-sunrise{
+    position: absolute;
+    z-index:1;
+    left: 45px;
+    top: 62px;
+}
+
+.sun-fullMorning{
+    position: absolute;
+    z-index:1;
+    left: 17px;
+    bottom:70px;
+}
+
+.sunset{
+    position: absolute;
+    z-index:1;
+    left: 85px;
+    bottom: 90px;
+}
+
+.night{
+    position: absolute;
+    z-index:1;
+    left: 95px;
+    bottom: 65px;
 }

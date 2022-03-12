@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap"
 import { Card, ListGroup, ListGroupItem, Row, Col, Button, ButtonGroup } from 'react-bootstrap'
 import './style.css'
 import bicicleta from '../../assets/img/bicicleta.jpg'
-import { useOneCity } from "../../custom-hook/oneCity"
+
 import { usePlaces } from "../../custom-hook/googleApi"
 import { useTranslation } from 'react-i18next'
 import { valenciaSol } from '../../objects/valencia/'
@@ -14,6 +14,8 @@ import { useState } from "react"
 import Slider from "react-slick"
 import { useContext } from "react"
 import { GoogleContext } from "../../context/googleApiContext/google.context"
+import { useMoreCities } from "../../custom-hook/moreCities"
+import { SearchContext } from "../../context/search.context"
 
 
 
@@ -70,8 +72,10 @@ function Activities() {
     }
 
     const [t, i18n] = useTranslation("activities")
-    const { cityOne } = useOneCity()
     const { restaurant } = usePlaces()
+    const [city] = useContext(SearchContext)
+    console.log(city)
+
 
     return (
         <Container className="container-activities" >
@@ -79,7 +83,7 @@ function Activities() {
             <Container >
                 <Row>
                     <Col >
-                        <h2 style={{ display: 'flex', gap: '5px' }} className="title-activities">{t("activities.button7")} <p className="city-title">{cityOne.map(e => e.name)}</p></h2>
+                        <h2 style={{ display: 'flex', gap: '5px',fontSize:'26px', fontWeight:'bold' }} className="title-activities">{t("activities.button7")} <p className="city-title">{city.map(e => e.name)}</p></h2>
                     </Col>
                 </Row>
                 <Row>
@@ -99,7 +103,7 @@ function Activities() {
 
             <Container>
 
-                <Container>
+                <Container style={{background:'red', marginTop:'42px'}}>
                     <Row>
                         <Col lg={8}>{t("activities.button6")}</Col>
                         <Col style={{ display: 'flex', justifyContent: 'space-between' }} lg={2}>

@@ -22,9 +22,10 @@ export const useOneCity = () => {
 
     
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=&lang=${lng}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=1f7689b2591acb5efd5d91b7e124bf44&lang=${lng}`)
         .then(r => r.json())
         .then(d => updateSearchCity([d]))
+        
         
     },[unit,lng,lat,lon])
 
