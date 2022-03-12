@@ -6,6 +6,7 @@ function GoogleProvider({children}){
  
 
     const placeGoogle = useState('')
+   
 
     return(
        <GoogleContext.Provider value={placeGoogle}>

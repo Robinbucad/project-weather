@@ -4,18 +4,21 @@ import { GoogleContext } from "../../context/googleApiContext/google.context"
 import { SearchContext } from "../../context/search.context"
 import { API_KEY } from '../../config.js'
 
+const latLocal = localStorage.getItem('lat')
+const lonLocal = localStorage.getItem('lon')
 export const usePlaces = e => {
 
     const [place, updatePlace] = useState([])
     const [cityContext, setCitycontext] = useContext(SearchContext)
     const [lat] = useContext(LatContext)
     const [lon] = useContext(LonContext)
+
     const [restaurant, updateRestaurant] = useState([])
     const [placeSearch, updatePlaceSearch] = useContext(GoogleContext)
     console.log(placeSearch)
 
     useEffect(() => {
-       fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=1500&type=${placeSearch}&key=$AQUI_API_KEY`)
+       fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=1500&type=${placeSearch}&key=`)
             .then(r => r.json())
             .then(d => {
                 console.log(d)
@@ -25,3 +28,5 @@ export const usePlaces = e => {
 
     return {place, restaurant}
 }
+
+

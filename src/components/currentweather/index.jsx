@@ -20,7 +20,7 @@ function CurrentWeather() {
   const [unit] = useContext(TemperatureContext)
   const [city ] = useContext(SearchContext)
   const {cities} = useMoreCities()
-  console.log(cities)
+
   const { cityOne } = useOneCity()
   console.log(cityOne)
 
@@ -28,22 +28,22 @@ function CurrentWeather() {
       switch(temp){
         case '01d': return 'img-temp';
         case '01n': return 'img-night';
-        case '02d': return 'img-temp';
-        case '02n': return 'img-temp';
-        case '03d': return 'img-temp';
-        case '03n': return 'img-temp';
-        case '04n': return 'img-rainy';
-        case '04d': return 'img-rainy';
-        case '09d': return 'img-temp';
-        case '09n': return 'img-temp';
-        case '10d': return 'img-temp';
-        case '10n': return 'img-temp';
-        case '11d': return 'img-temp';
-        case '11n': return 'img-temp';
-        case '13d': return 'img-temp';
-        case '13n': return 'img-temp';
-        case '50d': return 'img-temp';
-        case '50n': return 'img-temp'
+        case '02d': return 'img-cloudy';
+        case '02n': return 'img-cloudy';
+        case '03d': return 'img-cloudy';
+        case '03n': return 'img-cloudy';
+        case '04n': return 'img-cloudy';
+        case '04d': return 'img-cloudy';
+        case '09d': return 'img-rainy';
+        case '09n': return 'img-rainy';
+        case '10d': return 'img-rainy';
+        case '10n': return 'img-rainy';
+        case '11d': return 'img-rainy';
+        case '11n': return 'img-rainy';
+        case '13d': return 'img-rainy';
+        case '13n': return 'img-rainy';
+        case '50d': return 'img-cloudy';
+        case '50n': return 'img-cloudy'
       }
   }
 
@@ -72,7 +72,7 @@ function CurrentWeather() {
       <Row>
    
         <Row style={{ marginBottom: '2rem' }}>
-          {city.length===0 ? <h1>Cargando</h1> : city.map((e,i) => (
+        {city.length===0 ? <h1>Cargando</h1> : city.map((e,i) => (
             <Col key={i} lg={12}>
               <Card border="primary" style={{ width: '100%', height: '23rem', borderRadius: '12px', border: 'none', color: 'white' }} className={e.weather.map(d => handleBg(d.icon) )}>
 
@@ -95,8 +95,8 @@ function CurrentWeather() {
               </Card>
               
             </Col>
-          ))}
-
+        ))
+}
         </Row>
 
         <Row>
@@ -107,7 +107,7 @@ function CurrentWeather() {
 
         <Row>
           <Col>
-            <Card style={{ width: '105%', height: '13rem', borderRadius: '12px' }}>
+            <Card style={{ width: '99%', height: '13rem', borderRadius: '12px' }}>
 
               <Card.Body>
                 <div className="div-opts-current">
@@ -124,7 +124,7 @@ function CurrentWeather() {
                 </div>
                 <div className="div-opts-current">
                   <p className="name-opts-current">{t("card.text4")}</p>
-                  <p className="value-opts-current">{cities.map(e => e.daily[0].wind_speed)}</p>
+                  <p className="value-opts-current">{cityOne.map(e => e.visibility/1000)}Km</p>
                 </div>
                 <div className="div-opts-current">
                   <p className="name-opts-current">{t("card.text5")}</p>
@@ -137,7 +137,7 @@ function CurrentWeather() {
 
           <Col>
             <Col>
-              <Card style={{ width: '100%', height: '13rem', borderRadius: '12px', display:'flex', justifyContent:'space-between',padding:'10px' }}>
+              <Card style={{ width: '99%', height: '13rem', borderRadius: '12px', display:'flex', padding:'10px', justifyContent:'space-between' }}>
 
                 <section className="div-pos-sun">
                   <div>
@@ -153,7 +153,7 @@ function CurrentWeather() {
                   </div>
 
 
-                  <section style={{display:'flex', width:'110%', gap:'25px'}}>
+                  <section style={{display:'flex', gap:'5px'}}>
                       <div className="div-pos-sun">
                         <p>{`${cities.map(e => new Date(e.current.sunrise*1000).getHours())}:${cities.map(e => new Date(e.current.sunrise*1000).getMinutes())}`}</p>
                         <p className="pues-sol">{t("card.card3")}</p>
