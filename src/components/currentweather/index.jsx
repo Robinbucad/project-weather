@@ -146,7 +146,7 @@ function CurrentWeather() {
                   </div>
 
                   <div className="sun-div">
-                    <img className={handlePos(12)} src={sun} ></img>
+                    <img className={handlePos(date)} src={sun} ></img>
                     <div role='progressbar'>
 
                     </div>
