@@ -21,6 +21,8 @@ function CurrentWeather() {
   const [city ] = useContext(SearchContext)
   const {cities} = useMoreCities()
   console.log(cities)
+  const { cityOne } = useOneCity()
+  console.log(cityOne)
 
   const handleBg = (temp) => {
       switch(temp){

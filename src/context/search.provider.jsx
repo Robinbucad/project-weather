@@ -7,6 +7,7 @@ function SearchProvider({ children }) {
 
     const city = useState([])
     
+        
     return (
         <SearchContext.Provider value={city}>
             
