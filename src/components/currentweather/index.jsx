@@ -6,8 +6,6 @@ import { Card } from 'react-bootstrap'
 import './style.css'
 import ListHourly from "../list-hourly"
 import { useMoreCities } from "../../custom-hook/moreCities"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import sun from '../../assets/img/sun.png'
 import { useTranslation } from 'react-i18next'
 import { SearchContext } from "../../context/search.context"
