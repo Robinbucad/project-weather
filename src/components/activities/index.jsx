@@ -5,7 +5,7 @@ import bicicleta from '../../assets/img/bicicleta.jpg'
 
 import { usePlaces } from "../../custom-hook/googleApi"
 import { useTranslation } from 'react-i18next'
-import { valenciaSol } from '../../objects/valencia/'
+import { valenciaSol, valenciaNublado } from '../../objects/valencia/'
 import valenciaSol1 from '../../assets/img/valencia/valenciaSol1.svg'
 import valencia2Sol from '../../assets/img/valencia/valenciaSol2.svg'
 import valenciaSol3 from '../../assets/img/valencia/valenciaSol3.svg'
@@ -13,6 +13,15 @@ import valenciaSol4 from '../../assets/img/valencia/valenciaSol4.svg'
 import valenciaSol5 from '../../assets/img/valencia/valenciaSol5.svg'
 import valenciaSol6 from '../../assets/img/valencia/valenciaSol6.svg'
 import valenciaSol7 from '../../assets/img/valencia/valenciaSol7.svg'
+import valenciaSol8 from '../../assets/img/valencia/valenciaSol8.svg'
+
+import valenciaNub from '../../assets/img/valencia/valenciaNub.svg'
+import valenciaNub2 from '../../assets/img/valencia/valenciaNub2.svg'
+import valenciaNub3 from '../../assets/img/valencia/valenciaNub3.svg'
+import valenciaNub4 from '../../assets/img/valencia/valenciaNub4.svg'
+import valenciaNub5 from '../../assets/img/valencia/valenciaNub5.svg'
+import valenciaNub6 from '../../assets/img/valencia/valenciaNub6.svg'
+import valenciaNub7 from '../../assets/img/valencia/valenciaNub7.svg'
 import { useState } from "react"
 import Slider from "react-slick"
 import { useContext } from "react"
@@ -29,6 +38,7 @@ function Activities() {
 
     const [place, updatePlace] = useContext(GoogleContext)
     const [valencia, updateValencia] = useState(valenciaSol)
+    const [valenNub, updateValenciaNub] = useState()
 
     const handleImgAct = (img) => {
         switch (img) {
@@ -39,11 +49,21 @@ function Activities() {
             case 'valenciaSol5': return valenciaSol5
             case 'valenciaSol6': return valenciaSol6
             case 'valenciaSol7': return valenciaSol7
-            
+            case 'valenciaSol8': return valenciaSol8
+
+            case 'valenciaNub': return valenciaNub 
+            case 'valenciaNub2': return valenciaNub2
+            case 'valenciaNub3': return valenciaNub3
+            case 'valenciaNub4': return valenciaNub4
+            case 'valenciaNub5': return valenciaNub5
+            case 'valenciaNub6': return valenciaNub6
+            case 'valenciaNub7': return valenciaNub7
+
         }
     }
 
-    console.log(valencia)
+   
+
 
     const settings = {
         dots: true,
@@ -83,7 +103,7 @@ function Activities() {
     const [t, i18n] = useTranslation("activities")
     const { restaurant } = usePlaces()
     const [city] = useContext(SearchContext)
-    console.log(city)
+    console.log(restaurant)
 
 
     return (
@@ -124,26 +144,19 @@ function Activities() {
                 <Row >
                     <Col lg={12}>
                         <Slider {...settings}>
-                            {valencia.map(e => (
+                        {restaurant.map(e => e.results.map(r => (
                                 <article >
                                     <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
-                                        <img src={handleImgAct(e.img)}></img>
+                                        <Card.Img variant="top" className="img-acti" src={bicicleta} />
                                     </Card>
                                     <footer className="footer-card">
-                                     
-                                           
-                                            <p>{e.res}</p>
-                                        
-
-
-
-                                        <p>{e.desc}</p>
-                                        <p>{e.price}</p>
-
-
+                                        <p>{r.rating}</p>
+                                        <p>{r.name}</p>
+                                        <p>{r.user_ratings_total}</p>
+                                        <p>{r.price_level}</p>
                                     </footer>
                                 </article>
-                            ))}
+                            )))}
                         </Slider>
                     </Col>
                 </Row>
@@ -173,3 +186,29 @@ export default Activities
                             )))}
  */
 
+/**
+ *  {
+                               
+                                
+                                valencia.map(e => (
+                                <article >
+                                    <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
+                                        <img src={handleImgAct(e.img)}></img>
+                                    </Card>
+                                    <footer className="footer-card">
+                                     
+                                           
+                                            <p>{e.res}</p>
+                                        
+
+
+
+                                        <p>{e.desc}</p>
+                                        <p>{e.price}</p>
+
+
+                                    </footer>
+                                </article>
+                            ))
+                            }
+ */
