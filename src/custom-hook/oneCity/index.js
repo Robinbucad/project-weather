@@ -24,7 +24,11 @@ export const useOneCity = () => {
 
     
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=&lang=${lng}`)
+
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key3}&lang=${lng}`)
+=======
+
+
         .then(r => r.json())
         .then(d => {
             updatePlace('restaurant')
