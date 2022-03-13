@@ -18,7 +18,7 @@ import card_es from './translation/es/card.json'
 import card_en from './translation/en/card.json'
 import i18next from 'i18next'
 import { I18nextProvider } from 'react-i18next'
-
+import TemperatureProvider from './context/temperature.context.jsx'
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -35,7 +35,7 @@ i18next.init({
       activities: activities_en,
       card: card_en
     },
-    
+
   },
 })
 
@@ -44,15 +44,16 @@ i18next.init({
 ReactDOM.render(
   <React.StrictMode>
     <CoordsProvider>
+      <TemperatureProvider>
+        < I18nextProvider i18n={i18next}>
+          <GoogleProvider>
+            <SearchProvider>
+              <App />
+            </SearchProvider>
+          </GoogleProvider>
+        </ I18nextProvider>
+      </TemperatureProvider>
 
-
-      < I18nextProvider i18n={i18next}>
-        <GoogleProvider>
-          <SearchProvider>
-            <App />
-          </SearchProvider>
-        </GoogleProvider>
-      </ I18nextProvider>
     </CoordsProvider>
 
 

@@ -219,6 +219,13 @@ function Activities() {
     const handleimgCLick = e => {
       
     }
+//let random = Math.floor(Math.random() * tetrominos.length) 
+   
+
+    const handleRandomImg = img => {
+     
+    }
+
 
     return (
         <Container className="container-activities" >
@@ -288,7 +295,7 @@ function Activities() {
                                     </footer>
                                 </article>
                                 ))
-                            ) : console.log('no')}
+                            ) : ''}
 
                             {veriSol && verifyVal === true ? (
                                 valencia.map(e => (
@@ -304,7 +311,7 @@ function Activities() {
                                     </article>
                                 ))
 
-                            ) : console.log('no')}
+                            ) : ''}
 
                             {veriSol && verifyMad === true ? (
                                 madrid.map(e => (
@@ -320,7 +327,7 @@ function Activities() {
                                     </article>
                                 ))
 
-                            ) : console.log('no')}
+                            ) : ''}
 
                             {veriNub && verifyMad === true ? (
                                 madNub.map(e => (
@@ -336,7 +343,7 @@ function Activities() {
                                     </article>
                                 ))
 
-                            ) : console.log('no')}
+                            ) : ''}
 
                             {veriRain && verifyMad === true ? (
                                 madRain.map(e => (
@@ -352,11 +359,12 @@ function Activities() {
                                 </article>
                                 ))
 
-                            ) : console.log('no')}
+                            ) : ''}
                             {restaurant.map(e => e.results.map(r => (
                                 <article >
                                     <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
-                                        <Card.Img variant="top" className="img-acti" src={bicicleta} />
+                                        <Card.Img variant="top" className="img-acti"  />
+                                    
                                     </Card>
                                     <footer className="footer-card">
                                         <p>{r.rating}</p>

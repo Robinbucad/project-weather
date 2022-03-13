@@ -18,8 +18,8 @@ function Header() {
     const [, updateCityContext] = useContext(SearchContext)
     
     /**UPDATE COORDS CONTEXT */
-    const [,updateLat] = useContext(LatContext)
-    const [, updateLon] = useContext(LonContext)
+    const [lat,updateLat] = useContext(LatContext)
+    const [lon, updateLon] = useContext(LonContext)
 
     /**IDIOMA */
     const [lng,updateLng] = useContext(IdiomContext)
@@ -45,8 +45,7 @@ function Header() {
                 .then(d => {
                     updateLat(d.coord.lat)
                     updateLon(d.coord.lon)
-                    updateCityContext([d])          
-                   
+                    updateCityContext([d])    
                     updateLocation('')
                 })
         }

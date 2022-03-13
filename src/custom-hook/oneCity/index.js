@@ -16,12 +16,16 @@ export const useOneCity = () => {
     const [city, updateSearchCity] = useContext(SearchContext)
     const [lng,updateLng] = useContext(IdiomContext)
     const [placeSearch,updatePlace] = useContext(GoogleContext)
-
-
     
+    console.log(`lat ${lat} lon ${lon}`)
+
+    console.log(city.map(e => e.coord.lon))
+
     useEffect(() => {
 
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key}&lang=${lng}`)
+        
+
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key2}&lang=es`)
 
 
 
@@ -29,12 +33,12 @@ export const useOneCity = () => {
         .then(d => {
             updatePlace('restaurant')
             updateCity([d])
-            console.log(city)
             updateSearchCity([d])
+            console.log(d)
         })
         
         
-    },[unit,lat,lng,lon])
+    },[unit])
 
 
     
