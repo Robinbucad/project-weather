@@ -25,7 +25,7 @@ export const useOneCity = () => {
 
         
 
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key2}&lang=es`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=5752baf6201822d655e5282627caa619&lang=es`)
 
 
 
@@ -38,7 +38,7 @@ export const useOneCity = () => {
         })
         
         
-    },[unit])
+    },[unit,lat])
 
 
     

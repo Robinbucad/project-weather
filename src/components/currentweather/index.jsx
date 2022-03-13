@@ -20,7 +20,7 @@ function CurrentWeather() {
   const {cities} = useMoreCities()
 
   const { cityOne } = useOneCity()
-
+  console.log(cities)
 
   const handleBg = (temp) => {
       switch(temp){

@@ -16,7 +16,7 @@ export const useMoreCities = () => {
     const [placeSearch, updatePlaces] = useContext(GoogleContext)
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&appid=${API_KEY.key2}&lang=es}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&appid=5752baf6201822d655e5282627caa619&lang=es}`)
             .then(r => r.json())
             .then(d =>{
                 updateCities([d])
