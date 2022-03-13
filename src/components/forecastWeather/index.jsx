@@ -17,11 +17,8 @@ import { useState } from "react"
 
 
 function ForecastWeather() {
-    const [show, setShow] = useState(false);
-
 
     const { cities } = useMoreCities()
-    const [unit] = useContext(TemperatureContext)
 
     const handleIcon = (icon) => {
         switch (icon) {

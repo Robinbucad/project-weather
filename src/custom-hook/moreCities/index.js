@@ -8,23 +8,22 @@ import { GoogleContext } from "../../context/googleApiContext/google.context.js"
 
 
 export const useMoreCities = () => {
-    const [unit] = useContext(TemperatureContext)
-    const [lat] = useContext(LatContext)
-    const [long] = useContext(LonContext)
+    const [unit,updateUnit] = useContext(TemperatureContext)
+    const [lat,updateLat] = useContext(LatContext)
+    const [long,updateLong] = useContext(LonContext)
     const [cities, updateCities] = useState([])
-    const [lng] = useContext(IdiomContext)
+    const [lng,updateLng] = useContext(IdiomContext)
     const [placeSearch, updatePlaces] = useContext(GoogleContext)
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&appid=${API_KEY.key2}&lang=${lng}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=${unit}&appid=${API_KEY.key}&lang=${lng}`)
             .then(r => r.json())
             .then(d =>{
-                updatePlaces('restaurant')
                 updateCities([d])
             }  )
             
 
-    }, [long, lat, unit])
-
+    }, [long,unit, lat,lng])
+    
     return {  cities}
 }

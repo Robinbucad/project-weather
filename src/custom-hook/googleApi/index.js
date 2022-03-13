@@ -4,15 +4,14 @@ import { GoogleContext } from "../../context/googleApiContext/google.context"
 import { SearchContext } from "../../context/search.context"
 import { API_KEY } from '../../config.js'
 
-const latLocal = localStorage.getItem('lat')
-const lonLocal = localStorage.getItem('lon')
+
 export const usePlaces = e => {
 
     const [place, updatePlace] = useState([])
     const [cityContext, setCitycontext] = useContext(SearchContext)
     const [lat] = useContext(LatContext)
     const [lon] = useContext(LonContext)
-
+    
     const [restaurant, updateRestaurant] = useState([])
     const [placeSearch, updatePlaceSearch] = useContext(GoogleContext)
     console.log(placeSearch)

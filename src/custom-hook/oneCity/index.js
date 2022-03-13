@@ -6,11 +6,6 @@ import { GoogleContext } from "../../context/googleApiContext/google.context.js"
 import { SearchContext } from "../../context/search.context.js"
 import { IdiomContext, TemperatureContext } from "../../context/temperature.context.js"
 
-const latLoc = localStorage.getItem('lat')
-const lonLoc = localStorage.getItem('lon')
-
-
-
 
 export const useOneCity = () => {
 
@@ -22,10 +17,11 @@ export const useOneCity = () => {
     const [lng,updateLng] = useContext(IdiomContext)
     const [placeSearch,updatePlace] = useContext(GoogleContext)
 
+
     
     useEffect(() => {
 
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key3}&lang=${lng}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${API_KEY.key}&lang=${lng}`)
 
 
 
@@ -33,15 +29,16 @@ export const useOneCity = () => {
         .then(d => {
             updatePlace('restaurant')
             updateCity([d])
+            console.log(city)
             updateSearchCity([d])
         })
         
         
-    },[unit,lat,lon,lng])
+    },[unit,lat,lng,lon])
 
 
     
-    return {cityOne, updateCity}
+    return {cityOne,lng, updateCity}
 
 }
 

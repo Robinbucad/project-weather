@@ -8,7 +8,7 @@ import { SearchContext } from '../../context/search.context'
 import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
 import { LatContext, LonContext } from '../../context/geocoding/coords.context'
-import placeholderIcon from '../../assets/img/placeholderIcon.svg'
+import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
 
 
 function Header() {
@@ -46,7 +46,7 @@ function Header() {
                     updateLat(d.coord.lat)
                     updateLon(d.coord.lon)
                     updateCityContext([d])          
-                    updateLng(lng)
+                   
                     updateLocation('')
                 })
         }
@@ -61,6 +61,8 @@ function Header() {
             updateLng("es")
         }
     }
+
+  
 
     return (
 
@@ -82,10 +84,15 @@ function Header() {
                         onChange={e => updateLocation(e.target.value)}
                         onKeyPress={searchLoc}
                     />
+                    
                 </Col>
 
                 <Col lg={1}  >
+                    
                     <div className='div-celsius'>
+                        <button  className='placeholder-icon'>
+                           <img className='img-placeholder' src={iconPlaceholder}></img>
+                        </button>
                         <button onClick={handleClick} className={btn === true ? 'celsius' : 'fahrenheit'}>
                             <p>ºC</p>
                         </button>
@@ -99,8 +106,8 @@ function Header() {
                     <div>
                         <img src={mundo} />
                         <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none' }} >
-                            <option value='es'>Es</option>
-                            <option value='en'>En</option>
+                            <option value='es'>ES</option>
+                            <option value='en'>EN</option>
                         </select>
                        
                     </div>
