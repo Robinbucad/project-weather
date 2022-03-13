@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { Container, Row, Col, Card } from "react-bootstrap"
-import { TemperatureContext } from "../../context/temperature.context"
+import { IdiomContext, TemperatureContext } from "../../context/temperature.context"
 import { useMoreCities } from "../../custom-hook/moreCities"
 import sun from '../../assets/img/sunSmall.png'
 import rainSmall from '../../assets/img/icon-weather/rainy-medium.png'
@@ -19,6 +19,7 @@ import { useState } from "react"
 function ForecastWeather() {
 
     const { cities } = useMoreCities()
+    const [lng] = useContext(IdiomContext)
 
     const handleIcon = (icon) => {
         switch (icon) {
@@ -59,7 +60,7 @@ function ForecastWeather() {
                             
                              <Card.Body>
                                  <div className="div-date-forecast">
-                                <p>{`${new Date(r.dt*1000).toLocaleDateString("eng",{weekday:"long"})}`}</p>
+                                <p>{`${new Date(r.dt*1000).toLocaleDateString(lng,{weekday:"long"})}`}</p>
                                </div>
                                                              
                                 <Card.Img variant="top" src={r.weather.map(n => handleIcon(n.icon))} />

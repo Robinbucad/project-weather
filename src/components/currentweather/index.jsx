@@ -20,7 +20,8 @@ function CurrentWeather() {
   const {cities} = useMoreCities()
 
   const { cityOne } = useOneCity()
-  console.log(cities)
+
+  console.log(city)
 
   const handleBg = (temp) => {
       switch(temp){
@@ -153,7 +154,7 @@ function CurrentWeather() {
                   </div>
 
 
-                  <section style={{display:'flex', gap:'5px'}}>
+                  <section style={{display:'flex', gap:'5px', justifyContent:'space-between'}}>
                       <div className="div-pos-sun">
                         <p>{`${cities?.map(e => new Date(e.current.sunrise*1000).getHours())}:${cities.map(e => new Date(e.current.sunrise*1000).getMinutes())}`}</p>
                         <p className="pues-sol">{t("card.card3")}</p>

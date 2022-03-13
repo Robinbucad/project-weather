@@ -207,25 +207,35 @@ function Activities() {
     const [t] = useTranslation("activities")
     const { restaurant } = usePlaces()
     const [city] = useContext(SearchContext)
-    const verifyVal = search.some(e => e.name === 'Valencia' && 'Urda' )
-    const verifyMad = search.some(e => e.name === 'Madrid' && 'Sol')
-   
+    const verifyVal = search.some(e => e.name.includes('Valencia'))
+    const verifyMad = search.some(e => e.name.includes('Sol') || e.name.includes('Madrid') )
+    console.log(verifyMad)
 
-    const veriNub = city.some(e => e.weather.some(r => r.description.includes('nub')))
+    const veriNub = city.some(e => e.weather.some(r => r.description.includes('cl' )))
     const veriRain = city.some(e => e.weather.some(r => r.description.includes('llu')))
-    const veriSol = city.some(e => e.weather.some(r => r.description.includes('cl')))
+    const veriSol = city.some(e => e.weather.some(r => r.description.includes('cle', 'cli')))
 
 
     const handleimgCLick = e => {
       
     }
-//let random = Math.floor(Math.random() * tetrominos.length) 
+
    
 
-    const handleRandomImg = img => {
-     
+ 
+   
+
+    function handleImg(ram){
+        switch(ram){
+            case 'restaurant': return valenciaNub6;
+            case 'museum': return madridRain1
+            case 'night_club': return madridRain5
+            case 'outdoors': return madridSol7
+            case 'gym': return valenciaRain6
+        }
     }
 
+    handleImg(place)
 
     return (
         <Container className="container-activities" >
@@ -268,7 +278,7 @@ function Activities() {
 
 
                             {veriNub  && verifyVal === true ? (
-                                valenNub.map(e => (
+                                valenNub?.map(e => (
                                     <article >
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
@@ -283,7 +293,7 @@ function Activities() {
                             ) : console.log('no')}
 
                             {veriRain && verifyVal === true ? (
-                                valenRain.map(e => (
+                                valenRain?.map(e => (
                                     <article >
                                     <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                         <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
@@ -298,7 +308,7 @@ function Activities() {
                             ) : ''}
 
                             {veriSol && verifyVal === true ? (
-                                valencia.map(e => (
+                                valencia?.map(e => (
                                     <article >
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
@@ -313,8 +323,8 @@ function Activities() {
 
                             ) : ''}
 
-                            {veriSol && verifyMad === true ? (
-                                madrid.map(e => (
+                            {veriSol && verifyMad  === true ? (
+                                madrid?.map(e => (
                                     <article >
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
@@ -330,7 +340,7 @@ function Activities() {
                             ) : ''}
 
                             {veriNub && verifyMad === true ? (
-                                madNub.map(e => (
+                                madNub?.map(e => (
                                     <article >
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
@@ -346,7 +356,7 @@ function Activities() {
                             ) : ''}
 
                             {veriRain && verifyMad === true ? (
-                                madRain.map(e => (
+                                madRain?.map(e => (
                                     <article >
                                     <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                         <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
@@ -363,7 +373,7 @@ function Activities() {
                             {restaurant.map(e => e.results.map(r => (
                                 <article >
                                     <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
-                                        <Card.Img variant="top" className="img-acti"  />
+                                        <Card.Img variant="top" className="img-acti" src={handleImg(place)} />
                                     
                                     </Card>
                                     <footer className="footer-card">

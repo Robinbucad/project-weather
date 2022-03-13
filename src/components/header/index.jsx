@@ -7,7 +7,7 @@ import { API_KEY } from '../../config.js'
 import { SearchContext } from '../../context/search.context'
 import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
-import { LatContext, LonContext } from '../../context/geocoding/coords.context'
+import { CoordContext} from '../../context/geocoding/coords.context'
 import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
 
 
@@ -18,14 +18,13 @@ function Header() {
     const [, updateCityContext] = useContext(SearchContext)
     
     /**UPDATE COORDS CONTEXT */
-    const [lat,updateLat] = useContext(LatContext)
-    const [lon, updateLon] = useContext(LonContext)
+    const [lat, updatelat, lon, updateLon ] = useContext(CoordContext)
 
     /**IDIOMA */
     const [lng,updateLng] = useContext(IdiomContext)
     const [t, i18n] = useTranslation("global")
   
-
+    
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -37,19 +36,21 @@ function Header() {
             updateUnit('metric')
         }
     }
-
+// AYER ESTUVE PROBANDO &units=${unit}
     const searchLoc = e => {
         if (e.key === 'Enter') {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${API_KEY.key2}&lang=${lng}`)
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=1a1e6b25ceb11d049c296f3b556eb6d6&units=${unit}&lang=en}`)
                 .then(r => r.json())
                 .then(d => {
-                    updateLat(d.coord.lat)
+                    console.log(d)
+                    updatelat(d.coord.lat)
                     updateLon(d.coord.lon)
                     updateCityContext([d])    
                     updateLocation('')
                 })
         }
     }
+
 
     const handleChange = e => {
         if(e.target.value === "en"){

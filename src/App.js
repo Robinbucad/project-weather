@@ -8,9 +8,7 @@ import HomePage from './components/home/';
 
 
 function App() {
-  const geolo = useGeoLocation()
 
-  console.log(geolo)
 
   return (
 

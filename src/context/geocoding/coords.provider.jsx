@@ -1,22 +1,21 @@
 import { useState } from "react";
-import { LatContext, LonContext } from "./coords.context";
+import { CoordContext} from "./coords.context.js";
 
 const latLoc = localStorage.getItem('lat')
 const lonLoc = localStorage.getItem('lon')
 
 function CoordsProvider({children}){
 
-    const lat  = useState(latLoc)
-    const long = useState(lonLoc)
-
+    const [lat, updatelat] = useState('')
+    const [lon, updateLon] = useState('')
 
 
     return(
-        <LatContext.Provider value={lat}>
-            <LonContext.Provider value={long}>
+        <CoordContext.Provider value= {[lat, updatelat, lon, updateLon ]} >
+      
                 {children}
-            </LonContext.Provider>
-        </LatContext.Provider>
+       
+        </CoordContext.Provider>
     )
 }
 
