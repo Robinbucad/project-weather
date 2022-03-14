@@ -2,7 +2,7 @@
   "name": "project-weather",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://robinbucad.github.io/project-weather",
+  "homepage": "http://Robinbucad.github.io/project-weather",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
