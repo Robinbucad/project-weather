@@ -21,7 +21,7 @@ function CurrentWeather() {
   const { cityOne} = useOneCity()
 
   const [city] = useContext(SearchContext)
-  console.log(cityOne)
+
 
   const handleBg = (temp) => {
       switch(temp){
@@ -62,7 +62,7 @@ function CurrentWeather() {
     }
   }
   
-  console.log(cityOne)
+
 
   return (
     <Container style={{ height: '90vh', }} >

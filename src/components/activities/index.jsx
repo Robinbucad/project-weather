@@ -233,7 +233,7 @@ function Activities() {
         }
     }
 
-    console.log(cityOne)
+   
 
     return (
         <Container className="container-activities" >
@@ -288,7 +288,7 @@ function Activities() {
                                         </footer>
                                     </article>
                                 ))
-                            ) : console.log('no')}
+                            ) : ''}
 
                             {veriRain && verifyVal === true ? (
                                 valenRain?.map(e => (
