@@ -11,6 +11,7 @@ import { CoordContext} from '../../context/geocoding/coords.context'
 import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
 import profile from '../../assets/img/profile.png'
 import menu from '../../assets/img/menu.png'
+import { useOneCity } from '../../custom-hook/oneCity'
 
 
 function Header() {
@@ -26,7 +27,8 @@ function Header() {
     const [lng,updateLng] = useContext(IdiomContext)
     const [t, i18n] = useTranslation("global")
   
-    
+
+
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -41,7 +43,7 @@ function Header() {
 
     const  searchLoc = async e => {
         if (e.key === 'Enter') {
-            const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location},ES&units=${unit}&appid=${API_KEY.key10}&lang=sp`)
+            const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location},ES&units=${unit}&appid=${API_KEY.key10}&lang=es`)
             const d = await r.json()
             updateCityContext([d])
             updatelat(d.coord.lat)
