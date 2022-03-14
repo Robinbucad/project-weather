@@ -105,7 +105,7 @@ function Header() {
                 <Col lg={1}>
                     <div>
                         <img src={mundo} />
-                        <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none' }} >
+                        <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none', style:'none' }} >
                             <option value='es'>ES</option>
                             <option value='en'>EN</option>
                         </select>
