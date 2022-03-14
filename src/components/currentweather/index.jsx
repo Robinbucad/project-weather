@@ -21,8 +21,7 @@ function CurrentWeather() {
   const { cityOne} = useOneCity()
 
   const [city] = useContext(SearchContext)
-    console.log(city === [''])
-    console.log(city.length)
+  console.log(cityOne)
 
   const handleBg = (temp) => {
       switch(temp){
@@ -62,7 +61,8 @@ function CurrentWeather() {
       return console.log('err')
     }
   }
-
+  
+  console.log(cityOne)
 
   return (
     <Container style={{ height: '90vh', }} >
@@ -82,7 +82,7 @@ function CurrentWeather() {
                   </div>
 
                   <div>
-                    <Card.Text className="temp-info-current">{parseInt(e.main.temp)} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
+                    <Card.Text className="temp-info-current">{parseInt(cityOne.map(e => e.main.temp))} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
                     <Card.Text className="desc-temp" >{`${e.weather.map(e => e.description.charAt(0).toUpperCase())}${e.weather?.map(e => e.description.slice(1))}`}</Card.Text>
                     <div className="min-max">
                       <p className="max-info-current">Max {parseInt(e.main.temp_max)}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
@@ -106,11 +106,11 @@ function CurrentWeather() {
         </div>
 
         <div>
-          <Card.Text className="temp-info-current">{parseInt(e.main.temp)} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
+          <Card.Text className="temp-info-current">{parseInt(cityOne.map(e => e.main.temp))} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
           <Card.Text className="desc-temp" >{`${e.weather.map(e => e.description.charAt(0).toUpperCase())}${e.weather?.map(e => e.description.slice(1))}`}</Card.Text>
           <div className="min-max">
-            <p className="max-info-current">Max {parseInt(e.main.temp_max)}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
-            <p className="max-info-current">Min {parseInt(e.main.temp_min)}{unit === 'metric' ? 'ºC' : 'ºF'}</p>
+            <p className="max-info-current">Max {parseInt(cityOne.map(e => e.main.temp_max))}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
+            <p className="max-info-current">Min {parseInt(cityOne.map(e => e.main.temp_min))}{unit === 'metric' ? 'ºC' : 'ºF'}</p>
           </div>
         </div>
 
