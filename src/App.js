@@ -9,7 +9,7 @@ import HomePage from './components/home/';
 
 function App() {
 
-
+console.log('hola')
   return (
 
     <div className="App">
