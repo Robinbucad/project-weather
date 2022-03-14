@@ -18,18 +18,20 @@ export const useOneCity = () => {
     const [lng,updateLng] = useContext(IdiomContext)
     const [placeSearch,updatePlace] = useContext(GoogleContext)
     const coord = useGeoLocation()
+    const [met, setMet] = useState([])
 
     console.log(lng)
   
  
     useEffect(() => {
         
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=049f94146cf33b0b409eda3fe971bb47&lang=es}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key3}&lang=es}`)
 
         .then(r => r.json())
         .then(d => {
             updatePlace('restaurant')
-            updateCity([d])       
+            updateCity([d])   
+            
         })
         
         

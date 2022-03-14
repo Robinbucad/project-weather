@@ -9,6 +9,9 @@ import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
 import { CoordContext} from '../../context/geocoding/coords.context'
 import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
+import profile from '../../assets/img/profile.png'
+import menu from '../../assets/img/menu.png'
+import { useOneCity } from '../../custom-hook/oneCity'
 
 
 function Header() {
@@ -38,19 +41,14 @@ function Header() {
         }
     }
 
-    const searchLoc = e => {
+    const searchLoc = async e => {
         if (e.key === 'Enter') {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=049f94146cf33b0b409eda3fe971bb47&lang=${lng}`)
-                .then(r => r.json())
-                .then(d => {
-                    updatelat(d.coord.lat)
-                    updateLon(d.coord.lon)
-
-            
-                    updateCityContext([d])          
-                   
-                    updateLocation('')
-                })
+            const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location},ES&units=${unit}&appid=${API_KEY.key10}&lang=es`)
+            const d = await r.json()
+            updateCityContext([d])
+            updatelat(d.coord.lat)
+            updateLon(d.coord.lon)
+            updateLocation('')        
         }
     }
 

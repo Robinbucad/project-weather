@@ -84,6 +84,7 @@ function Activities() {
     const [madNub, updateMadNub] = useState(madridNublado)
     const [madRain, updateMadRain] = useState(madridRain)
 
+    const {cityOne} = useOneCity()
 
     const handleImgAct = (img) => {
         switch (img) {
@@ -232,7 +233,7 @@ function Activities() {
         }
     }
 
-    console.log(handleImg(place))
+    console.log(cityOne)
 
     return (
         <Container className="container-activities" >
@@ -240,7 +241,7 @@ function Activities() {
             <Container >
                 <Row>
                     <Col >
-                        <h2 style={{ display: 'flex', gap: '5px', fontSize: '26px', fontWeight: 'bold' }} className="title-activities">{t("activities.button7")} <p className="city-title">{city.map(e => e.name)}</p></h2>
+                        <h2 style={{ display: 'flex', gap: '5px', fontSize: '26px', fontWeight: 'bold' }} className="title-activities">{t("activities.button7")} <p className="city-title">{city.length===0 ? cityOne.map(e => e.name) : city.map(e => e.name)}</p></h2>
                     </Col>
                 </Row>
                 <Row>
