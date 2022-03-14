@@ -9,8 +9,8 @@ import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
 import { CoordContext} from '../../context/geocoding/coords.context'
 import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
-import profile from '../../assets/img/profile.png'
-import menu from '../../assets/img/menu.png'
+import profile from '../../assets/img/profile.jpg'
+import menu from '../../assets/img/menu.jpg'
 import { useOneCity } from '../../custom-hook/oneCity'
 
 
@@ -103,6 +103,12 @@ function Header() {
 
                 </Col>
                 <Col lg={1}>
+                    
+
+                </Col>
+
+                <Col className='col-idiom' md={{ offset: 2 }}>
+                    <p>Aqui menu</p>
                     <div>
                         <img src={mundo} />
                         <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none' }} >
@@ -111,11 +117,6 @@ function Header() {
                         </select>
                        
                     </div>
-
-                </Col>
-
-                <Col md={{ offset: 2 }}>
-                    <p>Aqui menu</p>
                 </Col>
             </Row>
 
