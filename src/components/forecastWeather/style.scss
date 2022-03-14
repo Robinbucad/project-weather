@@ -1,3 +1,15 @@
+@import '../../scss/style.scss';
+
+
+
+.fore-container{
+
+    .col-feat{
+        display: $displayFlex;
+        gap:$gapFeat;
+        margin-bottom: $marginBotFeat;
+    }
+
 .forecast-min-max{
     display: flex;
     justify-content: space-between;
@@ -27,8 +39,13 @@
 }
 
 .cardForecast:first-child{
-    background-color: #FF385C !important;
+    background-color:$redColor;
     color: white;
+}
+
+.cardForecast{
+     width: $cardFeatWidth;
+    border-radius:$borderRadiusCard
 }
 
 .div-date-forecast{
@@ -36,3 +53,4 @@
     font-weight: bold;
 }
 
+}

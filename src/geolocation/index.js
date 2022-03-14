@@ -1,24 +1,24 @@
-import  {useContext, useState} from 'react'
-import { GoogleContext } from '../context/googleApiContext/google.context'
+import  {useContext, useEffect} from 'react'
+import { CoordContext } from '../context/geocoding/coords.context'
 
-const latLoc = localStorage.getItem('lat')
-const lonLoc = localStorage.getItem('lon')
+
 
 export const useGeoLocation = () => {
 
-    const [lat, updateLat] = useState(latLoc)
-    const [long, updateLon] = useState(lonLoc)
+const [lat, updatelat, lon, updateLon ] = useContext(CoordContext)
 
 
-   navigator.geolocation.getCurrentPosition((function (position) {
-    updateLat(position.coords.latitude)
-    updateLon(position.coords.longitude)
+useEffect(() => {
+    navigator.geolocation.getCurrentPosition((function (position) {
+        localStorage.setItem('lat', position.coords.latitude)
+        localStorage.setItem('lon', position.coords.longitude)
+        updatelat(position.coords.latitude)
+        updateLon(position.coords.longitude)
+    
+        }
+    ))
+},[])
 
-    localStorage.setItem('lat', position.coords.latitude)
-    localStorage.setItem('lon', position.coords.longitude)
-    }
-))
 
-return {lat,long, updateLat, updateLon}
 
 }

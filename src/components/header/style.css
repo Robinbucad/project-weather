@@ -4,6 +4,7 @@
 #inputSearch{
     border-radius: 30px;
     border: 1px lightgray solid;
+    padding: 10px;
 }
 
 .logo-img{
@@ -11,16 +12,11 @@
  
 }
 
-.icon-div-search{
-    background-color: red;
-    position: relative;
-    width: 1px;
-    height: 20px;
-}
+
 
 .celsius{
     background-color: #FF385C;
-    width: 35px;
+    width: 50px;
     height: 35px;
     display: flex;
     justify-content: center;
@@ -43,7 +39,7 @@
 
 .fahrenheit{
     background:none;
-    width: 35px;
+    width: 50px;
     height: 35px;
     display: flex;
     justify-content: space-between;
@@ -62,12 +58,52 @@
 
 .div-celsius{
     display: flex;
-   
-    width: 80px;
+    margin-left: -10px;
+    width: 120px;
     height: 40px;
     border-radius: 30px;
     justify-content: center;
     gap: 5px;
     align-items: center;
 
+}
+
+.placeholder-icon{
+    background-color: #FF385C;
+    position: relative;
+    right: 60px;
+    padding: 8px;
+    border-radius: 50%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    cursor: pointer;
+    border: none;
+}
+
+.img-placeholder{
+    width: 21px;
+}
+
+.menu{
+    width:70px;
+    height: 36px;
+    padding: 10px, 12px, 10px, 12px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 22px;
+    border: 1px solid lightgray;
+    align-items: center;
+}
+
+.menu-img{
+    width: 15px;
+    height: 15px;
+}
+
+.prof-img{
+    width: 25px;
+    height: 25px;
 }

@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { Container, Row, Col,Form} from 'react-bootstrap'
+import { Container, Row, Col,Form, Button} from 'react-bootstrap'
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
 import { IdiomContext, TemperatureContext } from '../../context/temperature.context'
 import './style.css'
@@ -7,25 +7,26 @@ import { API_KEY } from '../../config.js'
 import { SearchContext } from '../../context/search.context'
 import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
-import { LatContext, LonContext } from '../../context/geocoding/coords.context'
-import placeholderIcon from '../../assets/img/placeholderIcon.svg'
+import { CoordContext} from '../../context/geocoding/coords.context'
+import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
+import profile from '../../assets/img/profile.png'
+import menu from '../../assets/img/menu.png'
 
 
 function Header() {
     
     const [unit, updateUnit] = useContext(TemperatureContext)
     const [location, updateLocation] = useState('')
-    const [, updateCityContext] = useContext(SearchContext)
+    const [ city , updateCityContext] = useContext(SearchContext)
     
     /**UPDATE COORDS CONTEXT */
-    const [,updateLat] = useContext(LatContext)
-    const [, updateLon] = useContext(LonContext)
+    const [lat, updatelat, lon, updateLon ] = useContext(CoordContext)
 
     /**IDIOMA */
     const [lng,updateLng] = useContext(IdiomContext)
     const [t, i18n] = useTranslation("global")
   
-
+    
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -38,20 +39,17 @@ function Header() {
         }
     }
 
-    const searchLoc = e => {
+    const  searchLoc = async e => {
         if (e.key === 'Enter') {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${API_KEY.key2}&lang=${lng}`)
-                .then(r => r.json())
-                .then(d => {
-                    updateLat(d.coord.lat)
-                    updateLon(d.coord.lon)
-                    updateCityContext([d])          
-                    updateLng(lng)
-                    updateLocation('')
-                })
+            const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location},ES&units=${unit}&appid=${API_KEY.key10}&lang=sp`)
+            const d = await r.json()
+            updateCityContext([d])
+            updatelat(d.coord.lat)
+            updateLon(d.coord.lon)
+            updateLocation('')        
         }
     }
-
+    
     const handleChange = e => {
         if(e.target.value === "en"){
             i18n.changeLanguage("en")
@@ -61,6 +59,8 @@ function Header() {
             updateLng("es")
         }
     }
+
+  
 
     return (
 
@@ -82,10 +82,15 @@ function Header() {
                         onChange={e => updateLocation(e.target.value)}
                         onKeyPress={searchLoc}
                     />
+                    
                 </Col>
 
                 <Col lg={1}  >
+                    
                     <div className='div-celsius'>
+                        <button  className='placeholder-icon'>
+                           <img className='img-placeholder' src={iconPlaceholder}></img>
+                        </button>
                         <button onClick={handleClick} className={btn === true ? 'celsius' : 'fahrenheit'}>
                             <p>ºC</p>
                         </button>
@@ -96,19 +101,22 @@ function Header() {
 
                 </Col>
                 <Col lg={1}>
-                    <div>
+                
                         <img src={mundo} />
                         <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none' }} >
-                            <option value='es'>Es</option>
-                            <option value='en'>En</option>
+                            <option value='es'>ES</option>
+                            <option value='en'>EN</option>
                         </select>
                        
-                    </div>
+               
 
                 </Col>
 
                 <Col md={{ offset: 2 }}>
-                    <p>Aqui menu</p>
+                    <div className='menu'>
+                        <img className='menu-img' src={menu}></img>
+                        <img className='prof-img' src={profile}></img>
+                    </div>
                 </Col>
             </Row>
 

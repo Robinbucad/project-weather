@@ -29,16 +29,17 @@
 
 .img-temp{
     background:url('../../assets/img/sunset.svg') !important;
+    background-size: cover;
 }
 
 .img-rainy{
     background:url('../../assets/img/ilustracionesClima/rain-couple.jpg');
-    background-size: contain;
+    background-size: cover;
 }
 
 .img-night{
     background:url('../../assets/img/ilustracionesClima/night.jpg');
-    background-size: contain;
+    background-size: cover;
 }
 
 .img-cloudy{
@@ -114,9 +115,9 @@
 [role="progressbar"]{
     content:"";
     position:absolute;
-    top: 50px;
-    width: 70%;
-    height: 40%;
+    top: 60px;
+    width: 80%;
+    height: 45%;
     background:conic-gradient(from 0.75turn at 50% 100%);
     mask: radial-gradient(at 50% 100%, white 55%, transparent 0);
     -webkit-mask: radial-gradient(at 50% 100%,#0000 64%, #000 0);
@@ -154,15 +155,15 @@
 .sun-sunrise{
     position: absolute;
     z-index:1;
-    left: 40px;
-    top: 39px;
+    left: 50px;
+    top: 47px;
 }
 
 .sun-fullMorning{
     position: absolute;
     z-index:1;
-    left: 8px;
-    bottom:70px;
+    left: 2px;
+    bottom:60px;
 }
 
 .sunset{
@@ -175,6 +176,6 @@
 .night{
     position: absolute;
     z-index:1;
-    left: 88px;
+    left: 100px;
     bottom: 65px;
 }

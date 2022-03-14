@@ -1,36 +1,39 @@
 import Header from "../header"
 import Activities from "../activities"
 import { Container, Row, Col} from "react-bootstrap"
-import CurrentWeather from "../currentweather"
+import CurrentWeather from "../currentWeather"
 import ForecastWeather from "../forecastWeather"
-
+import './style.scss'
 
 function HomePage() {
     return (
-        <Container style={{ paddingLeft: '6rem', paddingRight: '6rem' }} fluid >
+        <Container className="main-pageContainer" fluid >
 
-            <Container fluid style={{ marginBottom: '30px' }} >
+            <Container fluid className="header-cont" >
                 <Row >
-                    <Col lg={12}><Header></Header></Col>
+                    <Col  lg={12}><Header></Header></Col>
                 </Row>
             </Container>
 
-            <Container fluid style={{ display: 'flex' }}>
+            <Container fluid className="current-cont">
                 <Row>
-                    <Col style={{ width: '25rem' }} lg={6} >
+                    <Col md={{ span: 3, offset: 3 }} className="col-current" lg={6} >
                         <CurrentWeather></CurrentWeather>
                     </Col>
                 </Row>
 
-                <Container style={{ flexDirection: 'column', display: 'flex' }}>
+                <Container className="fore-cont">
                     <Row>
-                        <Col style={{ display: 'flex', gap: '1rem' }} lg={12}>
+                        <Col  lg={12}>
                             <ForecastWeather></ForecastWeather>
                         </Col>
                     </Row>
 
                     <Row>
+                        <Col >
                         <Activities></Activities>
+                        </Col>
+                      
                     </Row>
                 </Container>
 
