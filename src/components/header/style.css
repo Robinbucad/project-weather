@@ -12,7 +12,36 @@
  
 }
 
+.div-profile{
+    border-radius: 20px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid lightgray;
+    width: 60px;
 
+}
+
+.img-menu{
+    width: 15px;
+}
+
+.img-profile{
+    width: 20px;
+}
+
+.col-idiom{
+
+    justify-content: space-between;
+  
+}
+
+.idiom-menu{
+    display: flex;
+    align-items: center;
+}
 
 .celsius{
     background-color: #FF385C;

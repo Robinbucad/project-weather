@@ -21,7 +21,7 @@ function CurrentWeather() {
   const { cityOne} = useOneCity()
 
   const [city] = useContext(SearchContext)
-  console.log(cityOne)
+
 
   const handleBg = (temp) => {
       switch(temp){
@@ -180,7 +180,7 @@ function CurrentWeather() {
                         <p className="pues-sol">{t("card.card3")}</p>
                       </div>
                       <div className="div-pos-sun">
-                        <p>{`${cities?.map(e => new Date(e.current.sunset*1000).getHours())}:${cities.map(e => new Date(e.current.sunset*1000).getMinutes())}`}</p>
+                        <p className="atardecer">{`${cities?.map(e => new Date(e.current.sunset*1000).getHours())}:${cities.map(e => new Date(e.current.sunset*1000).getMinutes())}`}</p>
                         <p className="pues-sol">{t("card.card5")}</p>
                       </div>
                      

@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from "react"
 import { API_KEY } from "../../config.js"
 import { CoordContext } from "../../context/geocoding/coords.context.js"
 import { GoogleContext } from "../../context/googleApiContext/google.context.js"
-import { SearchContext } from "../../context/search.context.js"
 import { IdiomContext, TemperatureContext } from "../../context/temperature.context.js"
 import { useGeoLocation } from "../../geolocation/index.js"
 
@@ -17,10 +16,8 @@ export const useOneCity = () => {
     const [lng,updateLng] = useContext(IdiomContext)
     const [placeSearch,updatePlace] = useContext(GoogleContext)
     const coord = useGeoLocation()
+    
 
-
-    console.log(lng)
-  
  
     useEffect(() => {
         
