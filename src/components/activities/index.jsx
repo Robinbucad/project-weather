@@ -233,11 +233,7 @@ function Activities() {
         }
     }
 
-<<<<<<< HEAD
-
-=======
    
->>>>>>> develop
 
     return (
         <Container className="container-activities" >
