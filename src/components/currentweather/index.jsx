@@ -62,7 +62,7 @@ function CurrentWeather() {
     }
   }
   
-  console.log(cityOne)
+
 
   return (
     <Container style={{ height: '90vh', }} >

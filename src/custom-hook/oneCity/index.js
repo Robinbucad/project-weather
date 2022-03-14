@@ -14,18 +14,17 @@ export const useOneCity = () => {
     const [unit] = useContext(TemperatureContext)
     const [lat, updatelat, lon, updateLon ] = useContext(CoordContext)
     const [cityOne,updateCity] = useState([])
-    const [city, updateSearchCity] = useContext(SearchContext)
     const [lng,updateLng] = useContext(IdiomContext)
     const [placeSearch,updatePlace] = useContext(GoogleContext)
     const coord = useGeoLocation()
-    const [met, setMet] = useState([])
+
 
     console.log(lng)
   
  
     useEffect(() => {
         
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key3}&lang=es}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key2}&lang=es}`)
 
         .then(r => r.json())
         .then(d => {
