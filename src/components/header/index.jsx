@@ -49,17 +49,7 @@ function Header() {
             updateLocation('')        
         }
     }
-
-
-    //`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${API_KEY.key10}`
-    /**
-     * 
-     * updateLon(d.map(e => e.lon))
-            updatelat(d.map(e => e.lat))  
-            updateLocation('')   
-     */
-
-
+    
     const handleChange = e => {
         if(e.target.value === "en"){
             i18n.changeLanguage("en")

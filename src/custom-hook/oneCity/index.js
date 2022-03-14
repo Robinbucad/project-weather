@@ -9,9 +9,6 @@ import { useGeoLocation } from "../../geolocation/index.js"
 
 
 
-const latLoc = localStorage.getItem('lat')
-const lonLoc = localStorage.getItem('lon')
-
 export const useOneCity = () => {
 
     const [unit] = useContext(TemperatureContext)
@@ -22,22 +19,21 @@ export const useOneCity = () => {
     const [placeSearch,updatePlace] = useContext(GoogleContext)
     const coord = useGeoLocation()
 
-    console.log(lat, lon)
+    console.log(lng)
   
  
     useEffect(() => {
         
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key10}&lang=sp}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key10}&lang=es}`)
 
         .then(r => r.json())
         .then(d => {
             updatePlace('restaurant')
-            updateCity([d])
-          
+            updateCity([d])       
         })
         
         
-    },[unit,lat,lon])
+    },[unit,lat,lon,lng])
 
 
 

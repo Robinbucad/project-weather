@@ -7,20 +7,18 @@ import { API_KEY } from '../../config.js'
 
 export const usePlaces = e => {
 
-
     const [place, updatePlace] = useState([])
     const [cityContext, setCitycontext] = useContext(SearchContext)
     const [lat, updatelat, lon, updateLon ] = useContext(CoordContext)
     
     const [restaurant, updateRestaurant] = useState([])
     const [placeSearch, updatePlaceSearch] = useContext(GoogleContext)
-    console.log(placeSearch)
+
 
     useEffect(() => {
        fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=1500&type=${placeSearch}&key=${API_KEY}`)
             .then(r => r.json())
-            .then(d => {
-             
+                .then(d => {                 
                 console.log(d)
                 updateRestaurant([d])
             })
