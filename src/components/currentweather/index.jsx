@@ -16,12 +16,12 @@ function CurrentWeather() {
   
   const [t] = useTranslation("card")
   const [unit] = useContext(TemperatureContext)
-  const [city ] = useContext(SearchContext)
   const {cities} = useMoreCities()
 
-  const { cityOne } = useOneCity()
+  const { cityOne} = useOneCity()
 
-  console.log(city)
+
+
 
   const handleBg = (temp) => {
       switch(temp){
@@ -73,7 +73,7 @@ function CurrentWeather() {
       <Row>
    
         <Row style={{ marginBottom: '2rem' }}>
-        { city?.map((e,i) => (
+        { cityOne?.map((e,i) => (
             <Col key={i} lg={12}>
               <Card border="primary" style={{ width: '100%', height: '23rem', borderRadius: '12px', border: 'none', color: 'white' }} className={e.weather?.map(d => handleBg(d.icon) )}>
 

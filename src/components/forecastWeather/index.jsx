@@ -11,7 +11,7 @@ import partDayStorm from '../../assets/img/icon-weather/partly_day_storm-small.p
 import rainStorm from '../../assets/img/icon-weather/rainstorm-small.png'
 import snowy from '../../assets/img/icon-weather/snowy-small.png'
 import thundstorm from '../../assets/img/icon-weather/thunderstorm-small.png'
-import './style.css'
+import './style.scss'
 import { useState } from "react"
 
 
@@ -49,14 +49,14 @@ function ForecastWeather() {
 
     return (
 
-        <Container>
+        <Container className="fore-container">
 
             <Row >
 
-                <Col style={{ display: 'flex', gap: '1rem', marginBottom:'35px' }}>
-                    { cities.map(e => e.daily.map((r, i) => (
+                <Col className="col-feat">
+                    { cities?.map(e => e.daily.map((r, i) => (
                        
-                        <Card value={i}  key={i} style={{ width: '110px', width: '200px', borderRadius:'12px'}} className='cardForecast'>
+                        <Card value={i}  key={i}  className='cardForecast'>
                             
                              <Card.Body>
                                  <div className="div-date-forecast">

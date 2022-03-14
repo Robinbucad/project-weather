@@ -21,10 +21,11 @@ export const useMoreCities = () => {
   
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat === '' ? '50' : lat}&lon=${lon === '' ? '50' : lon}&units=${unit}&appid=1a1e6b25ceb11d049c296f3b556eb6d6&&lang=${lng}}}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat === '' ? '50' : lat}&lon=${lon === '' ? '50' : lon}&units=${unit}&appid=${API_KEY.key10}&lang=es}`)
             .then(r => r.json())
             .then(d =>{
                 updateCities([d])
+                console.log(d)
             }  )
             
 

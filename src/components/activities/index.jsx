@@ -211,10 +211,10 @@ function Activities() {
     const verifyMad = search.some(e => e.name.includes('Sol') || e.name.includes('Madrid') )
     console.log(verifyMad)
 
-    const veriNub = city.some(e => e.weather.some(r => r.description.includes('cl' )))
+    const veriNub = city.some(e => e.weather.some(r => r.description.includes('clo' )))
     const veriRain = city.some(e => e.weather.some(r => r.description.includes('llu')))
-    const veriSol = city.some(e => e.weather.some(r => r.description.includes('cle', 'cli')))
-
+    const veriSol = city.some(e => e.weather.some(r => r.description.includes('clear', 'cli')))
+    console.log(veriNub)
 
     const handleimgCLick = e => {
       

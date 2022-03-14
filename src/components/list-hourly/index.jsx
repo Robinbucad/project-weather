@@ -1,5 +1,5 @@
 import { useMoreCities } from "../../custom-hook/moreCities"
-
+import { Container,Row,Col, Card } from 'react-bootstrap'
 import sun from '../../assets/img/sunSmall.png'
 import rainSmall from '../../assets/img/icon-weather/rainy-medium.png'
 import cloudSmall from '../../assets/img/icon-weather/cloudy-small.png'
@@ -10,6 +10,7 @@ import rainStorm from '../../assets/img/icon-weather/rainstorm-small.png'
 import snowy from '../../assets/img/icon-weather/snowy-small.png'
 import thundstorm from '../../assets/img/icon-weather/thunderstorm-small.png'
 import './style.css'
+
 
 
 function ListHourly() {
@@ -42,35 +43,33 @@ function ListHourly() {
 
   return (
 
-    <section className="slider-container">
-     
-      {
+    <Container className="slider-container">
+        {
+        
+          cities.map(e => e.hourly?.map((d, i) => (
+            <Row>
+              <Col>
+              <Card key={i} className="card-current-weather">
+              <div>
+                <p style={{ textAlign: 'center' }}>{`${new Date(d.dt * 1000).getHours()}:${new Date(d.dt * 1000).getMinutes()}0`}</p>
+              </div>
 
-        cities.map(e => e.hourly.map((d, i) => (
-          <div key={i} className="card-current-weather">
+              <div className="img-container-listHour">
+                <img className="img-list-hour" src={d.weather?.map(r => handleIcon(r.icon))}></img>
 
-
-            <div>
-              <p style={{ textAlign: 'center' }}>{`${new Date(d.dt*1000).getHours()}:${new Date(d.dt*1000).getMinutes()}0`}</p>
-            </div>
-
-            <div className="img-container-listHour">
-              <img className="img-list-hour" src={d.weather.map(r => handleIcon(r.icon))}></img>
-
-            </div>
-
-
-            <div className="div-temp-currrent">
-              <p>{parseInt(d.temp)}º</p>
-            </div>
+              </div>
 
 
-          </div>
-        ))
-        )}
-
-
-    </section>
+              <div className="div-temp-currrent">
+                <p>{parseInt(d.temp)}º</p>
+              </div>         
+            </Card>
+              </Col>
+            </Row>
+            
+          ))
+          )}
+    </Container>
   )
 }
 

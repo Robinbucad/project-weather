@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { Container, Row, Col,Form} from 'react-bootstrap'
+import { Container, Row, Col,Form, Button} from 'react-bootstrap'
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
 import { IdiomContext, TemperatureContext } from '../../context/temperature.context'
 import './style.css'
@@ -9,13 +9,15 @@ import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
 import { CoordContext} from '../../context/geocoding/coords.context'
 import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
+import profile from '../../assets/img/profile.png'
+import menu from '../../assets/img/menu.png'
 
 
 function Header() {
     
     const [unit, updateUnit] = useContext(TemperatureContext)
     const [location, updateLocation] = useState('')
-    const [, updateCityContext] = useContext(SearchContext)
+    const [ city , updateCityContext] = useContext(SearchContext)
     
     /**UPDATE COORDS CONTEXT */
     const [lat, updatelat, lon, updateLon ] = useContext(CoordContext)
@@ -36,18 +38,15 @@ function Header() {
             updateUnit('metric')
         }
     }
-// AYER ESTUVE PROBANDO &units=${unit}
-    const searchLoc = e => {
+
+    const  searchLoc = async e => {
         if (e.key === 'Enter') {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=1a1e6b25ceb11d049c296f3b556eb6d6&units=${unit}&lang=en}`)
-                .then(r => r.json())
-                .then(d => {
-                    console.log(d)
-                    updatelat(d.coord.lat)
-                    updateLon(d.coord.lon)
-                    updateCityContext([d])    
-                    updateLocation('')
-                })
+            const r = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location},ES&limit=1&appid=${API_KEY.key10}`)
+            const d = await r.json()
+            console.log(d)
+            updateLon(d.map(e => e.lon))
+            updatelat(d.map(e => e.lat))  
+            updateLocation('')  
         }
     }
 
@@ -103,19 +102,22 @@ function Header() {
 
                 </Col>
                 <Col lg={1}>
-                    <div>
+                
                         <img src={mundo} />
                         <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none' }} >
                             <option value='es'>ES</option>
                             <option value='en'>EN</option>
                         </select>
                        
-                    </div>
+               
 
                 </Col>
 
                 <Col md={{ offset: 2 }}>
-                    <p>Aqui menu</p>
+                    <div>
+                        <img src={menu}></img>
+                        <img src={profile}></img>
+                    </div>
                 </Col>
             </Row>
 

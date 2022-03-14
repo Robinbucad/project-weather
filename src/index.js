@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchProvider from './context/search.provider'
 import CoordsProvider from './context/geocoding/coords.provider';
 import GoogleProvider from './context/googleApiContext/google.provider';
+import './scss/style.scss'
 
 //IDIOMAS
 import global_es from './translation/es/global.json'

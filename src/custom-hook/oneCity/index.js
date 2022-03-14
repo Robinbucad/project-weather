@@ -25,12 +25,8 @@ export const useOneCity = () => {
     console.log(lat, lon)
  
     useEffect(() => {
-
         
-
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat === '' ? '2' : lat}&lon=${lon === '' ? '2' : lon}&units=${unit}&appid=1a1e6b25ceb11d049c296f3b556eb6d6&lang=en}`)
-
-
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat === '' ? '2' : lat}&lon=${lon === '' ? '2' : lon}&units=${unit}&appid=${API_KEY.key10}&lang=es}`)
 
         .then(r => r.json())
         .then(d => {
@@ -41,7 +37,7 @@ export const useOneCity = () => {
         })
         
         
-    },[unit,lat,lon,lng])
+    },[unit,lat,lon])
 
 
     
