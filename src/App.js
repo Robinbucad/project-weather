@@ -8,18 +8,17 @@ import HomePage from './components/home/';
 
 
 function App() {
-  const geolo = useGeoLocation()
 
 
   return (
-      <TemperatureProvider>
+
     <div className="App">
 
     <HomePage></HomePage> 
 
 
     </div>
-    </TemperatureProvider>
+
   );
 }
 

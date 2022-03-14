@@ -86,3 +86,24 @@
 .img-placeholder{
     width: 21px;
 }
+
+.menu{
+    width:70px;
+    height: 36px;
+    padding: 10px, 12px, 10px, 12px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 22px;
+    border: 1px solid lightgray;
+    align-items: center;
+}
+
+.menu-img{
+    width: 15px;
+    height: 15px;
+}
+
+.prof-img{
+    width: 25px;
+    height: 25px;
+}

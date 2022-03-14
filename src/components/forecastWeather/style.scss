@@ -1,0 +1,56 @@
+@import '../../scss/style.scss';
+
+
+
+.fore-container{
+
+    .col-feat{
+        display: $displayFlex;
+        gap:$gapFeat;
+        margin-bottom: $marginBotFeat;
+    }
+
+.forecast-min-max{
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+    align-items: center;
+    margin-bottom: -10px;
+}
+
+.body-forecast{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.max-forecast{
+    font-weight: bold;
+}
+
+.div-min-max-forecast{
+    display:  flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -20px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.cardForecast:first-child{
+    background-color:$redColor;
+    color: white;
+}
+
+.cardForecast{
+     width: $cardFeatWidth;
+    border-radius:$borderRadiusCard
+}
+
+.div-date-forecast{
+    text-align: center;
+    font-weight: bold;
+}
+
+}
