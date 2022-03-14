@@ -41,14 +41,23 @@ function Header() {
 
     const  searchLoc = async e => {
         if (e.key === 'Enter') {
-            const r = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${location},ES&limit=1&appid=${API_KEY.key10}`)
+            const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location},ES&units=${unit}&appid=${API_KEY.key10}&lang=sp`)
             const d = await r.json()
-            console.log(d)
-            updateLon(d.map(e => e.lon))
-            updatelat(d.map(e => e.lat))  
-            updateLocation('')  
+            updateCityContext([d])
+            updatelat(d.coord.lat)
+            updateLon(d.coord.lon)
+            updateLocation('')        
         }
     }
+
+
+    //`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${API_KEY.key10}`
+    /**
+     * 
+     * updateLon(d.map(e => e.lon))
+            updatelat(d.map(e => e.lat))  
+            updateLocation('')   
+     */
 
 
     const handleChange = e => {
@@ -114,9 +123,9 @@ function Header() {
                 </Col>
 
                 <Col md={{ offset: 2 }}>
-                    <div>
-                        <img src={menu}></img>
-                        <img src={profile}></img>
+                    <div className='menu'>
+                        <img className='menu-img' src={menu}></img>
+                        <img className='prof-img' src={profile}></img>
                     </div>
                 </Col>
             </Row>

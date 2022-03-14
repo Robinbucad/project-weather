@@ -18,14 +18,14 @@ export const useMoreCities = () => {
     const [placeSearch, updatePlaces] = useContext(GoogleContext)
     const [city] = useContext(SearchContext)
     const coord = useGeoLocation()
-  
+    
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat === '' ? '50' : lat}&lon=${lon === '' ? '50' : lon}&units=${unit}&appid=${API_KEY.key10}&lang=es}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat }&lon=${lon }&units=${unit}&appid=${API_KEY.key10}&lang=sp}`)
             .then(r => r.json())
             .then(d =>{
                 updateCities([d])
-                console.log(d)
+        
             }  )
             
 

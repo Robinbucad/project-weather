@@ -20,6 +20,7 @@ function ForecastWeather() {
 
     const { cities } = useMoreCities()
     const [lng] = useContext(IdiomContext)
+   
 
     const handleIcon = (icon) => {
         switch (icon) {

@@ -20,8 +20,9 @@ function CurrentWeather() {
 
   const { cityOne} = useOneCity()
 
-
-
+  const [city] = useContext(SearchContext)
+    console.log(city === [''])
+    console.log(city.length)
 
   const handleBg = (temp) => {
       switch(temp){
@@ -62,7 +63,7 @@ function CurrentWeather() {
     }
   }
 
-
+console.log(cityOne)
 
 
 
@@ -70,10 +71,10 @@ function CurrentWeather() {
     <Container style={{ height: '90vh', }} >
 
 
-      <Row>
+      <Row lg={12}>
    
         <Row style={{ marginBottom: '2rem' }}>
-        { cityOne?.map((e,i) => (
+        {city.length===0 ? cityOne?.map((e,i) => (
             <Col key={i} lg={12}>
               <Card border="primary" style={{ width: '100%', height: '23rem', borderRadius: '12px', border: 'none', color: 'white' }} className={e.weather?.map(d => handleBg(d.icon) )}>
 
@@ -97,7 +98,29 @@ function CurrentWeather() {
               
             </Col>
         ))
-}
+: city?.map((e,i) => (
+  <Col key={i} lg={12}>
+    <Card border="primary" style={{ width: '100%', height: '23rem', borderRadius: '12px', border: 'none', color: 'white' }} className={e.weather?.map(d => handleBg(d.icon) )}>
+
+      <Card.Body className="card-body-current">
+        <div >
+          <Card.Title>{e.name}</Card.Title>
+          <p>{`${new Date(e.dt*1000).toLocaleDateString("eng",{weekday:"short"})}`}, {`${new Date(e.dt*1000).getHours()}`}:{`${new Date(e.dt*1000).getMinutes()}`}</p>
+        </div>
+
+        <div>
+          <Card.Text className="temp-info-current">{parseInt(e.main.temp)} {unit === 'metric' ? 'ºC' : 'ºF'}</Card.Text>
+          <Card.Text className="desc-temp" >{`${e.weather.map(e => e.description.charAt(0).toUpperCase())}${e.weather?.map(e => e.description.slice(1))}`}</Card.Text>
+          <div className="min-max">
+            <p className="max-info-current">Max {parseInt(e.main.temp_max)}{unit === 'metric' ? 'ºC' : 'ºFº'}</p>
+            <p className="max-info-current">Min {parseInt(e.main.temp_min)}{unit === 'metric' ? 'ºC' : 'ºF'}</p>
+          </div>
+        </div>
+
+      </Card.Body>
+    </Card>
+    
+  </Col>))}
         </Row>
 
         <Row>

@@ -89,7 +89,7 @@ export const madridNublado = [
     },
     {   
         link:"https://www.airbnb.es/experiences/879209?location=madrid&currentTab=experience_tab&federatedSearchId=032744f7-d023-466a-a95a-2d282dd90db6&searchId=&sectionId=3265a897-000f-4950-a7fc-0c3e05465043&source=p2",
-        tag:'variety',
+        tag:'museum',
         val:"4,80",
         desc:"Taller de pintura con Vino y Tapas",
         price:"Desde 40€ por persona",
@@ -116,30 +116,30 @@ export const madridNublado = [
     },
     {
         link:"https://www.airbnb.es/experiences/834863?location=madrid&currentTab=experience_tab&federatedSearchId=d2012942-54db-4976-8e0f-93337b3088a1&searchId=&sectionId=554ef942-1c3d-4e2d-aab0-5ed2abddf49a&source=p2",
-        tag:'sport',
+        tag:'gym',
         val:"4,98",
         res:"59",
         desc:"Corriendo por el centro de Madrid",
         price:"Desde 35€ por persona",
-        img:"madridNub4"
+        img:"madridNub5"
     },
     {
         link:"https://www.airbnb.es/experiences/255436?location=madrid&currentTab=experience_tab&federatedSearchId=fc1783ba-a041-4b8c-9299-323a2ac78bbd&searchId=&sectionId=554ef942-1c3d-4e2d-aab0-5ed2abddf49a&source=p2",
-        tag:'sport',
+        tag:'gym',
         val:"4,85",
         res:"26",
         desc:"Recorriendo el parque del Retiro en Segway",
         price:"Desde 39€ por persona",
-        img:"madridNub5"
+        img:"madridNub6"
     },
     {
         link:"https://www.airbnb.es/experiences/1313879?location=madrid&currentTab=experience_tab&federatedSearchId=3a4fc3af-ae68-4b23-8665-a6ca993ece4d&searchId=&sectionId=554ef942-1c3d-4e2d-aab0-5ed2abddf49a&source=p2",
-        tag:'ocio',
+        tag:'outdoors',
         val:"4,88",
         res:"25",
         desc:"Tour en Bici + Tapas",
         price:"Desde 25€ por persona",
-        img:"madridNub6"
+        img:"madridNub7"
     },
     {
         link:"https://www.airbnb.es/experiences/1763249?location=madrid&currentTab=experience_tab&federatedSearchId=fc1783ba-a041-4b8c-9299-323a2ac78bbd&searchId=&sectionId=554ef942-1c3d-4e2d-aab0-5ed2abddf49a&source=p2",
@@ -148,7 +148,7 @@ export const madridNublado = [
         res:"45",
         desc:"Aventura en Madrid. Sigue la ruta y encuentra pistas",
         price:"Desde 19€ por persona",
-        img:"madridNub7"
+        img:"madridNub8"
     }
     
 ]

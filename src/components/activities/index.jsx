@@ -7,65 +7,66 @@ import { useTranslation } from 'react-i18next'
 import { valenciaSol, valenciaNublado, valenciaLloviendo } from '../../objects/valencia'
 import { madridSol, madridNublado, madridRain } from "../../objects/madrid"
 
-import valenciaSol1 from '../../assets/img/valencia/sol/valenciaSol1.svg'
-import valencia2Sol from '../../assets/img/valencia/sol/valenciaSol2.svg'
-import valenciaSol3 from '../../assets/img/valencia/sol/valenciaSol3.svg'
-import valenciaSol4 from '../../assets/img/valencia/sol/valenciaSol4.svg'
-import valenciaSol5 from '../../assets/img/valencia/sol/valenciaSol5.svg'
-import valenciaSol6 from '../../assets/img/valencia/sol/valenciaSol6.svg'
-import valenciaSol7 from '../../assets/img/valencia/sol/valenciaSol7.svg'
-import valenciaSol8 from '../../assets/img/valencia/sol/valenciaSol8.svg'
+import valenciaSol1 from '../../assets/img/valencia/sol/valenciaSol1.jpg'
+import valencia2Sol from '../../assets/img/valencia/sol/valenciaSol2.jpg'
+import valenciaSol3 from '../../assets/img/valencia/sol/valenciaSol3.jpg'
+import valenciaSol4 from '../../assets/img/valencia/sol/valenciaSol4.jpg'
+import valenciaSol5 from '../../assets/img/valencia/sol/valenciaSol5.jpg'
+import valenciaSol6 from '../../assets/img/valencia/sol/valenciaSol6.jpg'
+import valenciaSol7 from '../../assets/img/valencia/sol/valenciaSol7.jpg'
+import valenciaSol8 from '../../assets/img/valencia/sol/valenciaSol8.jpg'
 
-import valenciaNub from '../../assets/img/valencia/nub/valenciaNub.svg'
-import valenciaNub2 from '../../assets/img/valencia/nub/valenciaNub2.svg'
-import valenciaNub3 from '../../assets/img/valencia/nub/valenciaNub3.svg'
-import valenciaNub4 from '../../assets/img/valencia/nub/valenciaNub4.svg'
-import valenciaNubPhoto from '../../assets/img/valencia/nub/valenciaNubPhoto.svg'
-import valenciaNub6 from '../../assets/img/valencia/nub/valenciaNub6.svg'
-import valenciaNub8 from '../../assets/img/valencia/nub/valenciaNub8.svg'
-import valenciaNub5 from '../../assets/img/valencia/nub/valenciaNub5.svg'
+import valenciaNub from '../../assets/img/valencia/nub/valenciaNub.jpg'
+import valenciaNub2 from '../../assets/img/valencia/nub/valenciaNub2.jpg'
+import valenciaNub3 from '../../assets/img/valencia/nub/valenciaNub3.jpg'
+import valenciaNub4 from '../../assets/img/valencia/nub/valenciaNub4.jpg'
+import valenciaNubPhoto from '../../assets/img/valencia/nub/valenciaNub5.jpg'
+import valenciaNub6 from '../../assets/img/valencia/nub/valenciaNub7.jpg'
+import valenciaNub8 from '../../assets/img/valencia/nub/valenciaNub8.jpg'
+import valenciaNub5 from '../../assets/img/valencia/nub/valenciaNub6.jpg'
 
-import valenciaRain from '../../assets/img/valencia/rain/valenciaRain.svg'
-import valenciaRain2 from '../../assets/img/valencia/rain/valenciaRain2.svg'
-import valenciaRain3 from '../../assets/img/valencia/rain/valenciaRain3.svg'
-import valenciaRain4 from '../../assets/img/valencia/rain/valenciaRain4.svg'
-import valenciaRain5 from '../../assets/img/valencia/rain/valenciaRain5.svg'
-import valenciaRain6 from '../../assets/img/valencia/rain/valenciaRain6.svg'
-import valenciaRain7 from '../../assets/img/valencia/rain/valenciaRain7.svg'
-import valenciaRain8 from '../../assets/img/valencia/rain/valenciaRain8.svg'
+import valenciaRain from '../../assets/img/valencia/rain/valenciaRain.jpg'
+import valenciaRain2 from '../../assets/img/valencia/rain/valenciaRain2.jpg'
+import valenciaRain3 from '../../assets/img/valencia/rain/valenciaRain3.jpg'
+import valenciaRain4 from '../../assets/img/valencia/rain/valenciaRain4.jpg'
+import valenciaRain5 from '../../assets/img/valencia/rain/valenciaRain5.jpg'
+import valenciaRain6 from '../../assets/img/valencia/rain/valenciaRain6.jpg'
+import valenciaRain7 from '../../assets/img/valencia/rain/valenciaRain7.jpg'
+import valenciaRain8 from '../../assets/img/valencia/rain/valenciaRain8.jpg'
 
-import madridSol1 from '../../assets/img/madrid/sol/madridSol.svg'
-import madridSol2 from '../../assets/img/madrid/sol/madridSol2.svg'
-import madridSol3 from '../../assets/img/madrid/sol/madridSol3.svg'
-import madridSol4 from '../../assets/img/madrid/sol/madridSol4.svg'
-import madridSol5 from '../../assets/img/madrid/sol/madridSol5.svg'
-import madridSol6 from '../../assets/img/madrid/sol/madridSol6.svg'
-import madridSol7 from '../../assets/img/madrid/sol/madridSol7.svg'
-import madridSol8 from '../../assets/img/madrid/sol/madridSol8.svg'
+import madridSol1 from '../../assets/img/madrid/sol/madridSol.jpg'
+import madridSol2 from '../../assets/img/madrid/sol/madridSol2.jpg'
+import madridSol3 from '../../assets/img/madrid/sol/madridSol3.jpg'
+import madridSol4 from '../../assets/img/madrid/sol/madridSol4.jpg'
+import madridSol5 from '../../assets/img/madrid/sol/madridSol5.jpg'
+import madridSol6 from '../../assets/img/madrid/sol/madridSol6.jpg'
+import madridSol7 from '../../assets/img/madrid/sol/madridSol7.jpg'
+import madridSol8 from '../../assets/img/madrid/sol/madridSol8.jpg'
 
-import madridNub1 from '../../assets/img/madrid/nub/madridNub.svg'
-import madridNub2 from '../../assets/img/madrid/nub/madridNub2.svg'
-import madridNub3 from '../../assets/img/madrid/nub/madridNub3.svg'
-import madridNub4 from '../../assets/img/madrid/nub/madridNub4.svg'
-import madridNub5 from '../../assets/img/madrid/nub/madridNub5.svg'
-import madridNub6 from '../../assets/img/madrid/nub/madridNub6.svg'
-import madridNub7 from '../../assets/img/madrid/nub/madridNub7.svg'
-import madridNub8 from '../../assets/img/madrid/nub/madridNub8.svg'
+import madridNub1 from '../../assets/img/madrid/nub/madridNub.jpg'
+import madridNub2 from '../../assets/img/madrid/nub/madridNub2.jpg'
+import madridNub3 from '../../assets/img/madrid/nub/madridNub3.jpg'
+import madridNub4 from '../../assets/img/madrid/nub/madridNub4.jpg'
+import madridNub5 from '../../assets/img/madrid/nub/madridNub5.jpg'
+import madridNub6 from '../../assets/img/madrid/nub/madridNub6.jpg'
+import madridNub7 from '../../assets/img/madrid/nub/madridNub7.jpg'
+import madridNub8 from '../../assets/img/madrid/nub/madridNub8.jpg'
 
 
-import madridRain1 from '../../assets/img/madrid/rain/madridRain.svg'
-import madridRain2 from '../../assets/img/madrid/rain/madridRain2.svg'
-import madridRain3 from '../../assets/img/madrid/rain/madridRain3.svg'
-import madridRain4 from '../../assets/img/madrid/rain/madridRain4.svg'
-import madridRain5 from '../../assets/img/madrid/rain/madridRain5.svg'
-import madridRain6 from '../../assets/img/madrid/rain/madridRain6.svg'
-import madridRain7 from '../../assets/img/madrid/rain/madridRain7.svg'
-import madridRain8 from '../../assets/img/madrid/rain/madridRain8.svg'
+import madridRain1 from '../../assets/img/madrid/rain/madridRain.jpg'
+import madridRain2 from '../../assets/img/madrid/rain/madridRain2.jpg'
+import madridRain3 from '../../assets/img/madrid/rain/madridRain3.jpg'
+import madridRain4 from '../../assets/img/madrid/rain/madridRain4.jpg'
+import madridRain5 from '../../assets/img/madrid/rain/madridRain5.jpg'
+import madridRain6 from '../../assets/img/madrid/rain/madridRain6.jpg'
+import madridRain7 from '../../assets/img/madrid/rain/madridRain7.jpg'
+import madridRain8 from '../../assets/img/madrid/rain/madridRain8.jpg'
 
 import { useState } from "react"
 import { useContext } from "react"
 import { GoogleContext } from "../../context/googleApiContext/google.context"
 import { SearchContext } from "../../context/search.context"
+import { useOneCity } from "../../custom-hook/oneCity"
 
 
 
@@ -209,12 +210,12 @@ function Activities() {
     const [city] = useContext(SearchContext)
     const verifyVal = search.some(e => e.name.includes('Valencia'))
     const verifyMad = search.some(e => e.name.includes('Sol') || e.name.includes('Madrid') )
-    console.log(verifyMad)
 
-    const veriNub = city.some(e => e.weather.some(r => r.description.includes('clo' )))
+   
+    const veriNub = city.some(e => e.weather.some(r => r.description.includes('nub' ,'cl' )))
     const veriRain = city.some(e => e.weather.some(r => r.description.includes('llu')))
-    const veriSol = city.some(e => e.weather.some(r => r.description.includes('clear', 'cli')))
-    console.log(veriNub)
+    const veriSol = city.some(e => e.weather.some(r => r.description.includes('des', 'cl')))
+
 
     const handleimgCLick = e => {
       
@@ -222,12 +223,13 @@ function Activities() {
 
    
 
- 
-   
+    const rand = [valenciaNub,valenciaNub2,valenciaNub3,valenciaNub4]
+    let random = rand[Math.floor(Math.random() * rand.length)]
+    console.log(random)
 
     function handleImg(ram){
         switch(ram){
-            case 'restaurant': return valenciaNub6;
+            case 'restaurant': return random;
             case 'museum': return madridRain1
             case 'night_club': return madridRain5
             case 'outdoors': return madridSol7
@@ -279,7 +281,7 @@ function Activities() {
 
                             {veriNub  && verifyVal === true ? (
                                 valenNub?.map(e => (
-                                    <article >
+                                    <article className="art" >
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
                                         </Card>
@@ -294,7 +296,7 @@ function Activities() {
 
                             {veriRain && verifyVal === true ? (
                                 valenRain?.map(e => (
-                                    <article >
+                                    <article className="art" >
                                     <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                         <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
                                     </Card>
@@ -309,7 +311,7 @@ function Activities() {
 
                             {veriSol && verifyVal === true ? (
                                 valencia?.map(e => (
-                                    <article >
+                                    <article className="art">
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
                                         </Card>
@@ -325,7 +327,7 @@ function Activities() {
 
                             {veriSol && verifyMad  === true ? (
                                 madrid?.map(e => (
-                                    <article >
+                                    <article className="art">
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
                                         </Card>
@@ -341,7 +343,7 @@ function Activities() {
 
                             {veriNub && verifyMad === true ? (
                                 madNub?.map(e => (
-                                    <article >
+                                    <article className="art" >
                                         <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                             <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
                                         </Card>
@@ -357,7 +359,7 @@ function Activities() {
 
                             {veriRain && verifyMad === true ? (
                                 madRain?.map(e => (
-                                    <article >
+                                    <article className="art">
                                     <Card  style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                         <img onClick={() => handleimgCLick(window.open(e.link))} src={handleImgAct(e.img)}></img>
                                     </Card>
@@ -371,7 +373,7 @@ function Activities() {
 
                             ) : ''}
                             {restaurant.map(e => e.results.map(r => (
-                                <article >
+                                <article className="art">
                                     <Card style={{ borderRadius: '12px', background: 'none', border: 'none' }} className="card-activity">
                                         <Card.Img variant="top" className="img-acti" src={handleImg(place)} />
                                     

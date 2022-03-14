@@ -23,21 +23,22 @@ export const useOneCity = () => {
     const coord = useGeoLocation()
 
     console.log(lat, lon)
+  
  
     useEffect(() => {
         
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat === '' ? '2' : lat}&lon=${lon === '' ? '2' : lon}&units=${unit}&appid=${API_KEY.key10}&lang=es}`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key10}&lang=sp}`)
 
         .then(r => r.json())
         .then(d => {
             updatePlace('restaurant')
             updateCity([d])
-            updateSearchCity([d])
-            console.log(d)
+          
         })
         
         
     },[unit,lat,lon])
+
 
 
     

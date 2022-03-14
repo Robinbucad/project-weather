@@ -6,8 +6,8 @@ const lonLoc = localStorage.getItem('lon')
 
 function CoordsProvider({children}){
 
-    const [lat, updatelat] = useState('')
-    const [lon, updateLon] = useState('')
+    const [lat, updatelat] = useState(latLoc)
+    const [lon, updateLon] = useState(lonLoc)
 
 
     return(

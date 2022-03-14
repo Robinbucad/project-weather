@@ -11,26 +11,29 @@ function HomePage() {
 
             <Container fluid className="header-cont" >
                 <Row >
-                    <Col lg={12}><Header></Header></Col>
+                    <Col  lg={12}><Header></Header></Col>
                 </Row>
             </Container>
 
             <Container fluid className="current-cont">
                 <Row>
-                    <Col className="col-current" lg={6} >
+                    <Col md={{ span: 3, offset: 3 }} className="col-current" lg={6} >
                         <CurrentWeather></CurrentWeather>
                     </Col>
                 </Row>
 
                 <Container className="fore-cont">
                     <Row>
-                        <Col style={{ display: 'flex', gap: '1rem' }} lg={12}>
+                        <Col  lg={12}>
                             <ForecastWeather></ForecastWeather>
                         </Col>
                     </Row>
 
                     <Row>
+                        <Col >
                         <Activities></Activities>
+                        </Col>
+                      
                     </Row>
                 </Container>
 
