@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { Container, Row, Col,Form, Button} from 'react-bootstrap'
+import { Container, Row, Col,Form} from 'react-bootstrap'
 import logo from '../../assets/img/logo-airbnb-tiempo.svg'
 import { IdiomContext, TemperatureContext } from '../../context/temperature.context'
 import './style.css'
@@ -9,24 +9,23 @@ import mundo from '../../assets/img/idioma.png'
 import { useTranslation } from 'react-i18next'
 import { CoordContext} from '../../context/geocoding/coords.context'
 import iconPlaceholder from '../../assets/img/placeholderIcon.svg'
-import profile from '../../assets/img/profile.png'
-import menu from '../../assets/img/menu.png'
 
 
 function Header() {
     
     const [unit, updateUnit] = useContext(TemperatureContext)
     const [location, updateLocation] = useState('')
-    const [ city , updateCityContext] = useContext(SearchContext)
+    const [, updateCityContext] = useContext(SearchContext)
     
     /**UPDATE COORDS CONTEXT */
     const [lat, updatelat, lon, updateLon ] = useContext(CoordContext)
+
 
     /**IDIOMA */
     const [lng,updateLng] = useContext(IdiomContext)
     const [t, i18n] = useTranslation("global")
   
-    
+
 
     const [btn, setBtn] = useState(true)
     const handleClick = e => {
@@ -39,17 +38,22 @@ function Header() {
         }
     }
 
-    const  searchLoc = async e => {
+    const searchLoc = e => {
         if (e.key === 'Enter') {
-            const r = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location},ES&units=${unit}&appid=${API_KEY.key10}&lang=sp`)
-            const d = await r.json()
-            updateCityContext([d])
-            updatelat(d.coord.lat)
-            updateLon(d.coord.lon)
-            updateLocation('')        
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=049f94146cf33b0b409eda3fe971bb47&lang=${lng}`)
+                .then(r => r.json())
+                .then(d => {
+                    updatelat(d.coord.lat)
+                    updateLon(d.coord.lon)
+
+            
+                    updateCityContext([d])          
+                   
+                    updateLocation('')
+                })
         }
     }
-    
+
     const handleChange = e => {
         if(e.target.value === "en"){
             i18n.changeLanguage("en")
@@ -101,22 +105,19 @@ function Header() {
 
                 </Col>
                 <Col lg={1}>
-                
+                    <div>
                         <img src={mundo} />
-                        <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none', style:'none' }} >
+                        <select onChange={handleChange} name='idioms' style={{ background: 'none', border: 'none' }} >
                             <option value='es'>ES</option>
                             <option value='en'>EN</option>
                         </select>
                        
-               
+                    </div>
 
                 </Col>
 
                 <Col md={{ offset: 2 }}>
-                    <div className='menu'>
-                        <img className='menu-img' src={menu}></img>
-                        <img className='prof-img' src={profile}></img>
-                    </div>
+                    <p>Aqui menu</p>
                 </Col>
             </Row>
 
