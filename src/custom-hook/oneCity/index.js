@@ -21,7 +21,7 @@ export const useOneCity = () => {
  
     useEffect(() => {
         
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key2}&lang=es}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat }&lon=${lon}&units=${unit}&appid=${API_KEY.key2}&lang=es}`)
 
         .then(r => r.json())
         .then(d => {
