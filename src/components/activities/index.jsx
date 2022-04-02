@@ -84,6 +84,7 @@ function Activities() {
     const [madNub, updateMadNub] = useState(madridNublado)
     const [madRain, updateMadRain] = useState(madridRain)
 
+
     const {cityOne} = useOneCity()
 
     const handleImgAct = (img) => {
@@ -215,7 +216,7 @@ function Activities() {
 
     const veriNub = city.some(e => e.weather.some(r => r.description.includes('nub' )))
     const veriRain = city.some(e => e.weather.some(r => r.description.includes('llu')))
-    const veriSol = city.some(e => e.weather.some(r => r.description.includes('des', 'cli')))
+    const veriSol = city.some(e => e.weather.some(r => r.description.includes('ci' || 'cl')))
 
 
     const handleimgCLick = e => {

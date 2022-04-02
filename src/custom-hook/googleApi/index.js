@@ -19,7 +19,7 @@ export const usePlaces = e => {
        fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=1500&type=${placeSearch}&key=${API_KEY}`)
             .then(r => r.json())
                 .then(d => {                 
-                console.log(d)
+                
                 updateRestaurant([d])
             })
     },[cityContext,placeSearch])
